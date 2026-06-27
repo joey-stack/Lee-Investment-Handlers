@@ -59,7 +59,7 @@ export default async function ArticlePage({ params }: PageProps) {
     <main className="min-h-screen bg-brand-bg-primary text-brand-primary">
       {/* Article Content Section */}
       <article className="pt-28 md:pt-36 pb-20 md:pb-24">
-        <div className="max-w-[800px] mx-auto px-4 md:px-6">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-7">
           {/* Breadcrumbs */}
           <nav className="flex items-center gap-2 mb-8 text-xs font-body font-medium tracking-wider uppercase text-brand-secondary/70">
             <Link href="/" className="hover:text-brand-alternate transition-colors duration-200">
@@ -91,7 +91,7 @@ export default async function ArticlePage({ params }: PageProps) {
           </div>
 
           {/* Headline */}
-          <h1 className="font-heading text-3xl md:text-[50px] font-normal leading-[1.15] tracking-tight text-brand-primary mb-8">
+          <h1 className="font-heading text-3xl md:text-[50px] font-normal leading-[1.15] tracking-tight text-brand-primary mb-8 max-w-[900px]">
             {article.title}
           </h1>
 
@@ -117,13 +117,13 @@ export default async function ArticlePage({ params }: PageProps) {
           </div>
 
           {/* Featured Image */}
-          <div className="relative w-full aspect-[16/9] mb-12 rounded-[6px] overflow-hidden bg-brand-bg-secondary shadow-[0px_4px_20px_rgba(0,0,0,0.02)] border border-brand-border/50 select-none">
+          <div className="relative w-full aspect-[16/9] md:aspect-[21/9] mb-12 rounded-[6px] overflow-hidden bg-brand-bg-secondary shadow-[0px_4px_20px_rgba(0,0,0,0.02)] border border-brand-border/50 select-none">
             <Image
               src={article.image}
               alt={article.title}
               fill
               priority
-              sizes="(max-width: 800px) 100vw, 800px"
+              sizes="(max-width: 1200px) 100vw, 1200px"
               className="object-cover"
             />
           </div>
@@ -162,8 +162,8 @@ export default async function ArticlePage({ params }: PageProps) {
       {/* Recommended Reading Section */}
       {recommendedArticles.length > 0 && (
         <section className="bg-brand-bg-secondary py-16 md:py-20 border-t border-brand-border/60">
-          <div className="max-w-[1248px] mx-auto px-4 md:px-6">
-            <div className="max-w-[800px] mx-auto mb-10 flex items-end justify-between">
+          <div className="max-w-[1200px] mx-auto px-5 md:px-7">
+            <div className="mb-10 flex items-end justify-between">
               <div>
                 <span className="text-xs font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-2 block">
                   More Analysis
@@ -174,7 +174,7 @@ export default async function ArticlePage({ params }: PageProps) {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[800px] mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {recommendedArticles.map((item) => (
                 <Link
                   href={`/insights/${item.slug}`}
@@ -187,7 +187,7 @@ export default async function ArticlePage({ params }: PageProps) {
                       src={item.image}
                       alt={item.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, 400px"
+                      sizes="(max-width: 768px) 100vw, 500px"
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                   </div>
