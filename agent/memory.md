@@ -1,18 +1,20 @@
 # Session Memory
-> Updated: 2026-06-27 — Session 21
+> Updated: 2026-06-27 — Session 22
 
 ## Project Phase
-Phase 10 — SEO, Performance & QA Complete (Homepage Services Redesign)
+Phase 11 — Handover (Blog Template & Vercel Prep)
 
 ## Last Completed Task
-Homepage Services Cards Redesign: Redesigned the services cards on the homepage in `src/components/sections/ServicesGrid.tsx` to match the split-panel design with edge-to-edge right-side images, vertically centered left-side copy, pill-shaped metrics badges, and original border radius, with full build verification.
+Dynamic Blog Post Template: Implemented a dynamic blog template route at `src/app/insights/[slug]/page.tsx`, updated schema types to support paragraphs, author, and read times, and built a copy-link Client Component (`ShareButton.tsx`). Linked the local repository and pushed the complete codebase to GitHub.
 
 ## What Was Built This Session
-- `src/components/sections/ServicesGrid.tsx` — Refactored layout to use vertical centering, balanced paddings, metrics badges, and edge-to-edge images
-- `run_replacements_extended.py` (scratch) — Automated replacements script for the remaining copy blocks
+- `src/app/insights/[slug]/page.tsx` — Dynamic route page with pre-rendered static path params and dynamic metadata.
+- `src/components/ui/ShareButton.tsx` — Interactivity helper with a temporal visual copied check state.
+- `src/types/index.ts` — Updated `InsightArticle` with optional content list, author, and readTime fields.
+- `src/lib/content/insights.ts` — Enhanced blog data with paragraphs, authors, and read times.
 
 ## Architecture Decisions Made
-- **Vertical Centering for Balanced Padding** — Replaced `justify-between` and `h-full` with `justify-center` on the content grid cell. This centers text content vertically, allocating excess grid height equally to the top and bottom edges of the card, preventing overflow and ensuring balanced padding.
+- **Server/Client Component Separation for Dynamic Routing** — Ensured the dynamic page remains a Server Component to support `generateStaticParams()` (static export) and `generateMetadata()` (dynamic SEO), while offloading copy-to-clipboard functionality to the nested Client Component `<ShareButton />`.
 
 ## Dependencies Added
 - None
@@ -37,4 +39,5 @@ Homepage Services Cards Redesign: Redesigned the services cards on the homepage 
 - [x] Contact Page route and all 3 subsections assembled
 - [x] Dynamic sitemap.xml and robots.txt routes active
 - [x] Compilation verified successfully (no TS warnings, static pages built)
+- [x] Codebase pushed to GitHub repository
 - [ ] Vercel connected
