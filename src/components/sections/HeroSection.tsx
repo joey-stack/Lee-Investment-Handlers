@@ -76,7 +76,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
       <div className="absolute inset-0 bg-black/65 z-10" />
 
       {/* 4. Centered Hero Content Container */}
-      <div className="relative z-20 w-full max-w-[1248px] mx-auto px-4 md:px-6 flex flex-col items-center justify-center h-full text-white text-center pt-20 pb-24">
+      <div className="relative z-20 w-full max-w-[1200px] mx-auto px-4 md:px-6 flex flex-col items-center justify-center h-full text-white text-center pt-20 pb-24">
         <motion.div
           variants={containerVariants}
           initial="hidden"

@@ -28,7 +28,7 @@ const itemVariants = {
 export const StrategiesHeroSection: React.FC = () => {
   return (
     <section className="bg-brand-bg-secondary pt-32 pb-20 md:pt-40 md:pb-28 border-b border-brand-border">
-      <div className="max-w-[1248px] mx-auto px-4 md:px-6">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         <motion.div
           variants={containerVariants}
           initial="hidden"

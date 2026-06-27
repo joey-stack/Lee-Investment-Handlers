@@ -54,7 +54,7 @@ const stagger = {
 export const WhyChooseUs: React.FC = () => {
   return (
     <section className="bg-brand-bg-primary py-20 md:py-28 font-body">
-      <div className="max-w-[1248px] mx-auto px-4 md:px-6">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         
         {/* Header Row (Flex on desktop) */}
         <motion.div

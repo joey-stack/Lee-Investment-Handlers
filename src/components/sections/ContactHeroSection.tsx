@@ -29,7 +29,7 @@ const itemVariants = {
 export const ContactHeroSection: React.FC = () => {
   return (
     <section className="bg-brand-bg-primary pt-32 pb-4 md:pt-36 md:pb-6">
-      <div className="max-w-[1248px] mx-auto px-4 md:px-6">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         <div className="relative w-full min-h-[380px] md:min-h-[440px] flex items-center justify-center overflow-hidden rounded-none bg-brand-bg-alternate select-none border border-brand-border-dark/30 shadow-lg">
           {/* Background Cover Image */}
           <div className="absolute inset-0 z-0">

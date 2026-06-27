@@ -32,7 +32,7 @@ export const AboutSnippet: React.FC = () => {
 
   return (
     <section className="bg-brand-bg-alternate py-20 md:py-28">
-      <div className="max-w-[1248px] mx-auto px-4 md:px-6">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
           
           {/* Left Column — Image with Overlaid Scrolling Marquee */}

@@ -33,7 +33,7 @@ export const IndustriesMarquee: React.FC = () => {
 
   return (
     <section className="bg-brand-bg-primary py-8 md:py-10">
-      <div className="max-w-[1248px] mx-auto px-4 md:px-6">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         <div className="relative w-full overflow-hidden bg-brand-bg-alternate rounded-[6px] py-6 md:py-8 border border-brand-border-dark/60 select-none">
           <div className="flex w-full overflow-hidden">
             <motion.div

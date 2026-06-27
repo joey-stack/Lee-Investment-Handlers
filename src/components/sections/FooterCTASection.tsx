@@ -29,7 +29,7 @@ export const FooterCTASection: React.FC<FooterCTASectionProps> = ({ onOpenConsul
       {/* Premium subtle glow overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(200,169,110,0.06)_0%,rgba(0,0,0,0)_70%)] pointer-events-none z-0" />
       
-      <div className="relative z-10 max-w-[1248px] mx-auto px-4 md:px-6 flex flex-col items-center justify-center">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 md:px-6 flex flex-col items-center justify-center">
         
         <motion.div
           variants={stagger}

@@ -31,7 +31,7 @@ const stagger = {
 export const AboutCommitmentsSection: React.FC = () => {
   return (
     <section className="bg-brand-bg-primary pt-20 pb-20 md:pt-28 md:pb-28 lg:pt-32 lg:pb-36 border-b border-brand-border">
-      <div className="max-w-[1248px] mx-auto px-4 md:px-6">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         
         {/* Section Header */}
         <div className="text-center mb-16">

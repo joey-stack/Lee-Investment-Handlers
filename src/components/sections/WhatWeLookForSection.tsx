@@ -26,7 +26,7 @@ const fadeUp = {
 export const WhatWeLookForSection: React.FC = () => {
   return (
     <section className="bg-brand-bg-secondary py-20 md:py-24 border-b border-brand-border">
-      <div className="max-w-[1248px] mx-auto px-4 md:px-6">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* Left Column — Title & Subtext */}

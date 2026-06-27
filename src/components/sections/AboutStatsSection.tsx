@@ -22,7 +22,7 @@ const stagger = {
 export const AboutStatsSection: React.FC = () => {
   return (
     <section className="bg-brand-bg-primary py-20 md:py-28 border-b border-brand-border">
-      <div className="max-w-[1248px] mx-auto px-4 md:px-6">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         
         {/* Large Decorative Header */}
         <div className="text-center mb-16 select-none">

@@ -106,7 +106,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-brand-bg-alternate text-white border-t border-brand-border-dark font-body">
-      <div className="max-w-[1248px] mx-auto px-4 md:px-6 py-16 md:py-20">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6 py-16 md:py-20">
         {/* Top Section: 4-Column Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 pb-12 md:pb-16 border-b border-brand-border-dark">
           

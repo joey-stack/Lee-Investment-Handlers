@@ -34,7 +34,7 @@ export const RiskManagementFrameworkSection: React.FC = () => {
         />
       </div>
 
-      <div className="relative z-10 max-w-[1248px] mx-auto px-4 md:px-6">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
           {/* Left Column — Eyebrow, Headline, Description */}

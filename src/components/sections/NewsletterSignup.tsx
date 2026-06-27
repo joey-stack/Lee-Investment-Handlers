@@ -70,7 +70,7 @@ export const NewsletterSignup: React.FC = () => {
 
   return (
     <section className="bg-brand-bg-alternate text-white py-20 md:py-24 border-b border-brand-border-dark select-none">
-      <div className="max-w-[1248px] mx-auto px-4 md:px-6 text-center">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6 text-center">
         <motion.div
           variants={stagger}
           initial="hidden"
