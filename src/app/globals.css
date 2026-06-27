@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Typography */
+  --font-heading: var(--font-heading), sans-serif;
+  --font-body: var(--font-body), sans-serif;
+
+  /* Brand Colors */
+  --color-brand-primary: #0A0A0A;
+  --color-brand-secondary: #4A4A4A;
+  --color-brand-alternate: #C8A96E;
+  
+  --color-brand-bg-primary: #FFFFFF;
+  --color-brand-bg-secondary: #F7F6F4;
+  --color-brand-bg-alternate: #0A0A0A;
+
+  --color-brand-border: #E8E5E0;
+  --color-brand-border-dark: #2A2A2A;
+
+  --color-brand-btn-primary: #C8A96E;
+  --color-brand-btn-hover: #B8995E;
+  --color-brand-btn-secondary-border: #E8E5E0;
+
+  /* Layout and Sizing Scale Defaults */
+  --spacing-base: 4px;
+
+  /* Container */
+  --container-max: 1200px;
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #0A0A0A;
+  --font-sans: var(--font-body);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* We preserve light mode as the default for this website layout */
+  :root {
+    --background: #FFFFFF;
+    --foreground: #0A0A0A;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Scrollbar Hide Utility */
+@utility scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
