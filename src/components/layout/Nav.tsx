@@ -60,13 +60,6 @@ export const Nav: React.FC = () => {
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-3">
             <Button
-              variant="secondary"
-              href="/portal"
-              className="text-[11px] font-semibold tracking-wide py-2 px-5 h-9 border border-brand-primary text-brand-primary hover:bg-brand-primary/5"
-            >
-              Client Portal
-            </Button>
-            <Button
               variant="primary"
               href="/contact"
               className="text-[11px] font-semibold tracking-wide py-2 px-5 h-9"

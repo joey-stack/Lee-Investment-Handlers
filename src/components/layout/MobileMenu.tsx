@@ -129,16 +129,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               >
                 Schedule a Consultation
               </Button>
-              
-              <div className="mt-6 text-center">
-                <Link
-                  href="/portal"
-                  onClick={onClose}
-                  className="font-body text-sm font-medium text-brand-secondary hover:text-brand-primary transition-colors duration-200"
-                >
-                  Client Portal
-                </Link>
-              </div>
             </motion.div>
           </motion.div>
         </motion.div>
