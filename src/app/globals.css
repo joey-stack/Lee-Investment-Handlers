@@ -97,60 +97,6 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  .animate-fade-up {
-    opacity: 0;
-    will-change: opacity, transform;
-    animation: fade-up 0.8s ease-out forwards;
-  }
-
-  .animate-fade-up-delay-1 {
-    opacity: 0;
-    will-change: opacity, transform;
-    animation: fade-up 0.8s ease-out forwards 0.2s;
-  }
-
-  .animate-fade-up-delay-2 {
-    opacity: 0;
-    will-change: opacity, transform;
-    animation: fade-up 0.8s ease-out forwards 0.4s;
-  }
-
-  .animate-fade-up-delay-3 {
-    opacity: 0;
-    will-change: opacity, transform;
-    animation: fade-up 0.8s ease-out forwards 0.6s;
-  }
-
-  .animate-fade-up-delay-4 {
-    opacity: 0;
-    will-change: opacity, transform;
-    animation: fade-up 0.8s ease-out forwards 0.8s;
-  }
-
-  .animate-fade-in {
-    opacity: 0;
-    will-change: opacity;
-    animation: fade-in 0.8s ease-out forwards;
-  }
-
-  .animate-fade-in-delay {
-    opacity: 0;
-    will-change: opacity;
-    animation: fade-in 0.8s ease-out forwards 0.3s;
-  }
-
-  .animate-scale-in {
-    opacity: 0;
-    will-change: opacity, transform;
-    animation: scale-in 0.8s ease-out forwards;
-  }
-
-  .animate-scale-in-delay {
-    opacity: 0;
-    will-change: opacity, transform;
-    animation: scale-in 0.8s ease-out forwards 0.3s;
-  }
-
   @keyframes scale-x-in {
     from {
       transform: scaleX(0);
@@ -160,7 +106,125 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  .animate-scale-x-in {
+  /* Scroll Trigger Animations Setup */
+
+  /* Base state when JavaScript is active: keep hidden until parent enters viewport */
+  .js-enabled :is(section, .reveal-group) :is(
+    .animate-fade-up,
+    .animate-fade-up-delay-1,
+    .animate-fade-up-delay-2,
+    .animate-fade-up-delay-3,
+    .animate-fade-up-delay-4,
+    .animate-fade-in,
+    .animate-fade-in-delay,
+    .animate-scale-in,
+    .animate-scale-in-delay
+  ) {
+    opacity: 0;
+  }
+
+  .js-enabled :is(section, .reveal-group) .animate-scale-x-in {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  /* Trigger state when parent is visible */
+  .js-enabled :is(section, .reveal-group).is-visible .animate-fade-up {
+    will-change: opacity, transform;
+    animation: fade-up 0.8s ease-out forwards;
+  }
+
+  .js-enabled :is(section, .reveal-group).is-visible .animate-fade-up-delay-1 {
+    will-change: opacity, transform;
+    animation: fade-up 0.8s ease-out forwards 0.2s;
+  }
+
+  .js-enabled :is(section, .reveal-group).is-visible .animate-fade-up-delay-2 {
+    will-change: opacity, transform;
+    animation: fade-up 0.8s ease-out forwards 0.4s;
+  }
+
+  .js-enabled :is(section, .reveal-group).is-visible .animate-fade-up-delay-3 {
+    will-change: opacity, transform;
+    animation: fade-up 0.8s ease-out forwards 0.6s;
+  }
+
+  .js-enabled :is(section, .reveal-group).is-visible .animate-fade-up-delay-4 {
+    will-change: opacity, transform;
+    animation: fade-up 0.8s ease-out forwards 0.8s;
+  }
+
+  .js-enabled :is(section, .reveal-group).is-visible .animate-fade-in {
+    will-change: opacity;
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .js-enabled :is(section, .reveal-group).is-visible .animate-fade-in-delay {
+    will-change: opacity;
+    animation: fade-in 0.8s ease-out forwards 0.3s;
+  }
+
+  .js-enabled :is(section, .reveal-group).is-visible .animate-scale-in {
+    will-change: opacity, transform;
+    animation: scale-in 0.8s ease-out forwards;
+  }
+
+  .js-enabled :is(section, .reveal-group).is-visible .animate-scale-in-delay {
+    will-change: opacity, transform;
+    animation: scale-in 0.8s ease-out forwards 0.3s;
+  }
+
+  .js-enabled :is(section, .reveal-group).is-visible .animate-scale-x-in {
+    animation: scale-x-in 0.8s ease-out forwards;
+  }
+
+  /* Progressive Enhancement fallback when JS is disabled */
+  html:not(.js-enabled) .animate-fade-up {
+    will-change: opacity, transform;
+    animation: fade-up 0.8s ease-out forwards;
+  }
+
+  html:not(.js-enabled) .animate-fade-up-delay-1 {
+    will-change: opacity, transform;
+    animation: fade-up 0.8s ease-out forwards 0.2s;
+  }
+
+  html:not(.js-enabled) .animate-fade-up-delay-2 {
+    will-change: opacity, transform;
+    animation: fade-up 0.8s ease-out forwards 0.4s;
+  }
+
+  html:not(.js-enabled) .animate-fade-up-delay-3 {
+    will-change: opacity, transform;
+    animation: fade-up 0.8s ease-out forwards 0.6s;
+  }
+
+  html:not(.js-enabled) .animate-fade-up-delay-4 {
+    will-change: opacity, transform;
+    animation: fade-up 0.8s ease-out forwards 0.8s;
+  }
+
+  html:not(.js-enabled) .animate-fade-in {
+    will-change: opacity;
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  html:not(.js-enabled) .animate-fade-in-delay {
+    will-change: opacity;
+    animation: fade-in 0.8s ease-out forwards 0.3s;
+  }
+
+  html:not(.js-enabled) .animate-scale-in {
+    will-change: opacity, transform;
+    animation: scale-in 0.8s ease-out forwards;
+  }
+
+  html:not(.js-enabled) .animate-scale-in-delay {
+    will-change: opacity, transform;
+    animation: scale-in 0.8s ease-out forwards 0.3s;
+  }
+
+  html:not(.js-enabled) .animate-scale-x-in {
     transform-origin: left;
     animation: scale-x-in 0.8s ease-out forwards;
   }
