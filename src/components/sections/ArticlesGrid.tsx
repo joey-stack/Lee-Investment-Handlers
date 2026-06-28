@@ -1,20 +1,35 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { insights } from "@/lib/content/insights";
+import { getPosts } from "@/services/blogService";
+import { InsightArticle } from "@/types";
+import { insights as staticInsights } from "@/lib/content/insights";
 import { cn } from "@/lib/utils";
 
 const categories = ["All", "Insights", "News"];
 
 export const ArticlesGrid: React.FC = () => {
+  const [articles, setArticles] = useState<InsightArticle[]>(staticInsights);
   const [activeCategory, setActiveCategory] = useState("All");
 
+  useEffect(() => {
+    async function loadLivePosts() {
+      try {
+        const data = await getPosts();
+        setArticles(data);
+      } catch (error) {
+        console.error("Error loading articles in grid view:", error);
+      }
+    }
+    loadLivePosts();
+  }, []);
+
   // Filter articles based on activeCategory
-  const filteredArticles = insights.filter((article) => {
+  const filteredArticles = articles.filter((article) => {
     if (activeCategory === "All") return true;
     return article.category.toLowerCase() === activeCategory.toLowerCase();
   });

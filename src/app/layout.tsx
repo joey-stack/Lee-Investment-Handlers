@@ -3,6 +3,7 @@ import { Didact_Gothic, Geist } from "next/font/google";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollTrigger } from "@/components/layout/ScrollTrigger";
+import { AuthProvider } from "@/context/AuthContext";
 import "./globals.css";
 
 const didactGothic = Didact_Gothic({
@@ -62,12 +63,14 @@ export default function RootLayout({
         className="min-h-full flex flex-col bg-brand-bg-primary text-brand-primary"
         suppressHydrationWarning
       >
-        <ScrollTrigger />
-        <Nav />
-        <div className="flex-1">
-          {children}
-        </div>
-        <Footer />
+        <AuthProvider>
+          <ScrollTrigger />
+          <Nav />
+          <div className="flex-1">
+            {children}
+          </div>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

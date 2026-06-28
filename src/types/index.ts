@@ -54,9 +54,10 @@ export interface InsightArticle {
   slug: string;
   featured?: boolean;
   image: string;
-  content?: string[];
+  content?: string[] | string;
   author?: string;
   readTime?: string;
+  tags?: string[];
 }
 
 export interface PerformanceBar {

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Clock, User, Calendar, ArrowUpRight } from "lucide-react";
-import { insights } from "@/lib/content/insights";
+import { getPosts, getPostBySlug } from "@/services/blogService";
 import { Button } from "@/components/ui/Button";
 import { ShareButton } from "@/components/ui/ShareButton";
 import { NewsletterSignup } from "@/components/sections/NewsletterSignup";
@@ -14,14 +14,15 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return insights.map((article) => ({
+  const articles = await getPosts();
+  return articles.map((article) => ({
     slug: article.slug,
   }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
-  const article = insights.find((a) => a.slug === resolvedParams.slug);
+  const article = await getPostBySlug(resolvedParams.slug);
   if (!article) return {};
 
   return {
@@ -44,14 +45,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ArticlePage({ params }: PageProps) {
   const resolvedParams = await params;
-  const article = insights.find((a) => a.slug === resolvedParams.slug);
+  const article = await getPostBySlug(resolvedParams.slug);
 
   if (!article) {
     notFound();
   }
 
-  // Filter out the current article to find recommended articles (max 2)
-  const recommendedArticles = insights
+  // Fetch all articles to compute recommended reads (fallback logic preserved)
+  const allArticles = await getPosts();
+  const recommendedArticles = allArticles
     .filter((a) => a.slug !== article.slug)
     .slice(0, 2);
 
@@ -129,20 +131,31 @@ export default async function ArticlePage({ params }: PageProps) {
           </div>
 
           {/* Article Text Content Body (strict design instructions: no animations on body text) */}
-          <div className="font-body text-brand-secondary text-base md:text-lg leading-[1.65] max-w-[720px] mx-auto">
-            {/* Introductory Bold Lead Paragraph */}
-            {article.content && article.content.length > 0 && (
-              <p className="font-medium text-brand-primary text-lg md:text-xl leading-relaxed mb-8">
-                {article.content[0]}
-              </p>
-            )}
+          <div className="font-body text-brand-secondary text-base md:text-lg leading-[1.65] max-w-[720px] mx-auto select-text">
+            {article.content && (
+              typeof article.content === "string" ? (
+                <div 
+                  className="prose prose-brand max-w-none select-text text-brand-secondary font-body prose-headings:font-heading prose-headings:font-normal prose-headings:text-brand-primary prose-a:text-brand-alternate hover:prose-a:underline"
+                  dangerouslySetInnerHTML={{ __html: article.content }} 
+                />
+              ) : (
+                <>
+                  {/* Introductory Bold Lead Paragraph */}
+                  {article.content.length > 0 && (
+                    <p className="font-medium text-brand-primary text-lg md:text-xl leading-relaxed mb-8">
+                      {article.content[0]}
+                    </p>
+                  )}
 
-            {/* Remaining Paragraphs */}
-            {article.content && article.content.slice(1).map((paragraph, index) => (
-              <p key={index} className="mb-6">
-                {paragraph}
-              </p>
-            ))}
+                  {/* Remaining Paragraphs */}
+                  {article.content.slice(1).map((paragraph, index) => (
+                    <p key={index} className="mb-6">
+                      {paragraph}
+                    </p>
+                  ))}
+                </>
+              )
+            )}
           </div>
 
           {/* Action Row */}
