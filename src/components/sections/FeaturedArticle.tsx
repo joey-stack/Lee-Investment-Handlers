@@ -1,25 +1,8 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { insights } from "@/lib/content/insights";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
-};
 
 export const FeaturedArticle: React.FC = () => {
   // Find featured article
@@ -33,27 +16,15 @@ export const FeaturedArticle: React.FC = () => {
         
         {/* Section Title */}
         <div className="mb-12">
-          <span className="text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-2 block">
+          <span className="text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-2 block animate-fade-up">
             Featured Article
           </span>
         </div>
 
         {/* Large Featured Card Layout */}
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           {/* Left Column — Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const }}
-            className="lg:col-span-6 relative w-full aspect-[16/10] lg:aspect-auto lg:h-[400px] overflow-hidden rounded-[6px] border border-brand-border/40 shadow-sm"
-          >
+          <div className="lg:col-span-6 relative w-full aspect-[16/10] lg:aspect-auto lg:h-[400px] overflow-hidden rounded-[6px] border border-brand-border/40 shadow-sm animate-scale-in">
             <Image
               src={featured.image}
               alt={featured.title}
@@ -62,13 +33,10 @@ export const FeaturedArticle: React.FC = () => {
               className="object-cover"
               priority
             />
-          </motion.div>
+          </div>
 
           {/* Right Column — Narrative text */}
-          <motion.div
-            variants={fadeUp}
-            className="lg:col-span-6 flex flex-col items-start"
-          >
+          <div className="lg:col-span-6 flex flex-col items-start animate-fade-up-delay-2">
             {/* Meta Tags */}
             <div className="flex items-center gap-3 mb-4">
               <span className="bg-brand-alternate/15 text-brand-primary text-xs font-semibold px-2.5 py-1 rounded-[2px] uppercase tracking-wider">
@@ -102,8 +70,8 @@ export const FeaturedArticle: React.FC = () => {
                 className="transition-transform duration-250 group-hover:translate-x-1"
               />
             </Link>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
       </div>
     </section>

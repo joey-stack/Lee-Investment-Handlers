@@ -1,23 +1,6 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { team } from "@/lib/content/team";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
-};
 
 export const LeadershipSnapshot: React.FC = () => {
   return (
@@ -25,52 +8,30 @@ export const LeadershipSnapshot: React.FC = () => {
       <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         
         {/* Section Header */}
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           {/* Eyebrow Label */}
-          <motion.div
-            variants={fadeUp}
-            className="flex items-center justify-center gap-2 text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4"
-          >
+          <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4 animate-fade-up">
             <span className="h-2.5 w-2.5 bg-brand-alternate inline-block" />
             <span>Leadership</span>
-          </motion.div>
+          </div>
 
           {/* Title */}
-          <motion.h2
-            variants={fadeUp}
-            className="font-heading text-3xl md:text-[40px] font-normal leading-[1.2] tracking-tight text-brand-primary"
-          >
+          <h2 className="font-heading text-3xl md:text-[40px] font-normal leading-[1.2] tracking-tight text-brand-primary animate-fade-up-delay-1">
             The People Behind Your Portfolio
-          </motion.h2>
+          </h2>
 
           {/* Description */}
-          <motion.p
-            variants={fadeUp}
-            className="font-body text-sm md:text-base text-brand-secondary leading-relaxed max-w-2xl mx-auto mt-4 text-balance"
-          >
+          <p className="font-body text-sm md:text-base text-brand-secondary leading-relaxed max-w-2xl mx-auto mt-4 text-balance animate-fade-up-delay-2">
             Meet the disciplined investment partners managing and protecting your wealth across generations.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         {/* 3-Column Static Grid */}
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {team.map((member) => (
-            <motion.div
+            <div
               key={member.id}
-              variants={fadeUp}
-              className="relative w-full aspect-[3/4] overflow-hidden rounded-[6px] group cursor-pointer hover:shadow-[0px_12px_40px_rgba(0,0,0,0.12)] transition-all duration-300 select-none"
+              className="relative w-full aspect-[3/4] overflow-hidden rounded-[6px] group cursor-pointer hover:shadow-[0px_12px_40px_rgba(0,0,0,0.12)] transition-all duration-300 select-none animate-fade-up-delay-4"
             >
               {/* Full-bleed photo */}
               <Image
@@ -126,9 +87,9 @@ export const LeadershipSnapshot: React.FC = () => {
                   </a>
                 )}
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

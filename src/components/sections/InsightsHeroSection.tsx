@@ -1,30 +1,6 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { insightsPageHero } from "@/lib/content/insights";
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1] as const,
-    },
-  },
-};
 
 export const InsightsHeroSection: React.FC = () => {
   return (
@@ -47,37 +23,23 @@ export const InsightsHeroSection: React.FC = () => {
 
           {/* Centered Content Container */}
           <div className="relative z-20 w-full px-6 py-12 md:py-16 flex flex-col items-center justify-center text-white text-center">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="max-w-3xl flex flex-col items-center text-center mx-auto"
-            >
+            <div className="max-w-3xl flex flex-col items-center text-center mx-auto">
               {/* Eyebrow */}
-              <motion.div
-                variants={itemVariants}
-                className="flex items-center justify-center gap-2 text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-6"
-              >
+              <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-6 animate-fade-up">
                 <span className="h-2.5 w-2.5 bg-brand-alternate inline-block" />
                 <span>Firm Insights</span>
-              </motion.div>
+              </div>
 
               {/* Heading (Didact Gothic) */}
-              <motion.h1
-                variants={itemVariants}
-                className="font-heading text-3xl md:text-4xl lg:text-[48px] font-normal leading-[1.15] tracking-tight text-white mb-6 text-balance text-center"
-              >
+              <h1 className="font-heading text-3xl md:text-4xl lg:text-[48px] font-normal leading-[1.15] tracking-tight text-white mb-6 text-balance text-center animate-fade-up-delay-1">
                 {insightsPageHero.headline}
-              </motion.h1>
+              </h1>
 
               {/* Subtext */}
-              <motion.p
-                variants={itemVariants}
-                className="font-body text-sm md:text-base text-white/80 leading-relaxed max-w-2xl font-normal mx-auto text-balance"
-              >
+              <p className="font-body text-sm md:text-base text-white/80 leading-relaxed max-w-2xl font-normal mx-auto text-balance animate-fade-up-delay-2">
                 {insightsPageHero.subtext}
-              </motion.p>
-            </motion.div>
+              </p>
+            </div>
           </div>
         </div>
       </div>

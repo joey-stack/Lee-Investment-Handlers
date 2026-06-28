@@ -75,19 +75,19 @@ export const ContactFormSection: React.FC = () => {
           {/* Left Column — Office details */}
           <div className="lg:col-span-5 space-y-8">
             <div>
-              <span className="text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-3 block">
+              <span className="text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-3 block animate-fade-up">
                 Office Locations
               </span>
-              <h2 className="font-heading text-2xl md:text-3xl font-normal tracking-tight text-brand-primary mb-6">
+              <h2 className="font-heading text-2xl md:text-3xl font-normal tracking-tight text-brand-primary mb-6 animate-fade-up-delay-1">
                 Our Corporate Offices
               </h2>
-              <p className="font-body text-xs md:text-sm text-brand-secondary leading-relaxed mb-8">
+              <p className="font-body text-xs md:text-sm text-brand-secondary leading-relaxed mb-8 animate-fade-up-delay-2">
                 For direct correspondence, partnership inquiries, or client visits, please contact our local operations teams in Lagos or Venice.
               </p>
             </div>
 
             {/* Office Cards List */}
-            <div className="space-y-6">
+            <div className="space-y-6 animate-fade-up-delay-4">
               {footerContent.offices.map((office) => (
                 <div 
                   key={office.city}
@@ -97,7 +97,7 @@ export const ContactFormSection: React.FC = () => {
                     {office.city}
                   </h3>
                   
-                  <div className="space-y-3 font-body text-xs md:text-sm text-brand-secondary">
+                  <div className="space-y-3 font-body text-xs md:text-sm text-[#BFAB9C]">
                     {/* Address */}
                     <div className="flex items-start gap-3">
                       <MapPin size={16} className="text-brand-alternate mt-0.5 flex-shrink-0" />
@@ -126,7 +126,7 @@ export const ContactFormSection: React.FC = () => {
           </div>
 
           {/* Right Column — Consultation Form Container */}
-          <div className="lg:col-span-7 bg-brand-bg-primary border border-brand-border/60 rounded-[6px] p-6 md:p-10 shadow-[0px_2px_8px_rgba(0,0,0,0.01)]">
+          <div className="lg:col-span-7 bg-brand-bg-primary border border-brand-border/60 rounded-[6px] p-6 md:p-10 shadow-[0px_2px_8px_rgba(0,0,0,0.01)] animate-fade-up-delay-3">
             <AnimatePresence mode="wait">
               {!isSuccess ? (
                 <motion.div

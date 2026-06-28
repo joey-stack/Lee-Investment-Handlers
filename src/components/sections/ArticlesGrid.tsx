@@ -10,11 +10,6 @@ import { cn } from "@/lib/utils";
 
 const categories = ["All", "Insights", "News"];
 
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
-};
-
 export const ArticlesGrid: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -31,16 +26,16 @@ export const ArticlesGrid: React.FC = () => {
         {/* Filters and Title Row */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <span className="text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-2 block">
+            <span className="text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-2 block animate-fade-up">
               Market Intelligence
             </span>
-            <h2 className="font-heading text-2xl md:text-3xl font-normal tracking-tight text-white">
+            <h2 className="font-heading text-2xl md:text-3xl font-normal tracking-tight text-white animate-fade-up-delay-1">
               All Research & Commentary
             </h2>
           </div>
 
           {/* Category Filter Buttons */}
-          <div className="flex items-center gap-2 border-b border-brand-border-dark/60 md:border-b-0 pb-3 md:pb-0">
+          <div className="flex items-center gap-2 border-b border-brand-border-dark/60 md:border-b-0 pb-3 md:pb-0 animate-fade-up-delay-2">
             {categories.map((cat) => {
               const isActive = activeCategory === cat;
               return (
@@ -62,14 +57,7 @@ export const ArticlesGrid: React.FC = () => {
         </div>
 
         {/* Grid List */}
-        <motion.div
-          layout
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-up-delay-4">
           <AnimatePresence mode="popLayout">
             {filteredArticles.map((article) => (
               <motion.div
@@ -79,8 +67,7 @@ export const ArticlesGrid: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.35, ease: "easeInOut" }}
-                whileHover={{ y: -6 }}
-                className="bg-[#0E0E0E] border border-zinc-900/60 rounded-[6px] overflow-hidden flex flex-col justify-between hover:border-zinc-800/80 hover:shadow-[0px_8px_32px_rgba(0,0,0,0.4)] transition-all duration-300 min-h-[380px] group"
+                className="bg-[#0E0E0E] border border-zinc-900/60 rounded-[6px] overflow-hidden flex flex-col justify-between hover:border-zinc-800/80 hover:shadow-[0px_8px_32px_rgba(0,0,0,0.4)] transition-all duration-300 min-h-[380px] group hover:-translate-y-1.5"
               >
                 {/* Cover Image Wrapper */}
                 <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#161616] select-none">
@@ -124,7 +111,7 @@ export const ArticlesGrid: React.FC = () => {
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
 
       </div>
     </section>

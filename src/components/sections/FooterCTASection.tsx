@@ -1,26 +1,11 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 
 interface FooterCTASectionProps {
   onOpenConsultation: () => void;
 }
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
-};
 
 export const FooterCTASection: React.FC<FooterCTASectionProps> = ({ onOpenConsultation }) => {
   return (
@@ -31,39 +16,24 @@ export const FooterCTASection: React.FC<FooterCTASectionProps> = ({ onOpenConsul
       
       <div className="relative z-10 max-w-[1200px] mx-auto px-4 md:px-6 flex flex-col items-center justify-center">
         
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="flex flex-col items-center max-w-2xl"
-        >
+        <div className="flex flex-col items-center max-w-2xl">
           {/* Eyebrow Label */}
-          <motion.p
-            variants={fadeUp}
-            className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-brand-alternate mb-6"
-          >
+          <p className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-brand-alternate mb-6 animate-fade-up">
             Ready to Take the First Step?
-          </motion.p>
+          </p>
 
           {/* Headline Display Heading (Didact Gothic) */}
-          <motion.h2
-            variants={fadeUp}
-            className="font-heading text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] tracking-tight text-white mb-6 text-balance"
-          >
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] tracking-tight text-white mb-6 text-balance animate-fade-up-delay-1">
             Manage Wealth. Build a Legacy.
-          </motion.h2>
+          </h2>
 
           {/* Subtext Paragraph */}
-          <motion.p
-            variants={fadeUp}
-            className="font-body text-sm md:text-base text-white/70 max-w-lg mb-10 leading-relaxed font-light text-balance"
-          >
+          <p className="font-body text-sm md:text-base text-white/70 max-w-lg mb-10 leading-relaxed font-light text-balance animate-fade-up-delay-2">
             Partner with us to protect and grow your wealth across generations. Request a private session with our investment committee.
-          </motion.p>
+          </p>
 
           {/* Primary CTA Button */}
-          <motion.div variants={fadeUp} className="w-full sm:w-auto">
+          <div className="w-full sm:w-auto animate-fade-up-delay-3">
             <Button
               variant="primary"
               onClick={onOpenConsultation}
@@ -71,8 +41,8 @@ export const FooterCTASection: React.FC<FooterCTASectionProps> = ({ onOpenConsul
             >
               Schedule a Consultation
             </Button>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
       </div>
     </section>

@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import { motion } from "framer-motion";
 import { ArrowUpRight, TrendingUp, ShieldCheck, Sparkles } from "lucide-react";
 import { aboutSnippetContent } from "@/lib/content/about";
 
@@ -12,22 +9,6 @@ const iconMap = [
   <Sparkles key="sparkles" size={20} />,
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
-  },
-};
-
 export const AboutCommitmentsSection: React.FC = () => {
   return (
     <section className="bg-brand-bg-primary pt-20 pb-20 md:pt-28 md:pb-28 lg:pt-32 lg:pb-36 border-b border-brand-border">
@@ -35,38 +16,22 @@ export const AboutCommitmentsSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="flex flex-col items-center"
-          >
-            <motion.div
-              variants={fadeUp}
-              className="flex items-center gap-2 text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4"
-            >
+          <div className="flex flex-col items-center">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-2 text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4 animate-fade-up">
               <span className="h-2.5 w-2.5 bg-brand-alternate inline-block" />
               <span>Our Commitments</span>
-            </motion.div>
+            </div>
 
-            <motion.h2
-              variants={fadeUp}
-              className="font-heading text-3xl md:text-[32px] font-normal leading-[1.2] tracking-tight text-brand-primary text-balance"
-            >
+            {/* Headline */}
+            <h2 className="font-heading text-3xl md:text-[32px] font-normal leading-[1.2] tracking-tight text-brand-primary text-balance animate-fade-up-delay-1">
               Unwavering Principles in Action
-            </motion.h2>
-          </motion.div>
+            </h2>
+          </div>
         </div>
 
         {/* Commitments Grid */}
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {aboutSnippetContent.commitments.map((item, index) => {
             // Apply asymmetric backgrounds matching the reference mockup
             let cardBg = "bg-brand-bg-secondary border border-brand-border/40 text-brand-primary";
@@ -92,12 +57,9 @@ export const AboutCommitmentsSection: React.FC = () => {
               : "lg:translate-y-8 transition-transform duration-500";
 
             return (
-              <div key={item.title} className={`${offsetClass} w-full flex`}>
-                <motion.div
-                  variants={fadeUp}
-                  whileHover={{ y: -4 }}
-                  transition={{ duration: 0.25, ease: "easeInOut" }}
-                  className={`rounded-[6px] p-6 md:p-8 flex flex-col items-start min-h-[260px] justify-between transition-all duration-300 w-full ${cardBg}`}
+              <div key={item.title} className={`${offsetClass} w-full flex animate-fade-up-delay-4`}>
+                <div
+                  className={`rounded-[6px] p-6 md:p-8 flex flex-col items-start min-h-[260px] justify-between transition-all duration-300 w-full hover:-translate-y-1 hover:shadow-md ${cardBg}`}
                 >
                   <div className="flex flex-col items-start w-full">
                     {/* Card Icon */}
@@ -118,11 +80,11 @@ export const AboutCommitmentsSection: React.FC = () => {
                   <span className={`font-body text-[10px] tracking-widest uppercase mt-6 block ${index === 2 ? "text-brand-alternate" : "text-brand-secondary/40"}`}>
                     ✦ {(index + 1).toString().padStart(2, "0")}
                   </span>
-                </motion.div>
+                </div>
               </div>
             );
           })}
-        </motion.div>
+        </div>
 
       </div>
     </section>

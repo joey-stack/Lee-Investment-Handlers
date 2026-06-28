@@ -2,22 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { team } from "@/lib/content/team";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
-};
 
 export const AboutLeadershipSection: React.FC = () => {
   return (
@@ -26,43 +11,26 @@ export const AboutLeadershipSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="flex flex-col items-center"
-          >
-            <motion.div
-              variants={fadeUp}
-              className="flex items-center gap-2 text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4"
-            >
+          <div className="flex flex-col items-center">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-2 text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4 animate-fade-up">
               <span className="h-2.5 w-2.5 bg-brand-alternate inline-block" />
               <span>Leadership</span>
-            </motion.div>
+            </div>
 
-            <motion.h2
-              variants={fadeUp}
-              className="font-heading text-3xl md:text-[32px] font-normal leading-[1.2] tracking-tight text-brand-primary text-balance"
-            >
+            {/* Headline */}
+            <h2 className="font-heading text-3xl md:text-[32px] font-normal leading-[1.2] tracking-tight text-brand-primary text-balance animate-fade-up-delay-1">
               The Partners Managing Your Portfolio
-            </motion.h2>
-          </motion.div>
+            </h2>
+          </div>
         </div>
 
         {/* Team Grid */}
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {team.map((member) => (
-            <motion.div
+            <div
               key={member.id}
-              variants={fadeUp}
-              className="relative w-full aspect-[3/4] overflow-hidden rounded-[6px] group cursor-pointer hover:shadow-[0px_12px_40px_rgba(0,0,0,0.12)] transition-all duration-300 select-none"
+              className="relative w-full aspect-[3/4] overflow-hidden rounded-[6px] group cursor-pointer hover:shadow-[0px_12px_40px_rgba(0,0,0,0.12)] transition-all duration-300 select-none animate-fade-up-delay-4"
             >
               {/* Full-bleed photo */}
               <Image
@@ -116,9 +84,9 @@ export const AboutLeadershipSection: React.FC = () => {
                   <span>LinkedIn</span>
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
       </div>
     </section>

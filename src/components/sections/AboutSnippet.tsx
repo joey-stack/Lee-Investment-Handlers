@@ -1,27 +1,9 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { aboutSnippetContent } from "@/lib/content/about";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
-  },
-};
 
 export const AboutSnippet: React.FC = () => {
   // Duplicate marquee items for seamless loop scrolling
@@ -36,13 +18,7 @@ export const AboutSnippet: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
           
           {/* Left Column — Image with Overlaid Scrolling Marquee */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const }}
-            className="lg:col-span-6 relative w-full aspect-[4/3] lg:aspect-auto lg:h-full min-h-[320px] overflow-hidden rounded-[6px]"
-          >
+          <div className="lg:col-span-6 relative w-full aspect-[4/3] lg:aspect-auto lg:h-full min-h-[320px] overflow-hidden rounded-[6px] animate-scale-in-delay">
             {/* Meeting Photo */}
             <Image
               src={aboutSnippetContent.imageUrl}
@@ -67,48 +43,32 @@ export const AboutSnippet: React.FC = () => {
                 ))}
               </motion.div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Column — Copy & Commitment Cards */}
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="lg:col-span-6 flex flex-col items-start"
-          >
+          <div className="lg:col-span-6 flex flex-col items-start">
             {/* Eyebrow Label */}
-            <motion.div
-              variants={fadeUp}
-              className="flex items-center gap-2 text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4"
-            >
+            <div className="flex items-center gap-2 text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4 animate-fade-up">
               <span className="h-2.5 w-2.5 bg-brand-alternate inline-block" />
               <span>About Us</span>
-            </motion.div>
+            </div>
 
             {/* Headline */}
-            <motion.h2
-              variants={fadeUp}
-              className="font-heading text-3xl md:text-[32px] font-normal leading-[1.2] tracking-tight text-white mb-6 text-balance"
-            >
+            <h2 className="font-heading text-3xl md:text-[32px] font-normal leading-[1.2] tracking-tight text-white mb-6 text-balance animate-fade-up-delay-1">
               {aboutSnippetContent.headline}
-            </motion.h2>
+            </h2>
 
-            {/* Body Paragraph — Static to comply with "No Animation on Body Text" Rule */}
-            <p className="font-body text-base text-white/70 leading-relaxed mb-8">
+            {/* Body Paragraph */}
+            <p className="font-body text-base text-white/70 leading-relaxed mb-8 animate-fade-up-delay-2">
               {aboutSnippetContent.body}
             </p>
 
             {/* Checklist Commitment Cards */}
-            <motion.div
-              variants={stagger}
-              className="grid grid-cols-1 gap-3 w-full mb-8"
-            >
+            <div className="grid grid-cols-1 gap-3 w-full mb-8 animate-fade-up-delay-4">
               {aboutSnippetContent.commitments.map((item) => (
-                <motion.div
+                <div
                   key={item.title}
-                  variants={fadeUp}
-                  className="bg-white/5 border border-white/10 rounded-md p-3 md:p-3.5 flex items-center gap-4"
+                  className="bg-white/5 border border-white/10 rounded-md p-3 md:p-3.5 flex items-center gap-4 animate-fade-up-delay-4"
                 >
                   <span className="flex-shrink-0 h-5 w-5 rounded-full flex items-center justify-center bg-brand-alternate/10 text-brand-alternate">
                     <Check size={12} strokeWidth={3} />
@@ -116,12 +76,12 @@ export const AboutSnippet: React.FC = () => {
                   <h4 className="font-body font-semibold text-sm md:text-base text-white">
                     {item.title}
                   </h4>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
+            </div>
 
             {/* CTA Button */}
-            <motion.div variants={fadeUp}>
+            <div className="animate-fade-up-delay-3 w-full sm:w-auto">
               <Button
                 variant="primary"
                 href={aboutSnippetContent.ctaHref}
@@ -129,8 +89,8 @@ export const AboutSnippet: React.FC = () => {
               >
                 {aboutSnippetContent.ctaText}
               </Button>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
         </div>
       </div>

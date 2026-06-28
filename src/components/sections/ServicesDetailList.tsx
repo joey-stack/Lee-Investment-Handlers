@@ -1,8 +1,5 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { services } from "@/lib/content/services";
 
@@ -19,43 +16,20 @@ const imageMap: Record<string, string> = {
   "risk-management": "/services/risk-management.png",
 };
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
-};
-
 export const ServicesDetailList: React.FC<ServicesDetailListProps> = ({ onOpenConsultation }) => {
   return (
     <section className="bg-brand-bg-primary py-20 md:py-28 border-b border-brand-border">
       <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         
         {/* 3-Column Services Card Grid */}
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const img = imageMap[service.id] || "/services/wealth-management.png";
             
             return (
-              <motion.div
+              <div
                 key={service.id}
-                variants={fadeUp}
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.25, ease: "easeInOut" }}
-                className="bg-brand-bg-secondary border border-brand-border/40 rounded-[6px] overflow-hidden flex flex-col justify-between shadow-[0px_2px_8px_rgba(0,0,0,0.01)] hover:shadow-[0px_8px_32px_rgba(10,10,10,0.04)] transition-all duration-300 min-h-[500px]"
+                className="bg-brand-bg-secondary border border-brand-border/40 rounded-[6px] overflow-hidden flex flex-col justify-between shadow-[0px_2px_8px_rgba(0,0,0,0.01)] hover:shadow-[0px_8px_32px_rgba(10,10,10,0.04)] transition-all duration-300 min-h-[500px] animate-fade-up-delay-4 hover:-translate-y-1"
               >
                 {/* 1. Card Top Cover Image */}
                 <div className="relative w-full aspect-[16/10] overflow-hidden bg-brand-bg-primary border-b border-brand-border/20 select-none">
@@ -84,7 +58,7 @@ export const ServicesDetailList: React.FC<ServicesDetailListProps> = ({ onOpenCo
                       {service.title}
                     </h3>
 
-                    {/* 4. Description Paragraph (Static for reading comfort) */}
+                    {/* 4. Description Paragraph */}
                     <p className="font-body text-xs md:text-sm text-brand-secondary leading-relaxed mb-6">
                       {service.description}
                     </p>
@@ -111,17 +85,17 @@ export const ServicesDetailList: React.FC<ServicesDetailListProps> = ({ onOpenCo
                     <Button
                       variant="secondary"
                       onClick={onOpenConsultation}
-                      className="w-full text-center text-xs font-semibold uppercase tracking-wider py-3.5 border-brand-border hover:border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 rounded-none"
+                      className="w-full text-center text-xs font-semibold uppercase tracking-wider py-3.5 border-brand-border hover:border-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-300 rounded-none animate-fade-up-delay-3"
                     >
                       Schedule Consultation
                     </Button>
                   </div>
                 </div>
 
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
 
       </div>
     </section>

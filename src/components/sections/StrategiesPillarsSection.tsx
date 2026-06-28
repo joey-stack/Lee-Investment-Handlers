@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import { motion } from "framer-motion";
 import { Search, PieChart, Target, BarChart2 } from "lucide-react";
 import { pillars } from "@/lib/content/pillars";
 
@@ -12,60 +9,30 @@ const iconMap: Record<string, React.ReactNode> = {
   "bar-chart-2": <BarChart2 size={20} />,
 };
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
-};
-
 export const StrategiesPillarsSection: React.FC = () => {
   return (
     <section className="bg-brand-bg-primary py-20 md:py-28 border-b border-brand-border">
       <div className="max-w-[1200px] mx-auto px-4 md:px-6">
 
         {/* Section Header */}
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-end mb-16"
-        >
-          <motion.h2
-            variants={fadeUp}
-            className="font-heading text-3xl md:text-[36px] font-normal leading-[1.15] tracking-tight text-brand-primary text-balance"
-          >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-end mb-16">
+          <h2 className="font-heading text-3xl md:text-[36px] font-normal leading-[1.15] tracking-tight text-brand-primary text-balance animate-fade-up-delay-1">
             The Four Foundations of Our Framework
-          </motion.h2>
-          <motion.div variants={fadeUp} className="flex items-center gap-2 text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate lg:justify-end">
+          </h2>
+          <div className="flex items-center gap-2 text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate lg:justify-end animate-fade-up">
             <span className="h-2.5 w-2.5 bg-brand-alternate inline-block" />
             <span>Investment Pillars</span>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Pillars Grid */}
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-brand-border"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-brand-border">
           {pillars.map((pillar, index) => {
             const isPerformance = pillar.id === "performance";
             return (
-              <motion.div
+              <div
                 key={pillar.id}
-                variants={fadeUp}
-                className={`flex flex-col justify-between p-8 min-h-[300px] transition-all duration-300 ${
+                className={`flex flex-col justify-between p-8 min-h-[300px] transition-all duration-300 animate-fade-up-delay-4 ${
                   isPerformance
                     ? "bg-brand-alternate"
                     : "bg-brand-bg-primary hover:bg-brand-bg-secondary"
@@ -106,10 +73,10 @@ export const StrategiesPillarsSection: React.FC = () => {
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
 
       </div>
     </section>

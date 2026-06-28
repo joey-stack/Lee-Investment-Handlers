@@ -15,20 +15,6 @@ const newsletterSchema = z.object({
 
 type NewsletterFormData = z.infer<typeof newsletterSchema>;
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
-};
-
 export const NewsletterSignup: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -71,37 +57,25 @@ export const NewsletterSignup: React.FC = () => {
   return (
     <section className="bg-brand-bg-alternate text-white py-20 md:py-24 border-b border-brand-border-dark select-none">
       <div className="max-w-[1200px] mx-auto px-4 md:px-6 text-center">
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="max-w-xl mx-auto flex flex-col items-center"
-        >
+        <div className="max-w-xl mx-auto flex flex-col items-center">
           {/* Eyebrow */}
-          <motion.div
-            variants={fadeUp}
-            className="flex items-center gap-2 text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-6"
-          >
+          <div className="flex items-center gap-2 text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-6 animate-fade-up">
             <span className="h-2.5 w-2.5 bg-brand-alternate inline-block" />
             <span>Newsletter</span>
-          </motion.div>
+          </div>
 
           {/* Headline */}
-          <motion.h2
-            variants={fadeUp}
-            className="font-heading text-3xl md:text-4xl font-normal leading-[1.2] tracking-tight text-white mb-6 text-balance"
-          >
+          <h2 className="font-heading text-3xl md:text-4xl font-normal leading-[1.2] tracking-tight text-white mb-6 text-balance animate-fade-up-delay-1">
             {newsletterCopy.headline}
-          </motion.h2>
+          </h2>
 
-          {/* Subtitle — Static to comply with "No Animation on Body Text" Rule */}
-          <p className="font-body text-base text-white/80 leading-relaxed max-w-md">
+          {/* Subtitle */}
+          <p className="font-body text-base text-white/80 leading-relaxed max-w-md animate-fade-up-delay-2">
             {newsletterCopy.subtext}
           </p>
 
           {/* Form / Success state */}
-          <div className="w-full max-w-md mt-8">
+          <div className="w-full max-w-md mt-8 animate-fade-up-delay-3">
             <AnimatePresence mode="wait">
               {isSuccess ? (
                 <motion.div
@@ -145,7 +119,7 @@ export const NewsletterSignup: React.FC = () => {
                   <Button
                     variant="primary"
                     type="submit"
-                    className="h-12 px-8 font-medium shadow-[0px_4px_12px_rgba(0,0,0,0.1)] text-brand-primary uppercase tracking-wider shrink-0"
+                    className="h-12 px-8 font-medium shadow-[0px_4px_12px_rgba(0,0,0,0.1)] text-brand-primary uppercase tracking-wider shrink-0 animate-fade-up-delay-3"
                     disabled={isLoading}
                   >
                     {isLoading ? "Subscribing..." : newsletterCopy.buttonText}
@@ -155,7 +129,7 @@ export const NewsletterSignup: React.FC = () => {
             </AnimatePresence>
           </div>
 
-        </motion.div>
+        </div>
       </div>
     </section>
   );

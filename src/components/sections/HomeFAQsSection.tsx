@@ -1,23 +1,7 @@
-"use client";
-
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { faqs } from "@/lib/content/faqs";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
-};
 
 interface FAQItemProps {
   question: string;
@@ -76,47 +60,26 @@ export const HomeFAQsSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* Left Column: Heading and info */}
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="lg:col-span-5 flex flex-col items-start lg:sticky lg:top-28"
-          >
+          <div className="lg:col-span-5 flex flex-col items-start lg:sticky lg:top-28">
             {/* Eyebrow Label */}
-            <motion.div
-              variants={fadeUp}
-              className="flex items-center gap-2 text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4"
-            >
+            <div className="flex items-center gap-2 text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4 animate-fade-up">
               <span className="h-2.5 w-2.5 bg-brand-alternate inline-block" />
               <span>FAQ</span>
-            </motion.div>
+            </div>
 
             {/* Headline */}
-            <motion.h2
-              variants={fadeUp}
-              className="font-heading text-3xl md:text-[40px] font-normal leading-[1.2] tracking-tight text-brand-primary mb-6"
-            >
+            <h2 className="font-heading text-3xl md:text-[40px] font-normal leading-[1.2] tracking-tight text-brand-primary mb-6 animate-fade-up-delay-1">
               Got Questions? We Have Answers.
-            </motion.h2>
+            </h2>
 
             {/* Subtext */}
-            <motion.p
-              variants={fadeUp}
-              className="font-body text-sm md:text-base text-brand-secondary leading-relaxed max-w-sm"
-            >
+            <p className="font-body text-sm md:text-base text-brand-secondary leading-relaxed max-w-sm animate-fade-up-delay-2">
               If you have any other questions regarding our investment process, fees, or custom services, please do not hesitate to contact our advisory team.
-            </motion.p>
-          </motion.div>
+            </p>
+          </div>
 
           {/* Right Column: Accordions list */}
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="lg:col-span-7 w-full"
-          >
+          <div className="lg:col-span-7 w-full animate-fade-up-delay-4">
             {faqs.map((faq) => (
               <FAQItem
                 key={faq.id}
@@ -126,7 +89,7 @@ export const HomeFAQsSection: React.FC = () => {
                 onToggle={() => toggleFAQ(faq.id)}
               />
             ))}
-          </motion.div>
+          </div>
 
         </div>
       </div>

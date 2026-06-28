@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import { motion } from "framer-motion";
 import {
   Briefcase,
   TrendingUp,
@@ -61,14 +58,14 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onOpenConsultation }
         {/* Header Row */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-20">
           <div className="max-w-[650px]">
-            <span className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4 block">
+            <span className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4 block animate-fade-up">
               Our Investment Solutions
             </span>
-            <h2 className="font-heading text-3xl md:text-[40px] font-normal leading-[1.2] tracking-tight text-brand-primary text-balance">
+            <h2 className="font-heading text-3xl md:text-[40px] font-normal leading-[1.2] tracking-tight text-brand-primary text-balance animate-fade-up-delay-1">
               Whatever your financial goals, we have the expertise to help you get there.
             </h2>
           </div>
-          <div className="max-w-[450px]">
+          <div className="max-w-[450px] animate-fade-up-delay-2">
             <p className="text-sm md:text-base text-brand-secondary leading-relaxed">
               We specialize in turning fast-moving market challenges into structured, wealth-building strategies.
             </p>
@@ -80,13 +77,9 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onOpenConsultation }
           {services.map((service, index) => {
             const img = imageMap[service.id] || "/services/wealth-management.png";
             return (
-              <motion.div
+              <div
                 key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const }}
-                className="sticky bg-brand-bg-secondary border border-brand-border/40 rounded-[6px] overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:shadow-[0px_8px_32px_rgba(0,0,0,0.03)] transition-shadow duration-300"
+                className="sticky bg-brand-bg-secondary border border-brand-border/40 rounded-[6px] overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:shadow-[0px_8px_32px_rgba(0,0,0,0.03)] transition-shadow duration-300 animate-fade-up-delay-4"
                 style={{
                   top: `${100 + index * 24}px`,
                   zIndex: index + 1,
@@ -141,7 +134,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onOpenConsultation }
                     <Button
                       variant="primary"
                       onClick={onOpenConsultation}
-                      className="w-full sm:w-auto font-medium text-brand-primary rounded-none shadow-sm"
+                      className="w-full sm:w-auto font-medium text-brand-primary rounded-none shadow-sm animate-fade-up-delay-3"
                     >
                       Schedule Consultation
                     </Button>
@@ -159,7 +152,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onOpenConsultation }
                     priority={index === 0}
                   />
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
