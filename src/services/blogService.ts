@@ -1,6 +1,6 @@
 import { 
   collection, 
-  getDocs, 
+  getDocsFromServer, 
   getDoc, 
   doc, 
   setDoc, 
@@ -29,7 +29,7 @@ export async function seedInsightsIfEmpty(): Promise<void> {
 
   try {
     const postsCol = collection(db, COLLECTION_NAME);
-    const snapshot = await getDocs(postsCol);
+    const snapshot = await getDocsFromServer(postsCol);
 
     if (snapshot.empty) {
       console.log("Firestore posts collection is empty. Seeding static insights...");
@@ -65,7 +65,7 @@ export async function getPosts(): Promise<InsightArticle[]> {
 
     const postsCol = collection(db, COLLECTION_NAME);
     const postsQuery = query(postsCol, orderBy("date", "desc"));
-    const snapshot = await getDocs(postsQuery);
+    const snapshot = await getDocsFromServer(postsQuery);
 
     if (snapshot.empty) {
       return staticInsights;
@@ -103,7 +103,7 @@ export async function getPostBySlug(slug: string): Promise<InsightArticle | null
   try {
     const postsCol = collection(db, COLLECTION_NAME);
     const q = query(postsCol, where("slug", "==", slug));
-    const snapshot = await getDocs(q);
+    const snapshot = await getDocsFromServer(q);
 
     if (snapshot.empty) {
       // Fallback check in static data
