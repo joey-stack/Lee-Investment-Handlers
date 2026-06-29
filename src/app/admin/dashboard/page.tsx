@@ -77,36 +77,9 @@ export default function AdminDashboardPage() {
   const categories = ["All", "Insights", "News"];
 
   return (
-    <AdminGuard>
-      <main className="min-h-screen bg-brand-bg-secondary font-body text-brand-primary pb-24">
-        {/* Navigation / Header */}
-        <header className="bg-brand-bg-primary border-b border-brand-border sticky top-0 z-40">
-          <div className="max-w-[1200px] mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span className="font-heading text-lg tracking-wider text-brand-primary uppercase">
-                LEE Admin
-              </span>
-              <span className="h-4 w-px bg-brand-border" />
-              <span className="text-xs text-brand-secondary">
-                Logged in as: <strong className="font-semibold text-brand-primary">{user?.email}</strong>
-              </span>
-            </div>
-            
-            <div className="flex items-center gap-4">
-              <Button
-                variant="secondary"
-                onClick={logout}
-                className="flex items-center gap-2 text-xs py-2 px-4 select-none h-auto"
-              >
-                <LogOut size={14} />
-                <span>Logout</span>
-              </Button>
-            </div>
-          </div>
-        </header>
-
-        {/* Dashboard Shell */}
-        <div className="max-w-[1200px] mx-auto px-4 md:px-6 mt-10">
+    <div className="py-10">
+      {/* Dashboard Shell */}
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6">
           {/* Headline and Primary action */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-10">
             <div>
@@ -366,7 +339,6 @@ export default function AdminDashboardPage() {
             </div>
           </div>
         )}
-      </main>
-    </AdminGuard>
+    </div>
   );
 }

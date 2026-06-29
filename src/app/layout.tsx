@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Didact_Gothic, Geist } from "next/font/google";
-import { Nav } from "@/components/layout/Nav";
-import { Footer } from "@/components/layout/Footer";
 import { ScrollTrigger } from "@/components/layout/ScrollTrigger";
 import { AuthProvider } from "@/context/AuthContext";
 import "./globals.css";
@@ -65,11 +63,9 @@ export default function RootLayout({
       >
         <AuthProvider>
           <ScrollTrigger />
-          <Nav />
-          <div className="flex-1">
+          <div className="flex-1 flex flex-col">
             {children}
           </div>
-          <Footer />
         </AuthProvider>
       </body>
     </html>

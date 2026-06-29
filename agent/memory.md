@@ -1,21 +1,21 @@
 # Session Memory
-> Updated: 2026-06-27 — Session 22
+> Updated: 2026-06-29 — Session 22
 
 ## Project Phase
-Phase 11 — Handover (Blog Template & Vercel Prep)
+Phase 10 — SEO, Performance & QA Complete (Firebase Project Migration)
 
 ## Last Completed Task
-Client Portal Links Removal: Removed the Client Portal button from the desktop header navigation (`src/components/layout/Nav.tsx`) and the mobile drawer menu (`src/components/layout/MobileMenu.tsx`). Pushed changes to GitHub.
+Database Separation: Configured and migrated the website's database & auth backend to the dedicated `lee-investment-handlers` Firebase project, removing all ties to the previous `wk-smart-city-plc` project. Created a new web app, deployed Firestore rules, and seeded the first administrative account.
 
 ## What Was Built This Session
-- `src/app/insights/[slug]/page.tsx` — Dynamic route page with pre-rendered static path params and dynamic metadata.
-- `src/components/ui/ShareButton.tsx` — Interactivity helper with a temporal visual copied check state.
-- `src/types/index.ts` — Updated `InsightArticle` with optional content list, author, and readTime fields.
-- `src/lib/content/insights.ts` — Enhanced blog data with paragraphs, authors, and read times.
-- `src/components/layout/Nav.tsx` & `MobileMenu.tsx` — Removed Client Portal links.
+- `.env.local` — Updated Firebase credentials to `lee-investment-handlers`
+- Deployed Firestore security rules to the new project
+- Registered Web App in `lee-investment-handlers`
+- Created administrator user: `admin@leeinvestments.com`
+- Started development server on port 3000
 
 ## Architecture Decisions Made
-- **Server/Client Component Separation for Dynamic Routing** — Ensured the dynamic page remains a Server Component to support `generateStaticParams()` (static export) and `generateMetadata()` (dynamic SEO), while offloading copy-to-clipboard functionality to the nested Client Component `<ShareButton />`.
+- **Separate Firebase Project Context** — Swapped project ID to `lee-investment-handlers` to isolate marketing and lead-generation data, preventing overlaps or conflicts.
 
 ## Dependencies Added
 - None
@@ -40,5 +40,7 @@ Client Portal Links Removal: Removed the Client Portal button from the desktop h
 - [x] Contact Page route and all 3 subsections assembled
 - [x] Dynamic sitemap.xml and robots.txt routes active
 - [x] Compilation verified successfully (no TS warnings, static pages built)
-- [x] Codebase pushed to GitHub repository
+- [x] Dev server running on port 3000
+- [x] Dedicated Firebase project (`lee-investment-handlers`) active
+- [x] Admin Auth user created in the new project
 - [ ] Vercel connected
