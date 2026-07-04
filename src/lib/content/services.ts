@@ -33,7 +33,7 @@ export const services: Service[] = [
     ],
     icon: "trending-up",
     metrics: [
-      { value: "+18.7%", label: "average annual return" },
+      { value: "+22.4%", label: "average annual return" },
       { value: "Active", label: "rebalancing frequency" },
     ],
   },

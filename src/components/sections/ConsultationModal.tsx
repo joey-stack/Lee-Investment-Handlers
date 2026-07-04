@@ -145,7 +145,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 8 }}
             transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
-            className="relative bg-white w-full max-w-lg rounded-[6px] shadow-[0px_24px_64px_rgba(0,0,0,0.16)] overflow-hidden z-10 flex flex-col text-brand-primary"
+            className="relative bg-brand-bg-secondary w-full max-w-lg rounded-[6px] shadow-[0px_24px_64px_rgba(0,0,0,0.4)] overflow-hidden z-10 flex flex-col text-brand-primary"
           >
             {/* Close Button */}
             <button
@@ -183,7 +183,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
                   {serverError && (
-                    <div className="p-4 bg-red-50 border border-red-200 text-red-600 text-xs rounded-[6px] font-light">
+                    <div className="p-4 bg-red-950/20 border border-red-900/40 text-red-400 text-xs rounded-[6px] font-light">
                       {serverError}
                     </div>
                   )}
@@ -198,7 +198,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                       type="text"
                       placeholder="e.g. David Lee"
                       className={cn(
-                        "w-full h-12 px-4 bg-white text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-primary placeholder-[#BFAB9C] transition-all duration-250",
+                        "w-full h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/50 transition-all duration-250",
                         errors.fullName ? "border-red-500 ring-1 ring-red-500" : "border-brand-border"
                       )}
                       {...register("fullName")}
@@ -222,7 +222,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                         type="email"
                         placeholder="e.g. client@domain.com"
                         className={cn(
-                          "w-full h-12 px-4 bg-white text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-primary placeholder-[#BFAB9C] transition-all duration-250",
+                          "w-full h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/50 transition-all duration-250",
                           errors.email ? "border-red-500 ring-1 ring-red-500" : "border-brand-border"
                         )}
                         {...register("email")}
@@ -244,7 +244,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                         type="tel"
                         placeholder="e.g. +234 800 123 4567"
                         className={cn(
-                          "w-full h-12 px-4 bg-white text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-primary placeholder-[#BFAB9C] transition-all duration-250",
+                          "w-full h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/50 transition-all duration-250",
                           errors.phone ? "border-red-500 ring-1 ring-red-500" : "border-brand-border"
                         )}
                         {...register("phone")}
@@ -266,7 +266,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                       <select
                         id="investmentGoals"
                         className={cn(
-                          "w-full h-12 px-4 bg-white text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-primary transition-all duration-250 appearance-none cursor-pointer",
+                          "w-full h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate transition-all duration-250 appearance-none cursor-pointer",
                           errors.investmentGoals ? "border-red-500 ring-1 ring-red-500" : "border-brand-border"
                         )}
                         {...register("investmentGoals")}
@@ -313,7 +313,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                       rows={3}
                       placeholder="Tell us more about your investment profile, timelines, or questions..."
                       className={cn(
-                        "w-full h-24 px-4 py-3 bg-white text-brand-primary border border-brand-border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-primary placeholder-[#BFAB9C] transition-all duration-250 resize-none font-body",
+                        "w-full h-24 px-4 py-3 bg-brand-bg-primary text-brand-primary border border-brand-border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/50 transition-all duration-250 resize-none font-body",
                         errors.message ? "border-red-500 ring-1 ring-red-500" : "border-brand-border"
                       )}
                       {...register("message")}
@@ -324,7 +324,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                   <Button
                     variant="primary"
                     type="submit"
-                    className="w-full font-medium h-12 shadow-[0px_4px_12px_rgba(0,0,0,0.05)] text-brand-primary select-none mt-2"
+                    className="w-full font-medium h-12 shadow-[0px_4px_12px_rgba(0,0,0,0.2)] select-none mt-2"
                     disabled={isLoading}
                   >
                     {isLoading ? "Sending Request..." : "Send Request"}

@@ -29,7 +29,7 @@ export const AboutSnippet: React.FC = () => {
             />
 
             {/* Overlaid Frosted Glass Marquee */}
-            <div className="absolute bottom-0 left-0 right-0 z-10 overflow-hidden w-full bg-black/40 backdrop-blur-md border-t border-white/10 py-3 flex">
+            <div className="absolute bottom-0 left-0 right-0 z-10 overflow-hidden w-full bg-black/40 backdrop-blur-md py-3 flex">
               <motion.div
                 animate={{ x: ["0%", "-50%"] }}
                 transition={{ ease: "linear", duration: 18, repeat: Infinity }}

@@ -266,7 +266,7 @@ export const ContactFormSection: React.FC = () => {
 
                     {/* Server Error Alert */}
                     {serverError && (
-                      <div className="bg-red-50 border border-red-200 text-red-700 text-xs md:text-sm p-4 rounded-[6px] font-body leading-relaxed">
+                      <div className="bg-red-950/20 border border-red-900/40 text-red-400 text-xs md:text-sm p-4 rounded-[6px] font-body leading-relaxed">
                         {serverError}
                       </div>
                     )}

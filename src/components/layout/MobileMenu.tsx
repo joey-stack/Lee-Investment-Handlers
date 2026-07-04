@@ -64,21 +64,21 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 bg-brand-bg-primary flex flex-col"
+          className="fixed inset-0 z-50 bg-brand-bg-alternate flex flex-col"
           variants={overlayVariants}
           initial="hidden"
           animate="visible"
           exit="exit"
         >
           {/* Header Bar */}
-          <div className="h-[75px] px-6 flex items-center justify-between border-b border-brand-border">
+          <div className="h-[75px] px-6 flex items-center justify-between border-b border-brand-border-dark">
             <Link href="/" onClick={onClose} className="flex items-center">
               <Image
                 src="/lee-logo.png"
                 alt="LEE Investment Handlers Logo"
-                width={120}
-                height={35}
-                className="h-[35px] w-auto object-contain"
+                width={200}
+                height={56}
+                className="h-[56px] w-auto object-contain"
                 priority
               />
             </Link>
@@ -86,7 +86,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               variant="icon"
               onClick={onClose}
               aria-label="Close menu"
-              className="text-brand-primary"
+              className="text-white"
             >
               <X size={24} />
             </Button>
@@ -109,7 +109,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                         "font-heading text-3xl tracking-wide transition-colors duration-200 block py-2",
                         isActive 
                           ? "text-brand-alternate" 
-                          : "text-brand-primary hover:text-brand-alternate"
+                          : "text-white hover:text-brand-alternate"
                       )}
                     >
                       {link.label}

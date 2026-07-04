@@ -1,27 +1,25 @@
 # Session Memory
-> Updated: 2026-06-29 — Session 22
+> Updated: 2026-07-04 — Session 24
 
 ## Project Phase
-Phase 10 — SEO, Performance & QA Complete (Firebase Project Migration)
+Phase 11 — Handover (Blog Template & Vercel Prep)
 
 ## Last Completed Task
-Database Separation: Configured and migrated the website's database & auth backend to the dedicated `lee-investment-handlers` Firebase project, removing all ties to the previous `wk-smart-city-plc` project. Created a new web app, deployed Firestore rules, and seeded the first administrative account.
+Card Stacking & Sticky Header Alignment: Resolved the issue where the final card in the services grid did not stack correctly on desktop, and fixed the scroll offset mismatch that caused cards to slide under the header while the header was still locked. Added `lg:last:mb-[350px]` to `src/components/sections/ServicesGrid.tsx` to align the cards' margins on desktop. Updated the sticky header wrapper height to `lg:h-[1010px]` and Card 0 negative margin-top to `lg:-mt-[800px]` to sync their sticky lock and unlock boundaries perfectly. Now, the entire section (header + stacked cards) locks at the exact same scroll position and unlocks/scrolls out together in unison. Verified compilation via build check.
 
 ## What Was Built This Session
-- `.env.local` — Updated Firebase credentials to `lee-investment-handlers`
-- Deployed Firestore security rules to the new project
-- Registered Web App in `lee-investment-handlers`
-- Created administrator user: `admin@leeinvestments.com`
-- Started development server on port 3000
+- `src/components/sections/ServicesGrid.tsx` — Aligned card margins on desktop via `lg:last:mb-[350px]`, increased header wrapper height to `lg:h-[1010px]`, and adjusted Card 0 offset via `lg:-mt-[800px]` to sync lock/unlock scroll events.
+- Firebase project migration complete: all credentials shifted to the dedicated `lee-investment-handlers` context.
 
 ## Architecture Decisions Made
-- **Separate Firebase Project Context** — Swapped project ID to `lee-investment-handlers` to isolate marketing and lead-generation data, preventing overlaps or conflicts.
+- **Aligned Sticky Boundaries:** Standardizing the desktop margin-bottom of all sticky stack elements inside a shared parent container is essential to ensure they exit the sticky viewport at the same time.
+- **Synced Header and Card Boundaries:** Multi-sticky layout components sharing a container must align their virtual scroll offsets (`sticky_top + element_height + margins`) to prevent individual elements from locking/unlocking at different rates.
 
 ## Dependencies Added
-- None
+- None.
 
 ## Open Issues
-- None
+- None.
 
 ## Next Task
 - Phase 11 — Handover. Connect and configure production domains on Vercel.

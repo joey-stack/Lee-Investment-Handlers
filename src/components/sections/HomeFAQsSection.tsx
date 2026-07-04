@@ -21,7 +21,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle })
           {question}
         </span>
         <span
-          className={`shrink-0 flex items-center justify-center h-6 w-6 rounded-full border border-brand-border bg-white text-brand-secondary transition-transform duration-300 ${
+          className={`shrink-0 flex items-center justify-center h-6 w-6 rounded-full border border-brand-border bg-brand-bg-primary text-brand-secondary transition-transform duration-300 ${
             isOpen ? "rotate-180 text-brand-alternate border-brand-alternate/40" : ""
           }`}
         >
@@ -37,7 +37,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle })
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
           >
-            <div className="px-5 pb-5 md:px-6 md:pb-6 font-body text-xs md:text-sm text-brand-secondary leading-relaxed border-t border-brand-border/20 pt-4 bg-white">
+            <div className="px-5 pb-5 md:px-6 md:pb-6 font-body text-xs md:text-sm text-brand-secondary leading-relaxed border-t border-brand-border/20 pt-4 bg-brand-bg-secondary">
               {answer}
             </div>
           </motion.div>

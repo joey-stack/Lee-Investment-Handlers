@@ -79,8 +79,12 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onOpenConsultation }
         {services.map((service, index) => {
           const img = imageMap[service.id] || "/services/wealth-management.png";
           return (
-            <div
+            <motion.div
               key={service.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const }}
               className={`relative lg:sticky lg:top-[340px] lg:h-[450px] bg-brand-bg-secondary border border-brand-border/40 rounded-[6px] overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:shadow-[0px_8px_32px_rgba(0,0,0,0.03)] transition-shadow duration-300 mb-12 md:mb-16 lg:mb-[350px] last:mb-0 lg:last:mb-[350px] ${
                 index === 0 ? "lg:-mt-[800px]" : ""
               }`}
@@ -155,7 +159,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onOpenConsultation }
                   priority={index === 0}
                 />
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>

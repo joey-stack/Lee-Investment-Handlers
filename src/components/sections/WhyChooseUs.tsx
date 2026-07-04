@@ -74,7 +74,7 @@ export const WhyChooseUs: React.FC = () => {
                   <span className="font-body text-xs font-semibold text-brand-alternate tracking-widest">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <div className="h-8 w-8 flex items-center justify-center rounded-md bg-white border border-brand-border/30 text-brand-alternate shadow-sm">
+                  <div className="h-8 w-8 flex items-center justify-center rounded-md bg-brand-bg-primary border border-brand-border/30 text-brand-alternate shadow-sm">
                     {item.icon}
                   </div>
                 </div>

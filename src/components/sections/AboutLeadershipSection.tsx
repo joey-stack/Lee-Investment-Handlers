@@ -26,7 +26,7 @@ export const AboutLeadershipSection: React.FC = () => {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map((member) => (
             <div
               key={member.id}
@@ -44,27 +44,15 @@ export const AboutLeadershipSection: React.FC = () => {
               {/* Gradient vignette — always visible */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
 
-              {/* Top-left identity badge */}
-              <div className="absolute top-5 left-5 z-20 backdrop-blur-md bg-black/30 border border-white/10 rounded-[2px] px-4 py-2.5 select-none">
+              {/* Bottom-left identity badge */}
+              <div className="absolute bottom-3 left-3 right-3 z-20 backdrop-blur-md bg-black/40 border border-white/10 rounded-[6px] p-3 select-none transition-opacity duration-300 group-hover:opacity-0">
                 <h3 className="font-heading text-sm md:text-base font-normal text-white leading-tight">
                   {member.name}
                 </h3>
-                <span className="font-body text-[10px] font-semibold text-brand-alternate uppercase tracking-wider">
+                <span className="font-body text-[10px] font-semibold text-brand-alternate uppercase tracking-wider block mt-1">
                   {member.title}
                 </span>
               </div>
-
-              {/* Bottom track record glassmorphism overlay */}
-              {member.experienceHighlight && (
-                <div className="absolute bottom-5 left-5 right-5 z-20 backdrop-blur-md bg-black/40 border border-white/10 p-4 md:p-5 rounded-[6px] select-none">
-                  <span className="font-body text-[10px] uppercase tracking-[0.15em] font-semibold text-brand-alternate mb-1 block">
-                    Track Record
-                  </span>
-                  <p className="font-heading text-sm md:text-base font-normal text-white leading-tight">
-                    {member.experienceHighlight}
-                  </p>
-                </div>
-              )}
 
               {/* Hover bio overlay */}
               <div className="absolute inset-0 z-30 flex flex-col justify-end p-5 md:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/90 via-black/70 to-black/40">

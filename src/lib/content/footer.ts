@@ -39,7 +39,7 @@ export const footerContent: FooterContent = {
     {
       city: "Venice Office",
       address: "Palazzo Contarini del Bovolo, San Marco 4390, 30124 Venezia, Italy",
-      phone: "+39 041 234 5678",
+      phone: "+39 0421 200688",
       email: "venice@leeinvestments.com",
     },
   ],

@@ -47,7 +47,7 @@ export const insights: InsightArticle[] = [
     date: "February 26, 2026",
     slug: "financial-modeling-decisions",
     image: "/insights/financial-modeling.jpg",
-    author: "David Lee",
+    author: "Uyi Loveday E.",
     readTime: "8 min read",
     content: [
       "Too many financial models are built solely to appease venture capitalists or satisfy bank loan officers. They are static spreadsheets, packed with optimistic assumptions, hockey-stick growth curves, and formulas that hide the underlying operational realities. Once the funding is secured, these models are archived, never to be opened again. This is a massive missed opportunity: a financial model should be a living, breathing operational tool that guides strategic business decisions.",
