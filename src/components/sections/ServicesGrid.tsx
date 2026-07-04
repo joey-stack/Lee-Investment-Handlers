@@ -7,6 +7,7 @@ import {
   Layers,
   Shield,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { services } from "@/lib/content/services";
 import Image from "next/image";
