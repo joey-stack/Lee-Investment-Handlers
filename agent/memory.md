@@ -5,9 +5,10 @@
 Phase 11 — Handover (Blog Template & Vercel Prep)
 
 ## Last Completed Task
-Venice Service Images: Generated six custom, high-fidelity Venice-themed images using AI aligned with financial concepts for each of the six service categories (Wealth Management -> Grand Canal, Portfolio Management -> Rialto Bridge, Retirement Planning -> Serene Side Canal, Institutional Investments -> Doge's Palace, Alternative Investments -> Venice Lagoon, Risk Management -> Punta della Dogana). Replaced the assets in `/public/services/` and verified that the production build compiles successfully.
+Venice Service Images & Hero Video: Generated six custom, high-fidelity Venice-themed images using AI aligned with financial concepts for each of the six service categories. Replaced the assets in `/public/services/`. Additionally, updated the homepage hero background video and fallback image to use the new Google Flow shared asset (`e387145a-0ab0-4090-9452-b26a2deae518`). Verified that the production build compiles successfully.
 
 ## What Was Built This Session
+- `src/lib/content/hero.ts` — Updated `videoUrl` and `fallbackImageUrl` for the home page hero section.
 - `/public/services/wealth-management.png` — Grand Canal and historic palaces image.
 - `/public/services/portfolio-management.png` — Rialto Bridge image.
 - `/public/services/retirement-planning.png` — Serene side canal at golden hour image.

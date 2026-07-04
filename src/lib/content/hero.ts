@@ -16,6 +16,6 @@ export const heroContent: HeroContent = {
   trustLine: "Serious investors in Lagos and Venice trust us.",
   ctaPrimaryText: "Book A Consultation",
   ctaSecondaryText: "Read Our Methods",
-  videoUrl: "https://labs.google/fx/api/og-video/shared/bacde8d6-4409-4467-b46c-dd8103db8fcc",
-  fallbackImageUrl: "https://labs.google/fx/api/og-video/thumbnail/shared/bacde8d6-4409-4467-b46c-dd8103db8fcc",
+  videoUrl: "https://labs.google/fx/api/og-video/shared/e387145a-0ab0-4090-9452-b26a2deae518",
+  fallbackImageUrl: "https://labs.google/fx/api/og-video/thumbnail/shared/e387145a-0ab0-4090-9452-b26a2deae518",
 };
