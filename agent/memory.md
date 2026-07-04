@@ -1,19 +1,22 @@
 # Session Memory
-> Updated: 2026-07-04 — Session 24
+> Updated: 2026-07-04 — Session 25
 
 ## Project Phase
 Phase 11 — Handover (Blog Template & Vercel Prep)
 
 ## Last Completed Task
-Card Stacking & Sticky Header Alignment: Resolved the issue where the final card in the services grid did not stack correctly on desktop, and fixed the scroll offset mismatch that caused cards to slide under the header while the header was still locked. Added `lg:last:mb-[350px]` to `src/components/sections/ServicesGrid.tsx` to align the cards' margins on desktop. Updated the sticky header wrapper height to `lg:h-[1010px]` and Card 0 negative margin-top to `lg:-mt-[800px]` to sync their sticky lock and unlock boundaries perfectly. Now, the entire section (header + stacked cards) locks at the exact same scroll position and unlocks/scrolls out together in unison. Verified compilation via build check.
+Venice Service Images: Generated six custom, high-fidelity Venice-themed images using AI aligned with financial concepts for each of the six service categories (Wealth Management -> Grand Canal, Portfolio Management -> Rialto Bridge, Retirement Planning -> Serene Side Canal, Institutional Investments -> Doge's Palace, Alternative Investments -> Venice Lagoon, Risk Management -> Punta della Dogana). Replaced the assets in `/public/services/` and verified that the production build compiles successfully.
 
 ## What Was Built This Session
-- `src/components/sections/ServicesGrid.tsx` — Aligned card margins on desktop via `lg:last:mb-[350px]`, increased header wrapper height to `lg:h-[1010px]`, and adjusted Card 0 offset via `lg:-mt-[800px]` to sync lock/unlock scroll events.
-- Firebase project migration complete: all credentials shifted to the dedicated `lee-investment-handlers` context.
+- `/public/services/wealth-management.png` — Grand Canal and historic palaces image.
+- `/public/services/portfolio-management.png` — Rialto Bridge image.
+- `/public/services/retirement-planning.png` — Serene side canal at golden hour image.
+- `/public/services/institutional-investments.png` — Doge's Palace and Piazza San Marco image.
+- `/public/services/alternative-investments.png` — Venice lagoon with sailboats image.
+- `/public/services/risk-management.png` — Punta della Dogana and statue of Fortune image.
 
 ## Architecture Decisions Made
-- **Aligned Sticky Boundaries:** Standardizing the desktop margin-bottom of all sticky stack elements inside a shared parent container is essential to ensure they exit the sticky viewport at the same time.
-- **Synced Header and Card Boundaries:** Multi-sticky layout components sharing a container must align their virtual scroll offsets (`sticky_top + element_height + margins`) to prevent individual elements from locking/unlocking at different rates.
+- **Venice Themed Imagery for Services:** Replaced generic placeholder images with custom Venice-themed landmarks, reinforcing the brand's connection to Venice (one of its key office hubs) and matching the premium design tone of the Insighter layout.
 
 ## Dependencies Added
 - None.
@@ -31,7 +34,7 @@ Card Stacking & Sticky Header Alignment: Resolved the issue where the final card
 - [x] Global Nav and Footer shells complete
 - [x] Homepage Hero, Consultation Modal, and all 11 sub-sections redesigned & assembled
 - [x] About Us Page route and all 9 subsections redesigned & assembled
-- [x] Services Page route and all 3 subsections assembled
+- [x] Services Page route and all 3 subsections assembled (using new Venice images)
 - [x] Investment Strategies Page route and all 7 subsections assembled
 - [x] Insights Page route and all 4 subsections assembled
 - [x] Careers Page route and all 4 subsections assembled
@@ -42,3 +45,4 @@ Card Stacking & Sticky Header Alignment: Resolved the issue where the final card
 - [x] Dedicated Firebase project (`lee-investment-handlers`) active
 - [x] Admin Auth user created in the new project
 - [ ] Vercel connected
+
