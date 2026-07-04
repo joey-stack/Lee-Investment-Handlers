@@ -53,110 +53,111 @@ const getMetricIcon = (value: string, label: string) => {
 export const ServicesGrid: React.FC<ServicesGridProps> = ({ onOpenConsultation }) => {
   return (
     <section className="bg-brand-bg-primary py-20 md:py-28 font-body">
-      <div className="max-w-[1200px] mx-auto px-4 md:px-6">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6 relative pb-12 lg:pb-[750px]">
         
-        {/* Header Row */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-20">
-          <div className="max-w-[650px]">
-            <span className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4 block animate-fade-up">
-              Our Investment Solutions
-            </span>
-            <h2 className="font-heading text-3xl md:text-[40px] font-normal leading-[1.2] tracking-tight text-brand-primary text-balance animate-fade-up-delay-1">
-              Whatever your financial goals, we have the expertise to help you get there.
-            </h2>
-          </div>
-          <div className="max-w-[450px] animate-fade-up-delay-2">
-            <p className="text-sm md:text-base text-brand-secondary leading-relaxed">
-              We specialize in turning fast-moving market challenges into structured, wealth-building strategies.
-            </p>
+        {/* Sticky Header Wrapper to align unlock boundaries */}
+        <div className="relative lg:sticky lg:top-[130px] lg:z-30 lg:h-[1010px] bg-transparent pointer-events-none w-full">
+          {/* Header Row Content */}
+          <div className="relative pt-4 pb-6 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 bg-brand-bg-primary pointer-events-auto w-full">
+            <div className="max-w-[650px]">
+              <span className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4 block">
+                Our Investment Solutions
+              </span>
+              <h2 className="font-heading text-3xl md:text-[40px] font-normal leading-[1.2] tracking-tight text-brand-primary text-balance">
+                Whatever your financial goals, we have the expertise to help you get there.
+              </h2>
+            </div>
+            <div className="max-w-[450px]">
+              <p className="text-sm md:text-base text-brand-secondary leading-relaxed">
+                We specialize in turning fast-moving market challenges into structured, wealth-building strategies.
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Vertical Stack of Cards */}
-        <div className="flex flex-col gap-12 md:gap-16">
-          {services.map((service, index) => {
-            const img = imageMap[service.id] || "/services/wealth-management.png";
-            return (
-              <div
-                key={service.id}
-                className="sticky bg-brand-bg-secondary border border-brand-border/40 rounded-[6px] overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:shadow-[0px_8px_32px_rgba(0,0,0,0.03)] transition-shadow duration-300 animate-fade-up-delay-4"
-                style={{
-                  top: `${100 + index * 24}px`,
-                  zIndex: index + 1,
-                }}
-              >
-                {/* Left Column: Text Content and Badges */}
-                <div className="lg:col-span-7 p-8 md:p-12 lg:p-14 flex flex-col justify-center min-h-[380px] lg:min-h-[420px]">
-                  {/* Top Content Block */}
-                  <div className="space-y-4">
-                    {/* Eyebrow Badge */}
-                    <div className="bg-white border border-brand-border/60 rounded-[2px] px-3.5 py-1 inline-flex items-center gap-1.5 text-[10px] font-semibold text-brand-secondary uppercase tracking-[0.15em] w-fit">
-                      <span className="text-brand-alternate flex items-center justify-center">
-                        {iconMap[service.icon] || <Briefcase size={12} />}
-                      </span>
-                      <span>SERVICE {String(index + 1).padStart(2, "0")}</span>
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="font-heading text-2xl md:text-3xl font-normal text-brand-primary leading-tight">
-                      {service.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="font-body text-sm md:text-base text-brand-secondary leading-relaxed max-w-xl text-balance">
-                      {service.description}
-                    </p>
+        {/* Cards loop as direct siblings of Header Row inside max-width wrapper */}
+        {services.map((service, index) => {
+          const img = imageMap[service.id] || "/services/wealth-management.png";
+          return (
+            <div
+              key={service.id}
+              className={`relative lg:sticky lg:top-[340px] lg:h-[450px] bg-brand-bg-secondary border border-brand-border/40 rounded-[6px] overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:shadow-[0px_8px_32px_rgba(0,0,0,0.03)] transition-shadow duration-300 mb-12 md:mb-16 lg:mb-[350px] last:mb-0 lg:last:mb-[350px] ${
+                index === 0 ? "lg:-mt-[800px]" : ""
+              }`}
+              style={{
+                zIndex: 10 + index,
+              }}
+            >
+              {/* Left Column: Text Content and Badges */}
+              <div className="lg:col-span-7 p-8 md:p-12 lg:p-14 flex flex-col justify-center min-h-[380px] lg:h-full">
+                {/* Top Content Block */}
+                <div className="space-y-4">
+                  {/* Eyebrow Badge */}
+                  <div className="bg-brand-bg-primary border border-brand-border/60 rounded-[2px] px-3.5 py-1 inline-flex items-center gap-1.5 text-[10px] font-semibold text-brand-secondary uppercase tracking-[0.15em] w-fit">
+                    <span className="text-brand-alternate flex items-center justify-center">
+                      {iconMap[service.icon] || <Briefcase size={12} />}
+                    </span>
+                    <span>SERVICE {String(index + 1).padStart(2, "0")}</span>
                   </div>
 
-                  {/* Bottom Content Block */}
-                  <div className="mt-8 space-y-6">
-                    {/* Metrics Badges Row */}
-                    <div className="flex flex-wrap gap-2">
-                      {service.metrics?.map((metric, mIdx) => (
-                        <div
-                          key={mIdx}
-                          className="bg-white border border-brand-border/60 rounded-full px-4 py-1.5 inline-flex items-center gap-2 text-[11px] font-medium text-brand-primary shadow-sm"
-                        >
-                          {getMetricIcon(metric.value, metric.label)}
-                          <span>
-                            {metric.value} {metric.label}
-                          </span>
-                        </div>
-                      ))}
-                      {/* 3rd Standard Badge (Fiduciary Standard) */}
-                      <div className="bg-white border border-brand-border/60 rounded-full px-4 py-1.5 inline-flex items-center gap-2 text-[11px] font-medium text-brand-primary shadow-sm">
-                        <ShieldCheck size={12} className="text-brand-alternate" />
-                        <span>Fiduciary Standard</span>
-                      </div>
-                    </div>
+                  {/* Title */}
+                  <h3 className="font-heading text-2xl md:text-3xl font-normal text-brand-primary leading-tight">
+                    {service.title}
+                  </h3>
 
-                    {/* CTA Button */}
-                    <Button
-                      variant="primary"
-                      onClick={onOpenConsultation}
-                      className="w-full sm:w-auto font-medium text-brand-primary rounded-none shadow-sm animate-fade-up-delay-3"
-                    >
-                      Schedule Consultation
-                    </Button>
-                  </div>
+                  {/* Description */}
+                  <p className="font-body text-sm md:text-base text-brand-secondary leading-relaxed max-w-xl text-balance">
+                    {service.description}
+                  </p>
                 </div>
 
-                {/* Right Column: Edge-to-Edge Image Container */}
-                <div className="lg:col-span-5 relative w-full min-h-[280px] lg:min-h-full aspect-[4/3] lg:aspect-auto">
-                  <Image
-                    src={img}
-                    alt={service.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 35vw"
-                    className="object-cover transition-transform duration-700 ease-out hover:scale-103"
-                    priority={index === 0}
-                  />
+                {/* Bottom Content Block */}
+                <div className="mt-8 space-y-6">
+                  {/* Metrics Badges Row */}
+                  <div className="flex flex-wrap gap-2">
+                    {service.metrics?.map((metric, mIdx) => (
+                      <div
+                        key={mIdx}
+                        className="bg-brand-bg-primary border border-brand-border/60 rounded-full px-4 py-1.5 inline-flex items-center gap-2 text-[11px] font-medium text-brand-primary shadow-sm"
+                      >
+                        {getMetricIcon(metric.value, metric.label)}
+                        <span>
+                          {metric.value} {metric.label}
+                        </span>
+                      </div>
+                    ))}
+                    {/* 3rd Standard Badge (Fiduciary Standard) */}
+                    <div className="bg-brand-bg-primary border border-brand-border/60 rounded-full px-4 py-1.5 inline-flex items-center gap-2 text-[11px] font-medium text-brand-primary shadow-sm">
+                      <ShieldCheck size={12} className="text-brand-alternate" />
+                      <span>Fiduciary Standard</span>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <Button
+                    variant="primary"
+                    onClick={onOpenConsultation}
+                    className="w-full sm:w-auto font-medium rounded-none shadow-sm"
+                  >
+                    Schedule Consultation
+                  </Button>
                 </div>
               </div>
-            );
-          })}
-        </div>
 
+              {/* Right Column: Edge-to-Edge Image Container */}
+              <div className="lg:col-span-5 relative w-full min-h-[280px] lg:h-full aspect-[4/3] lg:aspect-auto">
+                <Image
+                  src={img}
+                  alt={service.title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 35vw"
+                  className="object-cover transition-transform duration-700 ease-out hover:scale-103"
+                  priority={index === 0}
+                />
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

@@ -11,11 +11,21 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase for SSR compatibility
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-const auth = getAuth(app);
-const db = initializeFirestore(app, {
-  experimentalAutoDetectLongPolling: true,
-});
+// Initialize Firebase only if config is present, to prevent build-time failures when env variables are not set
+const isConfigured = 
+  !!process.env.NEXT_PUBLIC_FIREBASE_API_KEY && 
+  process.env.NEXT_PUBLIC_FIREBASE_API_KEY !== "placeholder_api_key";
+
+let app;
+let auth: any = null;
+let db: any = null;
+
+if (isConfigured) {
+  app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+  auth = getAuth(app);
+  db = initializeFirestore(app, {
+    experimentalAutoDetectLongPolling: true,
+  });
+}
 
 export { app, auth, db };

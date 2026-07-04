@@ -33,7 +33,9 @@ export default function Home() {
       <ServicesGrid onOpenConsultation={openConsultation} />
 
       {/* Asset Allocations Section */}
-      <StrategyBreakdownSection />
+      <div className="relative z-20 lg:-mt-[1020px] bg-brand-bg-primary">
+        <StrategyBreakdownSection />
+      </div>
 
       {/* Partners Marquee Banner */}
       <IndustriesMarquee />
