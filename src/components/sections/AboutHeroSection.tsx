@@ -10,7 +10,7 @@ export const AboutHeroSection: React.FC = () => {
           {/* Background Cover Image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/why-choose-meeting.png"
+              src={aboutHeroContent.bgImageUrl}
               alt="LEE Investment Handlers team consulting meeting"
               fill
               priority

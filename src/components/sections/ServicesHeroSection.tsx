@@ -12,7 +12,7 @@ export const ServicesHeroSection: React.FC = () => {
           {/* Background Cover Image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/services/wealth-management.png"
+              src={servicesPageHero.bgImageUrl}
               alt="Investment Services"
               fill
               priority

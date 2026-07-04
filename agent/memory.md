@@ -5,9 +5,11 @@
 Phase 11 — Handover (Blog Template & Vercel Prep)
 
 ## Last Completed Task
-Venice Service Images & Hero Video: Generated six custom, high-fidelity Venice-themed images using AI aligned with financial concepts for each of the six service categories. Replaced the assets in `/public/services/`. Additionally, updated the homepage hero background video and fallback image to use the new Google Flow shared asset (`e387145a-0ab0-4090-9452-b26a2deae518`). Verified that the production build compiles successfully.
+Venice Service Images, Hero Video, and Subpage Hero Images: Generated six custom, high-fidelity Venice-themed images using AI aligned with financial concepts for each of the six service categories. Replaced the assets in `/public/services/`. Updated the homepage hero background video and fallback image to use the new Google Flow shared asset (`e387145a-0ab0-4090-9452-b26a2deae518`). Additionally, updated the About page hero section background image to use the shared asset `fff194aa-b9e6-47e7-af76-2544c5119814`, and the Services page hero background image to use `dcfa42a0-4430-4555-a2d2-6b18617845e9`. Verified that the production build compiles successfully.
 
 ## What Was Built This Session
+- `src/lib/content/services.ts` & `src/components/sections/ServicesHeroSection.tsx` — Made Services page hero background dynamic and pointed it to the new Google Flow shared image.
+- `src/lib/content/about.ts` & `src/components/sections/AboutHeroSection.tsx` — Made About page hero image dynamic and pointed it to the new Google Flow shared image.
 - `src/lib/content/hero.ts` — Updated `videoUrl` and `fallbackImageUrl` for the home page hero section.
 - `/public/services/wealth-management.png` — Grand Canal and historic palaces image.
 - `/public/services/portfolio-management.png` — Rialto Bridge image.

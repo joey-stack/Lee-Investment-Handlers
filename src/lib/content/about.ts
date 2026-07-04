@@ -54,6 +54,7 @@ export const aboutSnippetContent: AboutSnippetContent = {
 export interface AboutHeroContent {
   headline: string;
   subtext: string;
+  bgImageUrl: string;
 }
 
 export interface OurStoryContent {
@@ -100,6 +101,7 @@ export interface AboutPillarsContent {
 export const aboutHeroContent: AboutHeroContent = {
   headline: "Invest On Facts. Grow By Results.",
   subtext: "We help you preserve, structure, and double your family wealth. Operating from Lagos and Venice, we apply hard facts and total discipline to make your cash work much harder.",
+  bgImageUrl: "https://labs.google/fx/api/og-image/shared/fff194aa-b9e6-47e7-af76-2544c5119814",
 };
 
 export const ourStoryContent: OurStoryContent = {

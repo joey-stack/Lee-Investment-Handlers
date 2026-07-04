@@ -114,6 +114,7 @@ export const services: Service[] = [
 export interface ServicesPageHero {
   headline: string;
   subtext: string;
+  bgImageUrl: string;
 }
 
 export interface ServicesPageCTA {
@@ -126,6 +127,7 @@ export interface ServicesPageCTA {
 export const servicesPageHero: ServicesPageHero = {
   headline: "Wealth Plans Built On Facts",
   subtext: "We turn complex global market insights into disciplined, wealth-building strategies. Whether preserving family capital for your heirs or managing institutional funds, we promise our complete alignment and factual execution.",
+  bgImageUrl: "https://labs.google/fx/api/og-image/shared/dcfa42a0-4430-4555-a2d2-6b18617845e9",
 };
 
 export const servicesPageCTA: ServicesPageCTA = {
