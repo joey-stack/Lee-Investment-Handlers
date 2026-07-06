@@ -114,7 +114,7 @@ export default function AdminLoginPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@leeinvestments.com"
+                  placeholder="Enter your email address"
                   className="w-full h-12 pl-11 pr-4 bg-white/5 text-white border border-white/10 rounded-[6px] text-sm focus:outline-none focus:border-brand-alternate placeholder-white/20 transition-all duration-250 font-medium"
                   required
                 />

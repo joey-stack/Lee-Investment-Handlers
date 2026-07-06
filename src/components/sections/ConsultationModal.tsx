@@ -196,7 +196,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                     <input
                       id="fullName"
                       type="text"
-                      placeholder="e.g. David Lee"
+                      placeholder="Enter your full name"
                       className={cn(
                         "w-full h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/50 transition-all duration-250",
                         errors.fullName ? "border-red-500 ring-1 ring-red-500" : "border-brand-border"
@@ -220,7 +220,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                       <input
                         id="email"
                         type="email"
-                        placeholder="e.g. client@domain.com"
+                        placeholder="Enter your email address"
                         className={cn(
                           "w-full h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/50 transition-all duration-250",
                           errors.email ? "border-red-500 ring-1 ring-red-500" : "border-brand-border"
@@ -242,7 +242,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                       <input
                         id="phone"
                         type="tel"
-                        placeholder="e.g. +234 800 123 4567"
+                        placeholder="Enter your phone number"
                         className={cn(
                           "w-full h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/50 transition-all duration-250",
                           errors.phone ? "border-red-500 ring-1 ring-red-500" : "border-brand-border"
