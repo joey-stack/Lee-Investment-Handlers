@@ -105,7 +105,7 @@ export const NewsletterSignup: React.FC = () => {
                       type="email"
                       placeholder={newsletterCopy.placeholder}
                       className={cn(
-                        "w-full h-12 px-4 bg-white/5 text-white border rounded-[6px] text-sm focus:outline-none focus:border-brand-alternate placeholder-white/40 transition-all duration-250",
+                        "w-full h-12 px-4 bg-white/5 text-white border rounded-[6px] text-sm focus:outline-none focus:border-brand-alternate placeholder-white/20 transition-all duration-250",
                         errors.email ? "border-red-500 ring-1 ring-red-500" : "border-white/10"
                       )}
                       {...register("email")}

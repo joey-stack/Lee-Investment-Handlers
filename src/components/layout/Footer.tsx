@@ -215,7 +215,7 @@ export const Footer: React.FC = () => {
                     type="email"
                     placeholder={footerContent.newsletter.placeholder}
                     className={cn(
-                      "h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/50 w-full transition-all duration-250",
+                      "h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/30 w-full transition-all duration-250",
                       errors.email ? "border-red-500 ring-1 ring-red-500" : "border-brand-border"
                     )}
                     {...register("email", {

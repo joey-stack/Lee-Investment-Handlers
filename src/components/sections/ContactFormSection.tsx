@@ -158,7 +158,7 @@ export const ContactFormSection: React.FC = () => {
                         placeholder={contactFormCopy.placeholderName}
                         disabled={isLoading}
                         className={cn(
-                          "w-full h-12 px-4 py-3 bg-brand-bg-primary border rounded-[6px] font-body text-sm font-medium text-brand-primary outline-hidden transition-all duration-200 focus:border-brand-primary placeholder-[#BFAB9C] disabled:bg-brand-bg-secondary disabled:text-[#BFAB9C] disabled:border-brand-border",
+                          "w-full h-12 px-4 py-3 bg-brand-bg-primary border rounded-[6px] font-body text-sm font-medium text-brand-primary outline-hidden transition-all duration-200 focus:border-brand-primary placeholder-[#BFAB9C]/30 disabled:bg-brand-bg-secondary disabled:text-[#BFAB9C] disabled:border-brand-border",
                           errors.fullName ? "border-red-500 ring-1 ring-red-500 focus:border-red-500" : "border-brand-border"
                         )}
                         {...register("fullName")}
@@ -183,7 +183,7 @@ export const ContactFormSection: React.FC = () => {
                           placeholder={contactFormCopy.placeholderEmail}
                           disabled={isLoading}
                           className={cn(
-                            "w-full h-12 px-4 py-3 bg-brand-bg-primary border rounded-[6px] font-body text-sm font-medium text-brand-primary outline-hidden transition-all duration-200 focus:border-brand-primary placeholder-[#BFAB9C] disabled:bg-brand-bg-secondary disabled:text-[#BFAB9C] disabled:border-brand-border",
+                            "w-full h-12 px-4 py-3 bg-brand-bg-primary border rounded-[6px] font-body text-sm font-medium text-brand-primary outline-hidden transition-all duration-200 focus:border-brand-primary placeholder-[#BFAB9C]/30 disabled:bg-brand-bg-secondary disabled:text-[#BFAB9C] disabled:border-brand-border",
                             errors.email ? "border-red-500 ring-1 ring-red-500 focus:border-red-500" : "border-brand-border"
                           )}
                           {...register("email")}
@@ -206,7 +206,7 @@ export const ContactFormSection: React.FC = () => {
                           placeholder={contactFormCopy.placeholderPhone}
                           disabled={isLoading}
                           className={cn(
-                            "w-full h-12 px-4 py-3 bg-brand-bg-primary border rounded-[6px] font-body text-sm font-medium text-brand-primary outline-hidden transition-all duration-200 focus:border-brand-primary placeholder-[#BFAB9C] disabled:bg-brand-bg-secondary disabled:text-[#BFAB9C] disabled:border-brand-border",
+                            "w-full h-12 px-4 py-3 bg-brand-bg-primary border rounded-[6px] font-body text-sm font-medium text-brand-primary outline-hidden transition-all duration-200 focus:border-brand-primary placeholder-[#BFAB9C]/30 disabled:bg-brand-bg-secondary disabled:text-[#BFAB9C] disabled:border-brand-border",
                             errors.phone ? "border-red-500 ring-1 ring-red-500 focus:border-red-500" : "border-brand-border"
                           )}
                           {...register("phone")}
@@ -228,7 +228,7 @@ export const ContactFormSection: React.FC = () => {
                         id="investmentGoals"
                         disabled={isLoading}
                         className={cn(
-                          "w-full h-12 px-4 py-3 bg-brand-bg-primary border rounded-[6px] font-body text-sm font-medium text-brand-primary outline-hidden transition-all duration-200 focus:border-brand-primary placeholder-[#BFAB9C] disabled:bg-brand-bg-secondary disabled:text-[#BFAB9C] disabled:border-brand-border appearance-none cursor-pointer",
+                          "w-full h-12 px-4 py-3 bg-brand-bg-primary border rounded-[6px] font-body text-sm font-medium text-brand-primary outline-hidden transition-all duration-200 focus:border-brand-primary placeholder-[#BFAB9C]/30 disabled:bg-brand-bg-secondary disabled:text-[#BFAB9C] disabled:border-brand-border appearance-none cursor-pointer",
                           errors.investmentGoals ? "border-red-500 ring-1 ring-red-500 focus:border-red-500" : "border-brand-border"
                         )}
                         {...register("investmentGoals")}
@@ -259,7 +259,7 @@ export const ContactFormSection: React.FC = () => {
                         rows={4}
                         placeholder={contactFormCopy.placeholderMessage}
                         disabled={isLoading}
-                        className="w-full min-h-[120px] px-4 py-3 bg-brand-bg-primary border border-brand-border rounded-[6px] font-body text-sm font-medium text-brand-primary outline-hidden transition-all duration-200 focus:border-brand-primary placeholder-[#BFAB9C] disabled:bg-brand-bg-secondary disabled:text-[#BFAB9C] disabled:border-brand-border resize-y"
+                        className="w-full min-h-[120px] px-4 py-3 bg-brand-bg-primary border border-brand-border rounded-[6px] font-body text-sm font-medium text-brand-primary outline-hidden transition-all duration-200 focus:border-brand-primary placeholder-[#BFAB9C]/30 disabled:bg-brand-bg-secondary disabled:text-[#BFAB9C] disabled:border-brand-border resize-y"
                         {...register("message")}
                       />
                     </div>

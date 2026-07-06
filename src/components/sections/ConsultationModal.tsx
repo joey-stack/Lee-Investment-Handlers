@@ -198,7 +198,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                       type="text"
                       placeholder="Enter your full name"
                       className={cn(
-                        "w-full h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/50 transition-all duration-250",
+                        "w-full h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/30 transition-all duration-250",
                         errors.fullName ? "border-red-500 ring-1 ring-red-500" : "border-brand-border"
                       )}
                       {...register("fullName")}
@@ -222,7 +222,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                         type="email"
                         placeholder="Enter your email address"
                         className={cn(
-                          "w-full h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/50 transition-all duration-250",
+                          "w-full h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/30 transition-all duration-250",
                           errors.email ? "border-red-500 ring-1 ring-red-500" : "border-brand-border"
                         )}
                         {...register("email")}
@@ -244,7 +244,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                         type="tel"
                         placeholder="Enter your phone number"
                         className={cn(
-                          "w-full h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/50 transition-all duration-250",
+                          "w-full h-12 px-4 bg-brand-bg-primary text-brand-primary border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/30 transition-all duration-250",
                           errors.phone ? "border-red-500 ring-1 ring-red-500" : "border-brand-border"
                         )}
                         {...register("phone")}
@@ -313,7 +313,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                       rows={3}
                       placeholder="Tell us more about your investment profile, timelines, or questions..."
                       className={cn(
-                        "w-full h-24 px-4 py-3 bg-brand-bg-primary text-brand-primary border border-brand-border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/50 transition-all duration-250 resize-none font-body",
+                        "w-full h-24 px-4 py-3 bg-brand-bg-primary text-brand-primary border border-brand-border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-alternate placeholder-[#BFAB9C]/30 transition-all duration-250 resize-none font-body",
                         errors.message ? "border-red-500 ring-1 ring-red-500" : "border-brand-border"
                       )}
                       {...register("message")}

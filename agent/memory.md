@@ -12,6 +12,9 @@ Refined office addresses, phone numbers, and emails across standard content file
 - `/public/services/institutional-investments.png` — Replaced the institutional investments service card image (Service Card 4) with the user-provided Civic Centre Towers photo.
 - `/public/services/risk-management.png` — Replaced the risk management service card image (Service Card 6) with the user-provided Palms Shopping Mall photo. Converted the JPEG source to PNG format using `sips`.
 - **Form Placeholders Update** — Standardized placeholder texts across all public forms (`ContactFormSection.tsx` and `ConsultationModal.tsx` via `contact.ts`) and the admin login page (`admin/login/page.tsx`) to remove explicit names, emails, and phone numbers in favor of generic instructions: "Enter your full name", "Enter your email address", and "Enter your phone number".
+- `/public/insights/strategy-execution.jpg` — Replaced the strategy execution blog post cover photo with a newly AI-generated image of African business people holding laptops in an office space, converted to JPEG format.
+- **Blog Detail Writer Removal** — Removed the author metadata section (avatar, "Written By", and writer's name Obadare OBADAREOBADARE) from the blog detail view (`src/app/(public)/insights/[slug]/page.tsx`), maintaining clean vertical division spacing and right-aligning the share button.
+- **Placeholder Opacity Reduction** — Reduced the opacity of input field placeholder text in all public-facing forms (`ContactFormSection.tsx`, `ConsultationModal.tsx`, and `Footer.tsx` using `placeholder-[#BFAB9C]/30`, and `NewsletterSignup.tsx` using `placeholder-white/20`) to make them fainter and cleaner.
 
 ## Architecture Decisions Made
 - **Venice Themed Imagery for Services:** Retained the original Venice landmarks for the services grid and details list, reinforcing the connection to the Venice office hub and matching the premium design tone of the Insighter layout.
