@@ -14,12 +14,16 @@ import { InsightsPreview } from "@/components/sections/InsightsPreview";
 import { HomeFAQsSection } from "@/components/sections/HomeFAQsSection";
 import { FooterCTASection } from "@/components/sections/FooterCTASection";
 import { ConsultationModal } from "@/components/sections/ConsultationModal";
+import { WriteReviewModal } from "@/components/sections/WriteReviewModal";
 
 export default function Home() {
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
+  const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
 
   const openConsultation = () => setIsConsultationModalOpen(true);
   const closeConsultation = () => setIsConsultationModalOpen(false);
+  const openReviewModal = () => setIsReviewModalOpen(true);
+  const closeReviewModal = () => setIsReviewModalOpen(false);
 
   return (
     <main className="min-h-screen bg-brand-bg-primary text-brand-primary">
@@ -46,7 +50,7 @@ export default function Home() {
       <LeadershipSnapshot />
 
       {/* Testimonials 3-column grid */}
-      <TestimonialsSection onOpenConsultation={openConsultation} />
+      <TestimonialsSection onOpenReviewModal={openReviewModal} />
 
       {/* Insights/Blog preview */}
       <InsightsPreview />
@@ -61,6 +65,12 @@ export default function Home() {
       <ConsultationModal
         isOpen={isConsultationModalOpen}
         onClose={closeConsultation}
+      />
+
+      {/* Write Review Form Modal Popup */}
+      <WriteReviewModal
+        isOpen={isReviewModalOpen}
+        onClose={closeReviewModal}
       />
     </main>
   );
