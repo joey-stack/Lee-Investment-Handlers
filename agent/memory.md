@@ -10,6 +10,7 @@ Refined office addresses, phone numbers, and emails across standard content file
 ## What Was Built This Session
 - `/public/services/portfolio-management.png` — Replaced the portfolio management service card image (Service Card 2) with the user-provided "Welcome to Lagos" monument photo. Converted the JPEG source to PNG format using `sips` to maintain extension compatibility. Verified successful Next.js production build.
 - `/public/services/institutional-investments.png` — Replaced the institutional investments service card image (Service Card 4) with the user-provided Civic Centre Towers photo.
+- `/public/services/risk-management.png` — Replaced the risk management service card image (Service Card 6) with the user-provided Palms Shopping Mall photo. Converted the JPEG source to PNG format using `sips`.
 
 ## Architecture Decisions Made
 - **Venice Themed Imagery for Services:** Retained the original Venice landmarks for the services grid and details list, reinforcing the connection to the Venice office hub and matching the premium design tone of the Insighter layout.
