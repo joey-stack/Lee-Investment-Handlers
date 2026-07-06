@@ -9,7 +9,7 @@ export const performanceBars: PerformanceBar[] = [
 ];
 
 export const performanceSummary = {
-  average: "+22.4%",
+  average: "Good and attractive investment rate",
   label: "Average Annual Growth",
   disclaimer:
     "Past growth does not guarantee future profits. All investments carry risk. Individual client returns will vary.",

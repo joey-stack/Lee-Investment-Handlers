@@ -69,5 +69,5 @@ export const careersCTA: CareersCTA = {
   headline: "Want To Join Our Team?",
   subtext: "Send your CV, background history, and target area of expertise directly to our recruitment team.",
   buttonText: "Submit Your Application",
-  email: "careers@leeinvestments.com",
+  email: "leeinvestmenthandlers@gmail.com",
 };

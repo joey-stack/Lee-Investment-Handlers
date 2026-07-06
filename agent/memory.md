@@ -1,25 +1,18 @@
 # Session Memory
-> Updated: 2026-07-04 — Session 25
+> Updated: 2026-07-06 — Session 26
 
 ## Project Phase
 Phase 11 — Handover (Blog Template & Vercel Prep)
 
 ## Last Completed Task
-Venice Service Images, Hero Video, and Subpage Hero Images: Generated six custom, high-fidelity Venice-themed images using AI aligned with financial concepts for each of the six service categories. Replaced the assets in `/public/services/`. Updated the homepage hero background video and fallback image to use the new Google Flow shared asset (`e387145a-0ab0-4090-9452-b26a2deae518`). Additionally, updated the About page hero section background image to use the shared asset `fff194aa-b9e6-47e7-af76-2544c5119814`, and the Services page hero background image to use `dcfa42a0-4430-4555-a2d2-6b18617845e9`. Verified that the production build compiles successfully.
+Refined office addresses, phone numbers, and emails across standard content files (footer, careers). Resolved dynamic stats typography scaling in the performance sections. Reverted selected service images back to Venice landmarks and verified successful production compilation.
 
 ## What Was Built This Session
-- `src/lib/content/services.ts` & `src/components/sections/ServicesHeroSection.tsx` — Made Services page hero background dynamic and pointed it to the new Google Flow shared image.
-- `src/lib/content/about.ts` & `src/components/sections/AboutHeroSection.tsx` — Made About page hero image dynamic and pointed it to the new Google Flow shared image.
-- `src/lib/content/hero.ts` — Updated `videoUrl` and `fallbackImageUrl` for the home page hero section.
-- `/public/services/wealth-management.png` — Grand Canal and historic palaces image.
-- `/public/services/portfolio-management.png` — Rialto Bridge image.
-- `/public/services/retirement-planning.png` — Serene side canal at golden hour image.
-- `/public/services/institutional-investments.png` — Doge's Palace and Piazza San Marco image.
-- `/public/services/alternative-investments.png` — Venice lagoon with sailboats image.
-- `/public/services/risk-management.png` — Punta della Dogana and statue of Fortune image.
+- `/public/services/portfolio-management.png` — Replaced the portfolio management service card image (Service Card 2) with the user-provided "Welcome to Lagos" monument photo. Converted the JPEG source to PNG format using `sips` to maintain extension compatibility. Verified successful Next.js production build.
 
 ## Architecture Decisions Made
-- **Venice Themed Imagery for Services:** Replaced generic placeholder images with custom Venice-themed landmarks, reinforcing the brand's connection to Venice (one of its key office hubs) and matching the premium design tone of the Insighter layout.
+- **Venice Themed Imagery for Services:** Retained the original Venice landmarks for the services grid and details list, reinforcing the connection to the Venice office hub and matching the premium design tone of the Insighter layout.
+- **Dynamic Stat Sizing:** Configured stats rendering to dynamically adjust font sizing and line height when text length exceeds standard percentages, preventing layout distortion.
 
 ## Dependencies Added
 - None.

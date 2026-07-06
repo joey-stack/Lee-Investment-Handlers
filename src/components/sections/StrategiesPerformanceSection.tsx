@@ -19,7 +19,11 @@ export const StrategiesPerformanceSection: React.FC = () => {
             </h2>
 
             <div className="mb-6 animate-fade-up-delay-2">
-              <span className="font-heading text-5xl md:text-6xl font-normal text-brand-alternate leading-none">
+              <span className={`font-heading font-normal text-brand-alternate block ${
+                performanceSummary.average.length > 10
+                  ? "text-2xl md:text-3xl leading-tight"
+                  : "text-5xl md:text-6xl leading-none"
+              }`}>
                 {performanceSummary.average}
               </span>
               <p className="font-body text-base text-brand-secondary mt-2">

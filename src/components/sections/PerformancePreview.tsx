@@ -56,8 +56,12 @@ export const PerformancePreview: React.FC = () => {
                     Performance track record from 2021 to 2025
                   </p>
                 </div>
-                <div className="text-left sm:text-right shrink-0">
-                  <span className="font-heading text-4xl md:text-5xl font-normal text-brand-alternate leading-none block">
+                <div className="text-left sm:text-right max-w-[280px] sm:max-w-[320px] shrink-0">
+                  <span className={`font-heading font-normal text-brand-alternate block ${
+                    performanceSummary.average.length > 10
+                      ? "text-xl md:text-2xl leading-tight"
+                      : "text-4xl md:text-5xl leading-none"
+                  }`}>
                     {performanceSummary.average}
                   </span>
                   <span className="text-[10px] uppercase tracking-wider text-brand-secondary font-medium mt-1 block">

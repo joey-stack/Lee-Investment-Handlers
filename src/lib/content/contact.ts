@@ -27,7 +27,7 @@ export interface ContactProcessCopy {
 
 export const contactPageHero: ContactPageHero = {
   headline: "How To Start Your Free Consultation Today",
-  subtext: "Please contact our offices in Lagos or Venice to schedule a private consultation with a senior financial advisor.",
+  subtext: "Please contact our offices in Lagos or Venice to schedule a private consultation with our financial advisor.",
 };
 
 export const contactFormCopy: ContactFormCopy = {

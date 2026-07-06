@@ -32,15 +32,15 @@ export const footerContent: FooterContent = {
   offices: [
     {
       city: "Lagos Office",
-      address: "15 Alfred Rewane Road, Ikoyi, Lagos, Nigeria",
-      phone: "+234 1 234 5678",
-      email: "lagos@leeinvestments.com",
+      address: "#12B Obadare Close, Santos Estate, Akowonjo, Lagos, Nigeria.",
+      phone: "+234 9129243211",
+      email: "leeinvestmenthandlers@gmail.com",
     },
     {
       city: "Venice Office",
-      address: "Palazzo Contarini del Bovolo, San Marco 4390, 30124 Venezia, Italy",
+      address: "Via Belfiore 23A, 30020, Italy.",
       phone: "+39 0421 200688",
-      email: "venice@leeinvestments.com",
+      email: "leeinvestmenthandlers@gmail.com",
     },
   ],
   socialLinks: [
