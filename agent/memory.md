@@ -2,10 +2,10 @@
 > Updated: 2026-07-06 — Session 26
 
 ## Project Phase
-Phase 11 — Handover (Blog Template & Vercel Prep)
+Phase 12 — Client Reviews Feature
 
 ## Last Completed Task
-Refined office addresses, phone numbers, and emails across standard content files (footer, careers). Resolved dynamic stats typography scaling in the performance sections. Reverted selected service images back to Venice landmarks and verified successful production compilation.
+Built a full client review system: Firestore `reviews` collection with static seeding, a public `WriteReviewModal` for star-rated submissions, dynamic rendering of approved reviews in `TestimonialsSection`, and a full admin CRUD tab in the dashboard (Create, Edit, Approve/Unapprove, Delete). All static testimonials are now seeded to Firestore so they can be managed from the admin panel.
 
 ## What Was Built This Session
 - `/public/services/portfolio-management.png` — Replaced the portfolio management service card image (Service Card 2) with the user-provided "Welcome to Lagos" monument photo. Converted the JPEG source to PNG format using `sips` to maintain extension compatibility. Verified successful Next.js production build.
