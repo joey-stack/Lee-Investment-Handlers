@@ -53,51 +53,58 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
       {/* 3. Dark Overlay Layer for Text Contrast */}
       <div className="absolute inset-0 bg-black/65 z-10" />
 
-      {/* 4. Centered Hero Content Container */}
-      <div className="relative z-20 w-full max-w-[1200px] mx-auto px-4 md:px-6 flex flex-col items-center justify-end h-full text-white text-center pt-24 pb-28 sm:pb-36">
-        <div className="flex flex-col items-center max-w-4xl">
-          {/* Eyebrow Label */}
-          <p className="text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-6 animate-fade-up">
-            {heroContent.eyebrow}
-          </p>
+      {/* 4. Hero Content Container — two-part flex to guarantee navbar clearance */}
+      <div className="relative z-20 w-full max-w-[1200px] mx-auto px-4 md:px-6 flex flex-col items-center h-full text-white text-center">
 
-          {/* Headline Display Heading (Didact Gothic) */}
-          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-normal leading-[1.1] tracking-tight text-balance mb-6 animate-fade-up-delay-1">
-            {heroContent.headline}
-          </h1>
+        {/* Rigid navbar-clearance spacer — always 96px on mobile, 80px on sm+ */}
+        <div className="shrink-0 h-24 sm:h-20" />
 
-          {/* Subtext Paragraph */}
-          <p className="font-body text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed font-light text-balance animate-fade-up-delay-2">
-            {heroContent.subtext}
-          </p>
+        {/* Flex-1 area: content anchors to the bottom */}
+        <div className="flex-1 flex flex-col items-center justify-end pb-20 sm:pb-32 w-full">
+          <div className="flex flex-col items-center max-w-4xl w-full">
+            {/* Eyebrow Label */}
+            <p className="text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-6 animate-fade-up">
+              {heroContent.eyebrow}
+            </p>
 
-          {/* CTAs Buttons Group */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-16 animate-fade-up-delay-3 max-w-[290px] sm:max-w-none mx-auto">
-            <Button
-              variant="primary"
-              onClick={onOpenConsultation}
-              className="w-full sm:w-auto text-xs sm:text-base px-4 sm:px-8 whitespace-nowrap font-medium shadow-[0px_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[0px_8px_24px_rgba(0,0,0,0.25)] text-brand-primary rounded-none"
-            >
-              {heroContent.ctaPrimaryText}
-            </Button>
-            <Button
-              variant="secondary"
-              href="/services"
-              className="w-full sm:w-auto text-xs sm:text-base px-4 sm:px-8 whitespace-nowrap text-white border-white hover:bg-white/10 rounded-none"
-            >
-              {heroContent.ctaSecondaryText}
-            </Button>
+            {/* Headline Display Heading (Didact Gothic) */}
+            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-normal leading-[1.1] tracking-tight text-balance mb-6 animate-fade-up-delay-1">
+              {heroContent.headline}
+            </h1>
+
+            {/* Subtext Paragraph */}
+            <p className="font-body text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed font-light text-balance animate-fade-up-delay-2">
+              {heroContent.subtext}
+            </p>
+
+            {/* CTAs Buttons Group */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto animate-fade-up-delay-3 max-w-[290px] sm:max-w-none mx-auto">
+              <Button
+                variant="primary"
+                onClick={onOpenConsultation}
+                className="w-full sm:w-auto text-xs sm:text-base px-4 sm:px-8 whitespace-nowrap font-medium shadow-[0px_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[0px_8px_24px_rgba(0,0,0,0.25)] text-brand-primary rounded-none"
+              >
+                {heroContent.ctaPrimaryText}
+              </Button>
+              <Button
+                variant="secondary"
+                href="/services"
+                className="w-full sm:w-auto text-xs sm:text-base px-4 sm:px-8 whitespace-nowrap text-white border-white hover:bg-white/10 rounded-none"
+              >
+                {heroContent.ctaSecondaryText}
+              </Button>
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Trust/Locations bar (Absolute position at bottom) */}
-        <div className="absolute bottom-8 sm:bottom-12 left-6 right-6 z-20 hidden sm:flex flex-row items-center justify-center gap-4 sm:gap-8 md:gap-12 text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/60 font-body font-medium animate-fade-up-delay-4">
-          <span className="hover:text-white transition-colors duration-300">Lagos, Nigeria</span>
-          <span className="hidden sm:block w-[1px] h-3.5 bg-white/20" />
-          <span className="hover:text-white transition-colors duration-300">Venice, Italy</span>
-          <span className="hidden sm:block w-[1px] h-3.5 bg-white/20" />
-          <span className="hover:text-white transition-colors duration-300">Capital Preservation</span>
-        </div>
+      {/* Bottom Trust/Locations bar — hidden on mobile */}
+      <div className="absolute bottom-8 sm:bottom-12 left-6 right-6 z-20 hidden sm:flex flex-row items-center justify-center gap-4 sm:gap-8 md:gap-12 text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/60 font-body font-medium animate-fade-up-delay-4">
+        <span className="hover:text-white transition-colors duration-300">Lagos, Nigeria</span>
+        <span className="w-[1px] h-3.5 bg-white/20" />
+        <span className="hover:text-white transition-colors duration-300">Venice, Italy</span>
+        <span className="w-[1px] h-3.5 bg-white/20" />
+        <span className="hover:text-white transition-colors duration-300">Capital Preservation</span>
       </div>
     </section>
   );
