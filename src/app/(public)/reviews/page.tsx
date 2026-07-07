@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { ReviewsHeroSection } from "@/components/sections/ReviewsHeroSection";
 import { ReviewsGrid } from "@/components/sections/ReviewsGrid";
-import { NewsletterSignup } from "@/components/sections/NewsletterSignup";
 import { WriteReviewModal } from "@/components/sections/WriteReviewModal";
 
 export default function ReviewsPage() {
@@ -20,9 +19,6 @@ export default function ReviewsPage() {
       {/* All Reviews Grid with filters */}
       <ReviewsGrid onOpenReviewModal={openReviewModal} />
 
-      {/* Newsletter Signup bottom panel */}
-      <NewsletterSignup />
-
       {/* Write Review Modal */}
       <WriteReviewModal
         isOpen={isReviewModalOpen}
@@ -31,3 +27,4 @@ export default function ReviewsPage() {
     </main>
   );
 }
+
