@@ -36,7 +36,7 @@ const imageMap: Record<string, string> = {
 
 const getMetricIcon = (value: string, label: string) => {
   const lbl = label.toLowerCase();
-  if (lbl.includes("return") || lbl.includes("retention") || lbl.includes("growth")) {
+  if (lbl.includes("return") || lbl.includes("retention") || lbl.includes("growth") || lbl.includes("rate")) {
     return <TrendingUp size={12} className="text-brand-alternate" />;
   }
   if (lbl.includes("experience") || lbl.includes("asset") || lbl.includes("frequency")) {
