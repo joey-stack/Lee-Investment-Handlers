@@ -1,5 +1,5 @@
 # Session Memory
-> Updated: 2026-07-06 — Session 26
+> Updated: 2026-07-07 — Session 27
 
 ## Project Phase
 Phase 12 — Client Reviews Feature
@@ -8,6 +8,7 @@ Phase 12 — Client Reviews Feature
 Built a full client review system: Firestore `reviews` collection with static seeding, a public `WriteReviewModal` for star-rated submissions, dynamic rendering of approved reviews in `TestimonialsSection`, and a full admin CRUD tab in the dashboard (Create, Edit, Approve/Unapprove, Delete). All static testimonials are now seeded to Firestore so they can be managed from the admin panel.
 
 ## What Was Built This Session
+- **Portfolio Management Metric Update** — Updated the Portfolio Management service card metric from "+22.4% average annual return" to "Good & Attractive investment rate" in `/src/lib/content/services.ts`. Updated the `getMetricIcon` helper in `/src/components/sections/ServicesGrid.tsx` to handle the new "rate" label keyword, maintaining the visual up-right arrow (`TrendingUp` icon).
 - `/public/services/portfolio-management.png` — Replaced the portfolio management service card image (Service Card 2) with the user-provided "Welcome to Lagos" monument photo. Converted the JPEG source to PNG format using `sips` to maintain extension compatibility. Verified successful Next.js production build.
 - `/public/services/institutional-investments.png` — Replaced the institutional investments service card image (Service Card 4) with the user-provided Civic Centre Towers photo.
 - `/public/services/risk-management.png` — Replaced the risk management service card image (Service Card 6) with the user-provided Palms Shopping Mall photo. Converted the JPEG source to PNG format using `sips`.
