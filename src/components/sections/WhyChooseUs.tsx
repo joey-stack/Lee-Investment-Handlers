@@ -66,9 +66,9 @@ export const WhyChooseUs: React.FC = () => {
           {items.map((item, index) => (
             <div
               key={item.title}
-              className="bg-brand-bg-secondary border border-brand-border/40 rounded-[6px] p-6 md:p-8 flex flex-col justify-between hover:shadow-[0px_8px_24px_rgba(0,0,0,0.04)] hover:-translate-y-1 transition-all duration-300 min-h-[250px] animate-fade-up-delay-4"
+              className="bg-brand-bg-secondary border border-brand-border/40 rounded-[6px] p-6 md:p-8 flex flex-col justify-start hover:shadow-[0px_8px_24px_rgba(0,0,0,0.04)] hover:-translate-y-1 transition-all duration-300 sm:min-h-[260px] animate-fade-up-delay-4"
             >
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-4">
                 {/* Top Row: Index and Icon */}
                 <div className="flex justify-between items-center w-full">
                   <span className="font-body text-xs font-semibold text-brand-alternate tracking-widest">
@@ -83,12 +83,12 @@ export const WhyChooseUs: React.FC = () => {
                 <h3 className="font-heading text-lg font-normal text-brand-primary leading-snug">
                   {item.title}
                 </h3>
-              </div>
 
-              {/* Description */}
-              <p className="font-body text-xs md:text-sm text-brand-secondary leading-relaxed mt-4">
-                {item.description}
-              </p>
+                {/* Description */}
+                <p className="font-body text-xs md:text-sm text-brand-secondary leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

@@ -39,11 +39,7 @@ export const AboutCommitmentsSection: React.FC = () => {
             let titleColor = "text-brand-primary";
             let descColor = "text-brand-secondary";
 
-            if (index === 1) {
-              // Light blue-gray card
-              cardBg = "bg-[#EDF1F5] border border-slate-200 text-brand-primary";
-              iconContainerBg = "bg-brand-primary/10 text-brand-primary";
-            } else if (index === 2) {
+            if (index === 1 || index === 2) {
               // Dark accent card
               cardBg = "bg-brand-bg-alternate border-0 text-white shadow-[0_12px_24px_rgba(0,0,0,0.15)]";
               iconContainerBg = "bg-brand-alternate/20 text-brand-alternate";

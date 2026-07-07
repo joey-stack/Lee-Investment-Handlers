@@ -29,14 +29,14 @@ export const AboutStatsSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Stat 2 — Light Blue-Gray Card */}
+          {/* Stat 2 — Dark themed Card (matched to first card) */}
           <div
-            className="bg-[#EDF1F5] border-t-[3px] border-t-brand-alternate border-x border-b border-slate-200 rounded-b-[6px] p-8 md:p-12 flex flex-col items-start text-left min-h-[220px] transition-all duration-300 shadow-[0px_2px_8px_rgba(0,0,0,0.01)] hover:shadow-[0px_8px_24px_rgba(10,10,10,0.04)] animate-fade-up-delay-4 hover:-translate-y-1"
+            className="bg-brand-bg-secondary border-t-[3px] border-t-brand-alternate border-x border-b border-brand-border/40 rounded-b-[6px] p-8 md:p-12 flex flex-col items-start text-left min-h-[220px] transition-all duration-300 shadow-[0px_2px_8px_rgba(0,0,0,0.01)] hover:shadow-[0px_8px_24px_rgba(10,10,10,0.04)] animate-fade-up-delay-4 hover:-translate-y-1"
           >
             <span className="font-heading text-6xl md:text-7xl lg:text-8xl font-normal text-brand-primary tracking-tight leading-none mb-4">
               2 Hubs
             </span>
-            <span className="font-body text-xs font-semibold text-[#3B4C66] uppercase tracking-wider mb-2">
+            <span className="font-body text-xs font-semibold text-brand-alternate uppercase tracking-wider mb-2">
               Global Footprint
             </span>
             <p className="font-body text-sm md:text-base text-brand-secondary leading-relaxed max-w-sm">
