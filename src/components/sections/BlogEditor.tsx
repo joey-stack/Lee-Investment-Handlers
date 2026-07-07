@@ -39,7 +39,7 @@ export const BlogEditor: React.FC<BlogEditorProps> = ({ initialPost }) => {
   const [category, setCategory] = useState(initialPost?.category || "Insights");
   const [image, setImage] = useState(initialPost?.image || "");
   const [featured, setFeatured] = useState(!!initialPost?.featured);
-  const [author, setAuthor] = useState(initialPost?.author || "David Lee");
+  const [author, setAuthor] = useState(initialPost?.author || "Osazuwa Omoregie");
   const [tags, setTags] = useState<string[]>(initialPost?.tags || []);
   const [tagInput, setTagInput] = useState("");
   
@@ -161,7 +161,7 @@ export const BlogEditor: React.FC<BlogEditorProps> = ({ initialPost }) => {
   };
 
   const categories = ["Insights", "News"];
-  const teamAuthors = ["David Lee", "Sarah Mitchell", "Michael Chen"];
+  const teamAuthors = ["Osazuwa Omoregie", "Judith Okafor", "Excel Joel"];
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 md:px-6 mt-6 pb-24 font-body select-none">

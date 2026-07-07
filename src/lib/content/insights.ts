@@ -11,7 +11,7 @@ export const insights: InsightArticle[] = [
     slug: "scaling-tech-infrastructure",
     image: "/insights/scaling-tech.jpg",
     featured: true,
-    author: "Michael Chen",
+    author: "Excel Joel",
     readTime: "6 min read",
     content: [
       "In the early stages of growth, the temptation to build institutional-grade, highly complex technology systems is immense. Startups and scaling firms often confuse scalability with complexity, investing heavily in distributed architectures, microservices, and specialized tooling before they have established product-market fit or a stable operational workflow. At LEE Investment Handlers, we advocate for a disciplined, pragmatic approach to engineering: build only what you need to survive the next phase of growth.",
@@ -29,7 +29,7 @@ export const insights: InsightArticle[] = [
     date: "February 26, 2026",
     slug: "why-strategy-fails",
     image: "/insights/strategy-execution.jpg",
-    author: "Sarah Mitchell",
+    author: "Judith Okafor",
     readTime: "5 min read",
     content: [
       "A beautiful strategy deck is easy to produce. Boardrooms are filled with elaborate five-year growth plans, digital transformation roadmaps, and detailed market expansion strategies. Yet, research consistently shows that over 70% of corporate strategies fail during the execution phase. The bottleneck is rarely the quality of the strategy itself; it is the friction of transforming abstract goals into daily operational actions.",
@@ -47,7 +47,7 @@ export const insights: InsightArticle[] = [
     date: "February 26, 2026",
     slug: "financial-modeling-decisions",
     image: "/insights/financial-modeling.jpg",
-    author: "Uyi Loveday E.",
+    author: "Osazuwa Omoregie",
     readTime: "8 min read",
     content: [
       "Too many financial models are built solely to appease venture capitalists or satisfy bank loan officers. They are static spreadsheets, packed with optimistic assumptions, hockey-stick growth curves, and formulas that hide the underlying operational realities. Once the funding is secured, these models are archived, never to be opened again. This is a massive missed opportunity: a financial model should be a living, breathing operational tool that guides strategic business decisions.",

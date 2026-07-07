@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Clock, Calendar, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, ArrowUpRight, User } from "lucide-react";
 import { getPosts, getPostBySlug } from "@/services/blogService";
 import { Button } from "@/components/ui/Button";
 import { ShareButton } from "@/components/ui/ShareButton";
@@ -97,9 +97,25 @@ export default async function ArticlePage({ params }: PageProps) {
             {article.title}
           </h1>
 
-          {/* Share button */}
-          <div className="flex justify-end py-6 border-y border-brand-border/60 mb-12">
-            <ShareButton />
+          {/* Author info & Share button */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 py-6 border-y border-brand-border/60 mb-12 select-none">
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 bg-brand-bg-secondary rounded-full flex items-center justify-center text-brand-secondary border border-brand-border/60">
+                <User size={18} />
+              </div>
+              <div>
+                <span className="block text-xs font-body text-brand-secondary uppercase tracking-wider font-semibold">
+                  Written By
+                </span>
+                <span className="text-sm font-body text-brand-primary font-medium">
+                  {article.author || "Osazuwa Omoregie"}
+                </span>
+              </div>
+            </div>
+            
+            <div>
+              <ShareButton />
+            </div>
           </div>
 
           {/* Featured Image */}

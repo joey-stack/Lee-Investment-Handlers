@@ -118,7 +118,7 @@ export const Footer: React.FC = () => {
                 alt="LEE Investment Handlers Logo"
                 width={140}
                 height={40}
-                className="h-[40px] w-auto object-contain brightness-0 invert"
+                className="h-[40px] w-auto object-contain"
                 priority
               />
             </Link>

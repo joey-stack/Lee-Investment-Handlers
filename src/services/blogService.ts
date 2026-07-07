@@ -83,7 +83,7 @@ export async function getPosts(): Promise<InsightArticle[]> {
         featured: !!data.featured,
         image: data.image || "/insights/strategy-execution.jpg",
         content: data.content || "",
-        author: data.author || "David Lee",
+        author: data.author || "Osazuwa Omoregie",
         readTime: data.readTime || "5 min read",
         tags: data.tags || []
       } as InsightArticle;
@@ -125,7 +125,7 @@ export async function getPostBySlug(slug: string): Promise<InsightArticle | null
       featured: !!data.featured,
       image: data.image || "/insights/strategy-execution.jpg",
       content: data.content || "",
-      author: data.author || "David Lee",
+      author: data.author || "Osazuwa Omoregie",
       readTime: data.readTime || "5 min read",
       tags: data.tags || []
     } as InsightArticle;

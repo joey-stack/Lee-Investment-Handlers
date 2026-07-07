@@ -452,7 +452,7 @@ export default function AdminDashboardPage() {
                             </span>
                           </td>
                           <td className="py-4 px-6 whitespace-nowrap text-sm text-brand-primary font-medium">
-                            {post.author || "David Lee"}
+                            {post.author || "Osazuwa Omoregie"}
                           </td>
                           <td className="py-4 px-6 whitespace-nowrap text-center">
                             {post.featured ? (
