@@ -72,18 +72,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
           </p>
 
           {/* CTAs Buttons Group */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-16 animate-fade-up-delay-3">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-16 animate-fade-up-delay-3 max-w-[290px] sm:max-w-none mx-auto">
             <Button
               variant="primary"
               onClick={onOpenConsultation}
-              className="w-full sm:w-auto font-medium shadow-[0px_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[0px_8px_24px_rgba(0,0,0,0.25)] text-brand-primary rounded-none"
+              className="w-full sm:w-auto text-xs sm:text-base px-4 sm:px-8 whitespace-nowrap font-medium shadow-[0px_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[0px_8px_24px_rgba(0,0,0,0.25)] text-brand-primary rounded-none"
             >
               {heroContent.ctaPrimaryText}
             </Button>
             <Button
               variant="secondary"
               href="/services"
-              className="w-full sm:w-auto text-white border-white hover:bg-white/10 rounded-none"
+              className="w-full sm:w-auto text-xs sm:text-base px-4 sm:px-8 whitespace-nowrap text-white border-white hover:bg-white/10 rounded-none"
             >
               {heroContent.ctaSecondaryText}
             </Button>
@@ -91,7 +91,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
         </div>
 
         {/* Bottom Trust/Locations bar (Absolute position at bottom) */}
-        <div className="absolute bottom-8 sm:bottom-12 left-6 right-6 z-20 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 md:gap-12 text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/60 font-body font-medium animate-fade-up-delay-4">
+        <div className="absolute bottom-8 sm:bottom-12 left-6 right-6 z-20 hidden sm:flex flex-row items-center justify-center gap-4 sm:gap-8 md:gap-12 text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/60 font-body font-medium animate-fade-up-delay-4">
           <span className="hover:text-white transition-colors duration-300">Lagos, Nigeria</span>
           <span className="hidden sm:block w-[1px] h-3.5 bg-white/20" />
           <span className="hover:text-white transition-colors duration-300">Venice, Italy</span>
