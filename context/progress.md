@@ -230,9 +230,9 @@
 
 ## Phase 11 — Handover
 
-- [ ] Production domain live on Vercel
+- [x] Production domain live on Vercel
 - [ ] `.env` variables documented and handed over securely
 - [ ] Client briefed on content update process (`/lib/content/` files)
 - [ ] Pending items list given to client (photos, addresses, phone numbers)
 - [ ] Loom walkthrough recorded
-- [ ] `/remember` — final session snapshot
+- [x] `/remember` — final session snapshot

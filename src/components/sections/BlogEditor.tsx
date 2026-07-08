@@ -176,8 +176,8 @@ export const BlogEditor: React.FC<BlogEditorProps> = ({ initialPost }) => {
       {notification && (
         <div className={`mb-6 p-4 rounded-[6px] border flex items-center gap-3 text-sm ${
           notification.type === "success" 
-            ? "bg-green-50 border-green-200 text-green-700" 
-            : "bg-red-50 border-red-200 text-red-700"
+            ? "bg-green-950/30 border-green-800/40 text-green-400" 
+            : "bg-red-950/30 border-red-800/40 text-red-400"
         }`}>
           {notification.type === "success" ? <CheckCircle size={18} /> : <AlertCircle size={18} />}
           <span className="font-light">{notification.message}</span>
@@ -191,7 +191,7 @@ export const BlogEditor: React.FC<BlogEditorProps> = ({ initialPost }) => {
         <div className="lg:col-span-8 space-y-6">
           
           {/* Post Title */}
-          <div className="bg-white border border-brand-border rounded-[6px] p-6 shadow-sm">
+          <div className="bg-[#141414] border border-white/10 rounded-[6px] p-6 shadow-sm">
             <input
               type="text"
               value={title}
@@ -203,7 +203,7 @@ export const BlogEditor: React.FC<BlogEditorProps> = ({ initialPost }) => {
           </div>
 
           {/* Excerpt */}
-          <div className="bg-white border border-brand-border rounded-[6px] p-6 shadow-sm space-y-1.5">
+          <div className="bg-[#141414] border border-white/10 rounded-[6px] p-6 shadow-sm space-y-1.5">
             <label className="block text-xs font-semibold text-brand-secondary uppercase tracking-wider">
               Short Description / Excerpt
             </label>
@@ -217,7 +217,7 @@ export const BlogEditor: React.FC<BlogEditorProps> = ({ initialPost }) => {
           </div>
 
           {/* Rich Text WYSIWYG Editor Workspace */}
-          <div className="bg-white border border-brand-border rounded-[6px] overflow-hidden shadow-sm flex flex-col min-h-[500px]">
+          <div className="bg-[#141414] border border-white/10 rounded-[6px] overflow-hidden shadow-sm flex flex-col min-h-[500px]">
             {/* WYSIWYG Formatting Toolbar */}
             <div className="bg-brand-bg-secondary/40 border-b border-brand-border p-2 flex flex-wrap items-center gap-1">
               <button 
@@ -315,7 +315,7 @@ export const BlogEditor: React.FC<BlogEditorProps> = ({ initialPost }) => {
             <div 
               ref={editorRef}
               contentEditable
-              className="flex-1 p-6 md:p-8 outline-none prose prose-sm md:prose-base prose-slate max-w-none focus:outline-none overflow-y-auto select-text font-body text-brand-primary"
+              className="flex-1 p-6 md:p-8 outline-none prose prose-sm md:prose-base prose-invert max-w-none focus:outline-none overflow-y-auto select-text font-body text-brand-primary"
             />
           </div>
         </div>
@@ -324,7 +324,7 @@ export const BlogEditor: React.FC<BlogEditorProps> = ({ initialPost }) => {
         <div className="lg:col-span-4 space-y-6">
           
           {/* Publish Actions card */}
-          <div className="bg-white border border-brand-border rounded-[6px] p-6 shadow-sm space-y-5">
+          <div className="bg-[#141414] border border-white/10 rounded-[6px] p-6 shadow-sm space-y-5">
             <h3 className="font-heading text-lg font-normal text-brand-primary pb-3 border-b border-brand-border/60">
               Publish Status
             </h3>
@@ -360,7 +360,7 @@ export const BlogEditor: React.FC<BlogEditorProps> = ({ initialPost }) => {
           </div>
 
           {/* Metadata Card */}
-          <div className="bg-white border border-brand-border rounded-[6px] p-6 shadow-sm space-y-6">
+          <div className="bg-[#141414] border border-white/10 rounded-[6px] p-6 shadow-sm space-y-6">
             <h3 className="font-heading text-lg font-normal text-brand-primary pb-3 border-b border-brand-border/60">
               Article Details
             </h3>

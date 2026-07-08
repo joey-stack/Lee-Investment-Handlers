@@ -290,8 +290,8 @@ export default function AdminDashboardPage() {
           <div className={cn(
             "mb-8 p-4 rounded-[6px] border flex items-center gap-3 text-sm animate-fade-up",
             notification.type === "success" 
-              ? "bg-green-50 border-green-200 text-green-700" 
-              : "bg-red-50 border-red-200 text-red-700"
+              ? "bg-green-950/30 border-green-800/40 text-green-400" 
+              : "bg-red-950/30 border-red-800/40 text-red-400"
           )}>
             {notification.type === "success" ? <CheckCircle size={18} /> : <AlertCircle size={18} />}
             <span className="font-light">{notification.message}</span>
@@ -445,8 +445,8 @@ export default function AdminDashboardPage() {
                             <span className={cn(
                               "inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold select-none border",
                               post.category.toLowerCase() === "news" 
-                                ? "bg-amber-50 text-amber-700 border-amber-200/50" 
-                                : "bg-emerald-50 text-emerald-700 border-emerald-200/50"
+                                ? "bg-amber-950/30 text-amber-400 border-amber-800/40" 
+                                : "bg-emerald-950/30 text-emerald-400 border-emerald-800/40"
                             )}>
                               {post.category}
                             </span>
@@ -477,7 +477,7 @@ export default function AdminDashboardPage() {
                               </Link>
                               <button 
                                 onClick={() => setPostDeleteConfirmId(post.id)}
-                                className="p-1.5 text-brand-secondary hover:text-red-600 hover:bg-red-50 rounded cursor-pointer transition-all"
+                                className="p-1.5 text-brand-secondary hover:text-red-400 hover:bg-red-950/30 rounded cursor-pointer transition-all"
                                 title="Delete Post"
                               >
                                 <Trash2 size={15} />
@@ -666,8 +666,8 @@ export default function AdminDashboardPage() {
                               className={cn(
                                 "px-3 py-1 rounded-[4px] text-[10px] font-semibold tracking-wider uppercase select-none border transition-colors cursor-pointer",
                                 review.approved 
-                                  ? "bg-green-50 text-green-700 border-green-200 hover:bg-green-100" 
-                                  : "bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100"
+                                  ? "bg-green-950/30 text-green-400 border-green-800/40 hover:bg-green-950/50" 
+                                  : "bg-amber-950/30 text-amber-400 border-amber-800/40 hover:bg-amber-950/50"
                               )}
                             >
                               {review.approved ? "Approved" : "Pending"}
@@ -686,7 +686,7 @@ export default function AdminDashboardPage() {
                               </button>
                               <button 
                                 onClick={() => setReviewDeleteConfirmId(review.id)}
-                                className="p-1.5 text-brand-secondary hover:text-red-600 hover:bg-red-50 rounded cursor-pointer transition-all"
+                                className="p-1.5 text-brand-secondary hover:text-red-400 hover:bg-red-950/30 rounded cursor-pointer transition-all"
                                 title="Delete Review permanently"
                               >
                                 <Trash2 size={15} />
@@ -714,7 +714,7 @@ export default function AdminDashboardPage() {
             onClick={() => setPostDeleteConfirmId(null)}
             className="absolute inset-0 bg-black/60 backdrop-blur-xs cursor-pointer" 
           />
-          <div className="relative bg-white w-full max-w-sm rounded-[6px] shadow-[0px_24px_64px_rgba(0,0,0,0.16)] p-6 md:p-8 z-10 text-brand-primary select-none font-body">
+          <div className="relative bg-[#141414] border border-white/10 w-full max-w-sm rounded-[6px] shadow-[0px_24px_64px_rgba(0,0,0,0.5)] p-6 md:p-8 z-10 text-brand-primary select-none font-body">
             <h3 className="font-heading text-xl font-normal leading-tight text-brand-primary mb-3">
               Confirm Article Deletion
             </h3>
@@ -752,7 +752,7 @@ export default function AdminDashboardPage() {
             onClick={() => setReviewDeleteConfirmId(null)}
             className="absolute inset-0 bg-black/60 backdrop-blur-xs cursor-pointer" 
           />
-          <div className="relative bg-white w-full max-w-sm rounded-[6px] shadow-[0px_24px_64px_rgba(0,0,0,0.16)] p-6 md:p-8 z-10 text-brand-primary select-none font-body">
+          <div className="relative bg-[#141414] border border-white/10 w-full max-w-sm rounded-[6px] shadow-[0px_24px_64px_rgba(0,0,0,0.5)] p-6 md:p-8 z-10 text-brand-primary select-none font-body">
             <h3 className="font-heading text-xl font-normal leading-tight text-brand-primary mb-3">
               Confirm Review Deletion
             </h3>
@@ -797,7 +797,7 @@ export default function AdminDashboardPage() {
             >
               <X size={20} />
             </button>
-            <div className="p-6 border-b border-brand-border bg-white">
+            <div className="p-6 border-b border-white/10 bg-[#1A1A1A]">
               <h3 className="font-heading text-xl font-normal leading-tight text-brand-primary">
                 Add Client Review manually
               </h3>
@@ -897,7 +897,7 @@ export default function AdminDashboardPage() {
             >
               <X size={20} />
             </button>
-            <div className="p-6 border-b border-brand-border bg-white">
+            <div className="p-6 border-b border-white/10 bg-[#1A1A1A]">
               <h3 className="font-heading text-xl font-normal leading-tight text-brand-primary">
                 Edit Client Review Details
               </h3>

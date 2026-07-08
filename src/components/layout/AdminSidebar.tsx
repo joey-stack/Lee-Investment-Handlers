@@ -68,7 +68,7 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({ children }) => {
   };
 
   return (
-    <div className="flex min-h-screen bg-brand-bg-secondary">
+    <div className="flex min-h-screen bg-[#0F0F0F]">
       {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 z-50 h-screen flex flex-col bg-[#0A0A0A] border-r border-white/8 transition-all duration-300 ease-in-out select-none ${
