@@ -34,7 +34,7 @@ export const footerContent: FooterContent = {
       city: "Lagos Office",
       address: "#12B Obadare Close, Santos Estate, Akowonjo, Lagos, Nigeria.",
       phone: "+234 9129243211",
-      email: "leeinvestmenthandlers@gmail.com",
+      email: "info@leeinvestmenthandlers.com",
     },
     {
       city: "Venice Office",
