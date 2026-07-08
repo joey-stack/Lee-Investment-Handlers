@@ -22,8 +22,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   useEffect(() => {
     // If Firebase isn't fully configured, we skip authentication checks gracefully
-    if (!process.env.NEXT_PUBLIC_FIREBASE_API_KEY || 
-        process.env.NEXT_PUBLIC_FIREBASE_API_KEY === "placeholder_api_key") {
+    if (!auth) {
       setLoading(false);
       return;
     }

@@ -17,6 +17,13 @@ export default function AdminLoginPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
+  // Check if Firebase auth is available
+  useEffect(() => {
+    if (!auth) {
+      setErrorMsg("Firebase is not configured. Please verify your environment variables (.env.local).");
+    }
+  }, []);
+
   // If already authenticated, redirect to dashboard
   useEffect(() => {
     if (!loading && user) {
@@ -26,6 +33,10 @@ export default function AdminLoginPage() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!auth) {
+      setErrorMsg("Firebase is not configured. Please verify your environment variables (.env.local).");
+      return;
+    }
     if (!email || !password) {
       setErrorMsg("Please provide both email and password.");
       return;
