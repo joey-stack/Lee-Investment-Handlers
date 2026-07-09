@@ -451,8 +451,22 @@ export default function AdminDashboardPage() {
                               {post.category}
                             </span>
                           </td>
-                          <td className="py-4 px-6 whitespace-nowrap text-sm text-brand-primary font-medium">
-                            {post.author || "Osazuwa Omoregie"}
+                          <td className="py-4 px-6 whitespace-nowrap">
+                            <div className="flex items-center gap-2.5">
+                              <div className="h-7 w-7 rounded-full bg-brand-alternate/15 border border-brand-alternate/25 flex items-center justify-center shrink-0">
+                                <span className="text-[10px] font-bold text-brand-alternate select-none">
+                                  {(post.author || "Osazuwa Omoregie")
+                                    .split(" ")
+                                    .map((n: string) => n[0])
+                                    .slice(0, 2)
+                                    .join("")
+                                    .toUpperCase()}
+                                </span>
+                              </div>
+                              <span className="text-sm text-brand-primary font-medium">
+                                {post.author || "Osazuwa Omoregie"}
+                              </span>
+                            </div>
                           </td>
                           <td className="py-4 px-6 whitespace-nowrap text-center">
                             {post.featured ? (

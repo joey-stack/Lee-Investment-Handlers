@@ -42,9 +42,9 @@
   }
 }
 
-/* Root font scale — 18px on mobile, 16px on desktop (md+) */
+/* Root font scale — 20px on mobile, 16px on desktop (md+) */
 html {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 @media (min-width: 768px) {
@@ -57,10 +57,18 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* Slightly heavier body weight on mobile for legibility */
+@media (max-width: 767px) {
+  body {
+    font-weight: 450;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
