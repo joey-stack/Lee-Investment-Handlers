@@ -108,7 +108,7 @@ export default async function ArticlePage({ params }: PageProps) {
                   Written By
                 </span>
                 <span className="text-sm font-body text-brand-primary font-medium">
-                  {article.author || "Osazuwa Omoregie"}
+                  {article.author}
                 </span>
               </div>
             </div>
