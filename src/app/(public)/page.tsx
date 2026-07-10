@@ -37,7 +37,7 @@ export default function Home() {
       {/* Vertical stacked Services Rows */}
       <ServicesGrid onOpenConsultation={openConsultation} />
 
-      <div className="relative z-20 lg:-mt-[320px] bg-brand-bg-primary">
+      <div className="relative z-20 lg:-mt-[1020px] bg-brand-bg-primary">
         <StrategyBreakdownSection />
       </div>
 

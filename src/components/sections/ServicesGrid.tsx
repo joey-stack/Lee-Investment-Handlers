@@ -47,10 +47,10 @@ const getMetricIcon = (value: string, label: string) => {
 export const ServicesGrid: React.FC<ServicesGridProps> = ({ onOpenConsultation }) => {
   return (
     <section className="bg-brand-bg-primary py-20 md:py-28 font-body">
-      <div className="max-w-[1200px] mx-auto px-4 md:px-6 relative pb-12 lg:pb-[150px]">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6 relative pb-12 lg:pb-[750px]">
         
         {/* Sticky Header Wrapper to align unlock boundaries */}
-        <div className="relative lg:sticky lg:top-[130px] lg:z-30 lg:h-[310px] bg-transparent pointer-events-none w-full">
+        <div className="relative lg:sticky lg:top-[130px] lg:z-30 lg:h-[1010px] bg-transparent pointer-events-none w-full">
           {/* Header Row Content */}
           <div className="relative pt-4 pb-6 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 bg-brand-bg-primary pointer-events-auto w-full">
             <div className="max-w-[650px]">
@@ -80,7 +80,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ onOpenConsultation }
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const }}
               className={`relative lg:sticky lg:top-[340px] lg:h-[450px] bg-brand-bg-secondary border border-brand-border/40 rounded-[6px] overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:shadow-[0px_8px_32px_rgba(0,0,0,0.03)] transition-shadow duration-300 mb-12 md:mb-16 lg:mb-[350px] last:mb-0 lg:last:mb-[350px] ${
-                index === 0 ? "lg:-mt-[100px]" : ""
+                index === 0 ? "lg:-mt-[800px]" : ""
               }`}
               style={{
                 zIndex: 10 + index,
