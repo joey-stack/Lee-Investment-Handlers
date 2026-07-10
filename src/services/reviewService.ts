@@ -60,23 +60,29 @@ export async function getApprovedReviews(): Promise<Testimonial[]> {
     await seedReviewsIfEmpty();
 
     const reviewsCol = collection(db, COLLECTION_NAME);
-    const q = query(reviewsCol, where("approved", "==", true), orderBy("createdAt", "desc"));
+    const q = query(reviewsCol, where("approved", "==", true));
     const snapshot = await getDocsFromServer(q);
 
     if (snapshot.empty) {
       return [];
     }
 
-    return snapshot.docs.map((doc) => {
+    const docs = snapshot.docs.map((doc) => {
       const data = doc.data();
       return {
         id: doc.id,
         quote: data.comment || "",
         attribution: data.name || "Anonymous",
         role: "", // Role is deprecated on the frontend card rendering
-        rating: typeof data.rating === "number" ? data.rating : 5
-      } as Testimonial;
+        rating: typeof data.rating === "number" ? data.rating : 5,
+        createdAt: data.createdAt || new Date().toISOString()
+      };
     });
+
+    // Sort in-memory by createdAt descending to bypass composite index requirement
+    docs.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+
+    return docs as Testimonial[];
   } catch (error) {
     console.error("Failed to fetch approved reviews from Firestore. Falling back to static data:", error);
     return staticTestimonials;
