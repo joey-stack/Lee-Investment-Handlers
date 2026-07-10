@@ -8,6 +8,7 @@ import { StrategyBreakdownSection } from "@/components/sections/StrategyBreakdow
 import { IndustriesMarquee } from "@/components/sections/IndustriesMarquee";
 
 import { PerformancePreview } from "@/components/sections/PerformancePreview";
+import { ManagementDisciplines } from "@/components/sections/ManagementDisciplines";
 import { LeadershipSnapshot } from "@/components/sections/LeadershipSnapshot";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { InsightsPreview } from "@/components/sections/InsightsPreview";
@@ -36,9 +37,12 @@ export default function Home() {
       {/* Vertical stacked Services Rows */}
       <ServicesGrid onOpenConsultation={openConsultation} />
 
-      <div className="relative z-20 lg:-mt-[1020px] bg-brand-bg-primary">
+      <div className="relative z-20 lg:-mt-[320px] bg-brand-bg-primary">
         <StrategyBreakdownSection />
       </div>
+
+      {/* Legacy Services as Core Expertise Disciplines (no buttons) */}
+      <ManagementDisciplines />
 
       {/* Partners Marquee Banner */}
       <IndustriesMarquee />

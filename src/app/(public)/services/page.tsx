@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ServicesHeroSection } from "@/components/sections/ServicesHeroSection";
 import { ServicesDetailList } from "@/components/sections/ServicesDetailList";
+import { ManagementDisciplines } from "@/components/sections/ManagementDisciplines";
 import { RiskManagementFrameworkSection } from "@/components/sections/RiskManagementFrameworkSection";
 import { StrategiesPerformanceSection } from "@/components/sections/StrategiesPerformanceSection";
 import { FooterCTASection } from "@/components/sections/FooterCTASection";
@@ -21,6 +22,9 @@ export default function ServicesPage() {
 
       {/* Alternating Services Detail Rows */}
       <ServicesDetailList onOpenConsultation={openConsultation} />
+
+      {/* Core Wealth Management Capabilities (legacy offerings, no buttons) */}
+      <ManagementDisciplines />
 
       {/* Investment Strategies — Risk Management Framework */}
       <RiskManagementFrameworkSection />

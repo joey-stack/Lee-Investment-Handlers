@@ -29,7 +29,7 @@ export const ServicesHeroSection: React.FC = () => {
               {/* Eyebrow */}
               <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-body font-medium tracking-[0.2em] uppercase text-brand-alternate mb-6 animate-fade-up">
                 <span className="h-2.5 w-2.5 bg-brand-alternate inline-block" />
-                <span>Our Services</span>
+                <span>Cooperations &amp; Disciplines</span>
               </div>
 
               {/* Headline (Didact Gothic) */}
