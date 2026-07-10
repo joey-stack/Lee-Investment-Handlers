@@ -12,8 +12,8 @@ Restructured the services layout across the site to split direct operations (Coo
 - **Core Cooperations Scroll Grid** — Refactored `ServicesGrid.tsx` to display the 4 Cooperations with active "Schedule Consultation" CTA buttons. Recalibrated layout sticky heights, top offsets, and padding values to cleanly stack 4 cards instead of 6 on desktop and mobile viewports.
 - **Management Disciplines Section** — Created a reusable grid component `ManagementDisciplines.tsx` displaying the legacy 6 wealth solutions in a premium 3-column grid. Crucially, these cards do not render any CTA buttons, representing core expertise frameworks.
 - **Page Layout Integrations** — Injected both sections into the homepage (`src/app/(public)/page.tsx`) and the main services subpage (`src/app/(public)/services/page.tsx`).
-- **Image Assets Generation** — Generated and configured 3 realistic, high-fidelity PNG image assets for the Cooperations cards (`iron-steel-operations.png`, `oil-gas-investments.png`, and `forex-strategies.png`) matching the client's sector specifics.
-- **Git Push Verification** — Staged, committed, and successfully pushed all layout adjustments and media assets to the remote repository.
+- **Image Assets Generation** — Generated and configured 3 realistic, high-fidelity PNG image assets for the Cooperations cards (`iron-steel-operations.png`, `oil-gas-investments.png`, and `forex-strategies.png`) featuring African industrial personnel, engineers, and financial traders to align with the company's regional hubs.
+- **Git Push Verification** — Staged, committed, and successfully pushed all layout adjustments and updated media assets to the remote repository.
 
 ## Architecture Decisions Made
 - **Dual Content Division:** Separated direct operations ("Cooperations") from advisory areas ("Management Disciplines") to preserve institutional credibility while clearly representing the conglomerate's exact assets.
