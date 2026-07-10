@@ -13,6 +13,7 @@ Restructured the services layout across the site to split direct operations (Coo
 - **Management Disciplines Section** — Created a reusable grid component `ManagementDisciplines.tsx` displaying the legacy 6 wealth solutions in a premium 3-column grid. Crucially, these cards do not render any CTA buttons, representing core expertise frameworks.
 - **Page Layout Integrations** — Injected both sections into the homepage (`src/app/(public)/page.tsx`) and the main services subpage (`src/app/(public)/services/page.tsx`).
 - **Image Assets Generation** — Generated and configured 3 realistic, high-fidelity PNG image assets for the Cooperations cards (`iron-steel-operations.png`, `oil-gas-investments.png`, and `forex-strategies.png`) featuring African industrial personnel, engineers, and financial traders to align with the company's regional hubs.
+- **Firestore Security Rules Deployment** — Resolved the "Missing or insufficient permissions" error on client review submission by defining permission rules for the `reviews` collection in `firestore.rules` (allowing public reads/creates and restricting updates/deletes to authenticated administrators) and deploying them to the active Firebase project.
 - **Git Push Verification** — Staged, committed, and successfully pushed all layout adjustments and updated media assets to the remote repository.
 
 ## Architecture Decisions Made
