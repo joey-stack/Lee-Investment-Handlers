@@ -9,9 +9,9 @@ interface ServicesDetailListProps {
 
 const imageMap: Record<string, string> = {
   "real-estate-holdings": "/services/institutional-investments.png",
-  "iron-steel-operations": "/services/wealth-management.png",
-  "oil-gas-investments": "/services/alternative-investments.png",
-  "forex-strategies": "/services/portfolio-management.png",
+  "iron-steel-operations": "/services/iron-steel-operations.png",
+  "oil-gas-investments": "/services/oil-gas-investments.png",
+  "forex-strategies": "/services/forex-strategies.png",
 };
 
 export const ServicesDetailList: React.FC<ServicesDetailListProps> = ({ onOpenConsultation }) => {
