@@ -1,4 +1,6 @@
 import { ContactFormData, ServiceResponse } from "@/types";
+import { collection, getDocsFromServer, query, orderBy, deleteDoc, doc } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 /**
  * Submits the consultation request form data to the client-facing API endpoint.
@@ -34,3 +36,42 @@ export async function submitConsultationRequest(
     };
   }
 }
+
+/**
+ * Fetches all consultation requests from Firestore for the admin dashboard.
+ */
+export async function getConsultations(): Promise<any[]> {
+  try {
+    if (!db) {
+      console.warn("Firestore db not initialized, cannot fetch consultations.");
+      return [];
+    }
+    const consultationsCol = collection(db, "consultations");
+    const q = query(consultationsCol, orderBy("createdAt", "desc"));
+    const snapshot = await getDocsFromServer(q);
+    return snapshot.docs.map((docSnap) => ({
+      id: docSnap.id,
+      ...docSnap.data(),
+    }));
+  } catch (err) {
+    console.error("Failed to fetch consultations from Firestore:", err);
+    return [];
+  }
+}
+
+/**
+ * Deletes a consultation request by ID in Firestore.
+ */
+export async function deleteConsultation(id: string): Promise<void> {
+  try {
+    if (!db) {
+      throw new Error("Firestore db not initialized.");
+    }
+    const docRef = doc(db, "consultations", id);
+    await deleteDoc(docRef);
+  } catch (err) {
+    console.error(`Failed to delete consultation ${id}:`, err);
+    throw err;
+  }
+}
+

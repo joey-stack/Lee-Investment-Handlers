@@ -1,5 +1,7 @@
 import { Resend } from "resend";
 import { ContactFormData, ServiceResponse } from "@/types";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 const resendApiKey = process.env.RESEND_API_KEY;
 const contactEmailTo = process.env.CONTACT_EMAIL_TO;
@@ -16,6 +18,26 @@ export async function sendConsultationEmail(
   const { fullName, email, phone, investmentGoals, message } = data;
 
   try {
+    // 1. Store consultation request in Firestore if configured
+    try {
+      if (db) {
+        const consultationsCol = collection(db, "consultations");
+        await addDoc(consultationsCol, {
+          fullName,
+          email,
+          phone,
+          investmentGoals,
+          message: message || "",
+          createdAt: new Date().toISOString(),
+        });
+        console.log("Successfully stored consultation request in Firestore.");
+      } else {
+        console.warn("Firestore db not initialized, skipping storage.");
+      }
+    } catch (dbErr) {
+      console.error("Failed to save consultation request to Firestore:", dbErr);
+    }
+
     if (!resendInstance || !contactEmailTo) {
       console.warn(
         "Resend email service: RESEND_API_KEY or CONTACT_EMAIL_TO is missing in .env. Falling back to console log for debugging."

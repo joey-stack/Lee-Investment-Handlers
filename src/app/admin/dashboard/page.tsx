@@ -11,6 +11,7 @@ import {
   createReview, 
   updateReview 
 } from "@/services/reviewService";
+import { getConsultations, deleteConsultation } from "@/services/consultationService";
 import { InsightArticle } from "@/types";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
@@ -29,7 +30,8 @@ import {
   AlertCircle,
   MessageSquare,
   Check,
-  X
+  X,
+  Mail
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -37,7 +39,7 @@ export default function AdminDashboardPage() {
   const { logout } = useAuth();
   
   // Tab State
-  const [activeTab, setActiveTab] = useState<"articles" | "reviews">("articles");
+  const [activeTab, setActiveTab] = useState<"articles" | "reviews" | "consultations">("articles");
 
   // Blog Articles State
   const [posts, setPosts] = useState<InsightArticle[]>([]);
@@ -54,6 +56,13 @@ export default function AdminDashboardPage() {
   const [reviewsFilter, setReviewsFilter] = useState("All"); // "All" | "Approved" | "Pending"
   const [reviewDeleteConfirmId, setReviewDeleteConfirmId] = useState<string | null>(null);
   const [isReviewDeleting, setIsReviewDeleting] = useState(false);
+
+  // Consultations State
+  const [consultations, setConsultations] = useState<any[]>([]);
+  const [consultationsLoading, setConsultationsLoading] = useState(true);
+  const [consultationsSearchQuery, setConsultationsSearchQuery] = useState("");
+  const [consultationDeleteConfirmId, setConsultationDeleteConfirmId] = useState<string | null>(null);
+  const [isConsultationDeleting, setIsConsultationDeleting] = useState(false);
 
   // Admin Review Creator/Editor States
   const [isReviewCreateOpen, setIsReviewCreateOpen] = useState(false);
@@ -72,6 +81,7 @@ export default function AdminDashboardPage() {
   useEffect(() => {
     fetchBlogPosts();
     fetchReviews();
+    fetchConsultations();
   }, []);
 
   const showNotification = (type: "success" | "error", message: string) => {
@@ -117,6 +127,33 @@ export default function AdminDashboardPage() {
       console.error("Error fetching admin reviews:", error);
     } finally {
       setReviewsLoading(false);
+    }
+  };
+
+  const fetchConsultations = async () => {
+    setConsultationsLoading(true);
+    try {
+      const data = await getConsultations();
+      setConsultations(data);
+    } catch (error) {
+      console.error("Error fetching consultations:", error);
+    } finally {
+      setConsultationsLoading(false);
+    }
+  };
+
+  const handleConsultationDelete = async (id: string) => {
+    setIsConsultationDeleting(true);
+    try {
+      await deleteConsultation(id);
+      showNotification("success", "Consultation request deleted.");
+      setConsultations(consultations.filter((item) => item.id !== id));
+    } catch (error) {
+      console.error("Delete consultation failure:", error);
+      showNotification("error", "Failed to delete consultation request.");
+    } finally {
+      setIsConsultationDeleting(false);
+      setConsultationDeleteConfirmId(null);
     }
   };
 
@@ -252,6 +289,16 @@ export default function AdminDashboardPage() {
     return matchesSearch && matchesFilter;
   });
 
+  const filteredConsultations = consultations.filter((item) => {
+    const matchesSearch = 
+      (item.fullName || "").toLowerCase().includes(consultationsSearchQuery.toLowerCase()) ||
+      (item.email || "").toLowerCase().includes(consultationsSearchQuery.toLowerCase()) ||
+      (item.phone || "").toLowerCase().includes(consultationsSearchQuery.toLowerCase()) ||
+      (item.investmentGoals || "").toLowerCase().includes(consultationsSearchQuery.toLowerCase()) ||
+      (item.message || "").toLowerCase().includes(consultationsSearchQuery.toLowerCase());
+    return matchesSearch;
+  });
+
   const categories = ["All", "Insights", "News"];
   const reviewFilterOptions = ["All", "Approved", "Pending"];
 
@@ -282,6 +329,17 @@ export default function AdminDashboardPage() {
             )}
           >
             Client Reviews
+          </button>
+          <button
+            onClick={() => setActiveTab("consultations")}
+            className={cn(
+              "px-6 py-3.5 text-xs font-heading font-medium tracking-widest uppercase border-b-2 transition-all duration-200 cursor-pointer select-none -mb-[2px]",
+              activeTab === "consultations" 
+                ? "border-brand-alternate text-brand-alternate font-bold" 
+                : "border-transparent text-brand-secondary hover:text-brand-primary"
+            )}
+          >
+            Consultation Requests
           </button>
         </div>
 
@@ -717,6 +775,147 @@ export default function AdminDashboardPage() {
           </div>
         )}
 
+        {/* ========================================================================= */}
+        {/* TAB 3: CONSULTATIONS VIEW */}
+        {/* ========================================================================= */}
+        {activeTab === "consultations" && (
+          <div>
+            {/* Header Area */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-10">
+              <div>
+                <h1 className="font-heading text-3xl font-normal leading-tight tracking-tight text-brand-primary">
+                  Consultation & Contact Requests
+                </h1>
+                <p className="text-sm text-brand-secondary mt-1 font-light leading-relaxed">
+                  View and manage inbound investor consultation inquiries and lead submissions.
+                </p>
+              </div>
+            </div>
+
+            {/* Quick Stats Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+              <div className="bg-brand-bg-primary border border-brand-border rounded-[6px] p-6 flex items-center gap-5">
+                <div className="h-12 w-12 bg-brand-alternate/10 text-brand-alternate flex items-center justify-center border border-brand-alternate/20">
+                  <Mail size={20} />
+                </div>
+                <div>
+                  <span className="block text-xs font-medium text-brand-secondary uppercase tracking-wider">Total Inquiries</span>
+                  <span className="text-2xl font-semibold text-brand-primary">{consultations.length}</span>
+                </div>
+              </div>
+
+              <div className="bg-brand-bg-primary border border-brand-border rounded-[6px] p-6 flex items-center gap-5">
+                <div className="h-12 w-12 bg-green-500/10 text-green-600 flex items-center justify-center border border-green-500/20">
+                  <CheckCircle size={20} />
+                </div>
+                <div>
+                  <span className="block text-xs font-medium text-brand-secondary uppercase tracking-wider">Active Leads</span>
+                  <span className="text-2xl font-semibold text-brand-primary">
+                    {new Set(consultations.map(c => c.email)).size}
+                  </span>
+                </div>
+              </div>
+
+              <div className="bg-brand-bg-primary border border-brand-border rounded-[6px] p-6 flex items-center gap-5">
+                <div className="h-12 w-12 bg-blue-500/10 text-blue-600 flex items-center justify-center border border-blue-500/20">
+                  <BookOpen size={20} />
+                </div>
+                <div>
+                  <span className="block text-xs font-medium text-brand-secondary uppercase tracking-wider">Unique Goals</span>
+                  <span className="text-2xl font-semibold text-brand-primary">
+                    {new Set(consultations.map(c => c.investmentGoals).filter(Boolean)).size}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Filters Bar */}
+            <div className="bg-brand-bg-primary border border-brand-border rounded-[6px] p-4 mb-8 flex items-center justify-between gap-4">
+              <div className="relative flex-1 max-w-md">
+                <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-brand-secondary/60">
+                  <Search size={16} />
+                </span>
+                <input
+                  type="text"
+                  value={consultationsSearchQuery}
+                  onChange={(e) => setConsultationsSearchQuery(e.target.value)}
+                  placeholder="Search inquiries by name, email, phone, goals..."
+                  className="w-full h-11 pl-10 pr-4 bg-brand-bg-secondary text-brand-primary border border-brand-border rounded-[6px] text-sm focus:outline-none focus:border-brand-primary transition-colors duration-250 placeholder-brand-secondary/50 font-medium"
+                />
+              </div>
+            </div>
+
+            {/* Consultations Table */}
+            <div className="bg-brand-bg-primary border border-brand-border rounded-[6px] overflow-hidden shadow-[0px_4px_16px_rgba(0,0,0,0.02)]">
+              {consultationsLoading ? (
+                <div className="py-24 text-center flex flex-col items-center justify-center">
+                  <div className="h-8 w-8 border-2 border-brand-alternate/20 border-t-brand-alternate rounded-full animate-spin mb-4" />
+                  <span className="text-xs text-brand-secondary tracking-widest uppercase">Loading inquiries...</span>
+                </div>
+              ) : filteredConsultations.length === 0 ? (
+                <div className="py-24 text-center">
+                  <Mail className="mx-auto text-brand-secondary/40 mb-4" size={40} strokeWidth={1.5} />
+                  <h3 className="font-heading text-lg font-normal text-brand-primary mb-1">No inquiries found</h3>
+                  <p className="font-body text-sm text-brand-secondary font-light max-w-sm mx-auto leading-relaxed">
+                    {consultationsSearchQuery
+                      ? "Try adjusting your search keywords."
+                      : "No consultation requests have been submitted yet."}
+                  </p>
+                </div>
+              ) : (
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="border-b border-brand-border bg-brand-bg-secondary/40">
+                        <th className="py-4 px-6 text-xs font-semibold text-brand-secondary uppercase tracking-wider">Investor Details</th>
+                        <th className="py-4 px-6 text-xs font-semibold text-brand-secondary uppercase tracking-wider">Investment Goals</th>
+                        <th className="py-4 px-6 text-xs font-semibold text-brand-secondary uppercase tracking-wider">Message</th>
+                        <th className="py-4 px-6 text-xs font-semibold text-brand-secondary uppercase tracking-wider text-right">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-brand-border/60">
+                      {filteredConsultations.map((item) => (
+                        <tr key={item.id} className="hover:bg-brand-bg-secondary/20 transition-colors duration-150">
+                          <td className="py-4 px-6 whitespace-nowrap">
+                            <span className="block font-body font-semibold text-brand-primary text-sm">
+                              {item.fullName}
+                            </span>
+                            <span className="block text-xs text-brand-secondary font-light mt-0.5">
+                              <a href={`mailto:${item.email}`} className="hover:underline">{item.email}</a> | {item.phone}
+                            </span>
+                            <span className="block text-[10px] text-brand-secondary/70 font-light mt-0.5">
+                              Submitted: {item.createdAt ? new Date(item.createdAt).toLocaleString() : "N/A"}
+                            </span>
+                          </td>
+                          <td className="py-4 px-6 whitespace-nowrap">
+                            <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border bg-brand-alternate/10 text-brand-alternate border-brand-alternate/20">
+                              {item.investmentGoals}
+                            </span>
+                          </td>
+                          <td className="py-4 px-6">
+                            <p className="font-body text-xs md:text-sm text-brand-secondary max-w-md leading-relaxed whitespace-pre-wrap">
+                              {item.message || "No message provided."}
+                            </p>
+                          </td>
+                          <td className="py-4 px-6 whitespace-nowrap text-right">
+                            <button
+                              onClick={() => setConsultationDeleteConfirmId(item.id)}
+                              className="p-1.5 text-brand-secondary hover:text-red-400 hover:bg-red-950/30 rounded cursor-pointer transition-all"
+                              title="Delete Inquiry"
+                            >
+                              <Trash2 size={15} />
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
       </div>
 
       {/* ========================================================================= */}
@@ -991,6 +1190,44 @@ export default function AdminDashboardPage() {
                 {reviewFormIsSubmitting ? "Updating..." : "Save Review Changes"}
               </Button>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================================= */}
+      {/* DIALOG 5: CONSULTATION DELETE MODAL */}
+      {/* ========================================================================= */}
+      {consultationDeleteConfirmId && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div 
+            onClick={() => setConsultationDeleteConfirmId(null)}
+            className="absolute inset-0 bg-black/60 backdrop-blur-xs cursor-pointer" 
+          />
+          <div className="relative bg-[#141414] border border-white/10 w-full max-w-sm rounded-[6px] shadow-[0px_24px_64px_rgba(0,0,0,0.5)] p-6 md:p-8 z-10 text-brand-primary select-none font-body">
+            <h3 className="font-heading text-xl font-normal leading-tight text-brand-primary mb-3">
+              Confirm Inquiry Deletion
+            </h3>
+            <p className="text-sm text-brand-secondary leading-relaxed font-light mb-6">
+              Are you sure you want to delete this consultation request? This action is permanent.
+            </p>
+            <div className="flex justify-end gap-3">
+              <Button
+                variant="secondary"
+                onClick={() => setConsultationDeleteConfirmId(null)}
+                className="px-5 py-2 text-xs h-auto"
+                disabled={isConsultationDeleting}
+              >
+                Cancel
+              </Button>
+              <Button
+                variant="primary"
+                onClick={() => handleConsultationDelete(consultationDeleteConfirmId)}
+                className="px-5 py-2 text-xs bg-red-600 text-white hover:bg-red-700 shadow-none border-none font-semibold"
+                disabled={isConsultationDeleting}
+              >
+                {isConsultationDeleting ? "Deleting..." : "Permanently Delete"}
+              </Button>
+            </div>
           </div>
         </div>
       )}
