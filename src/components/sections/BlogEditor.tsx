@@ -5,7 +5,7 @@ import { InsightArticle } from "@/types";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { createPost, updatePost } from "@/services/blogService";
+import { createPost, updatePost, getAuthors, addAuthor } from "@/services/blogService";
 import { 
   ArrowLeft, 
   Bold, 
@@ -40,12 +40,56 @@ export const BlogEditor: React.FC<BlogEditorProps> = ({ initialPost }) => {
   const [image, setImage] = useState(initialPost?.image || "");
   const [featured, setFeatured] = useState(!!initialPost?.featured);
   const [author, setAuthor] = useState(initialPost?.author || "Osazuwa Omoregie");
+  const [authorsList, setAuthorsList] = useState<string[]>([]);
+  const [isAddingAuthor, setIsAddingAuthor] = useState(false);
+  const [newAuthorName, setNewAuthorName] = useState("");
   const [tags, setTags] = useState<string[]>(initialPost?.tags || []);
   const [tagInput, setTagInput] = useState("");
   
   // UX State
   const [isSaving, setIsSaving] = useState(false);
   const [notification, setNotification] = useState<{ type: "success" | "error"; message: string } | null>(null);
+
+  // Load authors list on mount
+  useEffect(() => {
+    async function loadAuthors() {
+      try {
+        const list = await getAuthors();
+        setAuthorsList(list);
+        
+        // If initialPost has an author that is not in the default/loaded list, append it so it's selectable
+        if (initialPost?.author && !list.includes(initialPost.author)) {
+          setAuthorsList((prev) => [...prev, initialPost.author!].sort((a, b) => a.localeCompare(b)));
+        }
+      } catch (err) {
+        console.error("Failed to load authors:", err);
+      }
+    }
+    loadAuthors();
+  }, [initialPost?.author]);
+
+  // Handler to save new author
+  const handleSaveNewAuthor = async () => {
+    if (!newAuthorName.trim()) {
+      setNotification({ type: "error", message: "Author name cannot be empty." });
+      return;
+    }
+    try {
+      await addAuthor(newAuthorName.trim());
+      const updatedList = await getAuthors();
+      setAuthorsList(updatedList);
+      setAuthor(newAuthorName.trim());
+      setIsAddingAuthor(false);
+      setNewAuthorName("");
+      setNotification({ type: "success", message: `Author "${newAuthorName.trim()}" successfully created and assigned.` });
+      // Clear notification after 3 seconds
+      setTimeout(() => setNotification(null), 3000);
+    } catch (err: any) {
+      console.error("Failed to save author:", err);
+      setNotification({ type: "error", message: err.message || "Failed to create new author." });
+    }
+  };
+
 
   // Set initial content inside contentEditable div
   useEffect(() => {
@@ -383,18 +427,60 @@ export const BlogEditor: React.FC<BlogEditorProps> = ({ initialPost }) => {
 
             {/* Author selection */}
             <div className="space-y-1.5">
-              <label className="block text-xs font-semibold text-brand-secondary uppercase tracking-wider">
-                Assigned Author
-              </label>
-              <select
-                value={author}
-                onChange={(e) => setAuthor(e.target.value)}
-                className="w-full h-11 px-3 bg-brand-bg-secondary text-brand-primary border border-brand-border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-primary cursor-pointer"
-              >
-                {teamAuthors.map(a => (
-                  <option key={a} value={a}>{a}</option>
-                ))}
-              </select>
+              <div className="flex items-center justify-between">
+                <label className="block text-xs font-semibold text-brand-secondary uppercase tracking-wider">
+                  Assigned Author
+                </label>
+                {!isAddingAuthor && (
+                  <button
+                    type="button"
+                    onClick={() => setIsAddingAuthor(true)}
+                    className="text-xs text-brand-alternate hover:text-brand-primary transition-colors font-medium flex items-center gap-1 cursor-pointer"
+                  >
+                    <Plus size={12} /> Add New
+                  </button>
+                )}
+              </div>
+
+              {isAddingAuthor ? (
+                <div className="flex gap-2 items-center">
+                  <input
+                    type="text"
+                    value={newAuthorName}
+                    onChange={(e) => setNewAuthorName(e.target.value)}
+                    placeholder="Enter author name..."
+                    className="flex-1 h-9 px-2 bg-brand-bg-secondary text-brand-primary border border-brand-border rounded-[6px] text-xs focus:outline-none focus:border-brand-primary"
+                    required
+                  />
+                  <button
+                    type="button"
+                    onClick={handleSaveNewAuthor}
+                    className="px-2.5 py-1.5 bg-brand-alternate text-brand-primary rounded-[4px] text-xs font-medium hover:bg-brand-alternate/85 cursor-pointer transition-colors"
+                  >
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsAddingAuthor(false);
+                      setNewAuthorName("");
+                    }}
+                    className="px-2.5 py-1.5 bg-zinc-800 text-zinc-300 rounded-[4px] text-xs font-medium hover:bg-zinc-700 cursor-pointer transition-colors"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              ) : (
+                <select
+                  value={author}
+                  onChange={(e) => setAuthor(e.target.value)}
+                  className="w-full h-11 px-3 bg-brand-bg-secondary text-brand-primary border border-brand-border rounded-[6px] text-sm font-medium focus:outline-none focus:border-brand-primary cursor-pointer"
+                >
+                  {(authorsList.length > 0 ? authorsList : teamAuthors).map(a => (
+                    <option key={a} value={a}>{a}</option>
+                  ))}
+                </select>
+              )}
             </div>
 
             {/* Featured Switch */}

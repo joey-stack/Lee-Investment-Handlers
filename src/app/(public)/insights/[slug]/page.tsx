@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/Button";
 import { ShareButton } from "@/components/ui/ShareButton";
 import { NewsletterSignup } from "@/components/sections/NewsletterSignup";
 
+export const dynamic = "force-dynamic";
+
 interface PageProps {
   params: Promise<{ slug: string }> | { slug: string };
 }

@@ -172,3 +172,96 @@ export async function deletePost(id: string): Promise<void> {
   const docRef = doc(db, COLLECTION_NAME, id);
   await deleteDoc(docRef);
 }
+
+const AUTHORS_COLLECTION = "authors";
+
+const DEFAULT_AUTHORS = [
+  "Osazuwa Omoregie",
+  "Judith Okafor",
+  "Excel Joel",
+  "Sarah Mitchell",
+  "Michael Chen",
+  "David Lee",
+  "Uyi Loveday E.",
+  "Barr. Adaora Nkem Okafor",
+  "Chinedu Alexander Eze",
+  "Alessandro Ricci"
+];
+
+// Seed Firestore with default authors if the collection is empty
+export async function seedAuthorsIfEmpty(): Promise<void> {
+  if (!isFirebaseConfigured()) return;
+
+  try {
+    const colRef = collection(db, AUTHORS_COLLECTION);
+    const snapshot = await getDocsFromServer(colRef);
+
+    if (snapshot.empty) {
+      console.log("Firestore authors collection is empty. Seeding default authors...");
+      for (const name of DEFAULT_AUTHORS) {
+        const docId = name.toLowerCase().replace(/[^a-z0-9]/g, "-");
+        await setDoc(doc(db, AUTHORS_COLLECTION, docId), {
+          name,
+          createdAt: new Date().toISOString()
+        });
+      }
+      console.log("Authors successfully seeded to Firestore.");
+    }
+  } catch (error) {
+    console.error("Error seeding authors:", error);
+  }
+}
+
+// Fetch all authors from Firestore, with fallback to default list
+export async function getAuthors(): Promise<string[]> {
+  if (!isFirebaseConfigured()) {
+    console.warn("Firebase not configured. Falling back to default authors list.");
+    return DEFAULT_AUTHORS;
+  }
+
+  try {
+    await seedAuthorsIfEmpty();
+
+    const colRef = collection(db, AUTHORS_COLLECTION);
+    const snapshot = await getDocsFromServer(colRef);
+
+    if (snapshot.empty) {
+      return DEFAULT_AUTHORS;
+    }
+
+    const list: string[] = [];
+    snapshot.forEach((doc) => {
+      const data = doc.data();
+      if (data.name) {
+        list.push(data.name);
+      }
+    });
+
+    // Sort alphabetically
+    return list.sort((a, b) => a.localeCompare(b));
+  } catch (error) {
+    console.error("Failed to fetch authors from Firestore. Falling back to default list:", error);
+    return DEFAULT_AUTHORS;
+  }
+}
+
+// Add a new author to Firestore
+export async function addAuthor(name: string): Promise<void> {
+  if (!isFirebaseConfigured()) {
+    throw new Error("Firebase is not configured. Cannot perform write operations.");
+  }
+
+  if (!name || !name.trim()) {
+    throw new Error("Author name cannot be empty.");
+  }
+
+  const trimmedName = name.trim();
+  const docId = trimmedName.toLowerCase().replace(/[^a-z0-9]/g, "-");
+  const docRef = doc(db, AUTHORS_COLLECTION, docId);
+
+  await setDoc(docRef, {
+    name: trimmedName,
+    createdAt: new Date().toISOString()
+  });
+}
+
