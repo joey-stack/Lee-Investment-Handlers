@@ -1,19 +1,15 @@
 # Session Memory
-> Updated: 2026-07-11 — Session 29
+> Updated: 2026-07-13 — Session 30
 
 ## Project Phase
 Phase 11 — Handover / Final Polish
 
 ## Last Completed Task
-Implemented dynamic author management in Firestore (seeding default authors and allowing custom inline author creation in the blog editor) and forced dynamic rendering on the blog detail pages so that author changes reflect instantly. Staged, committed, and pushed all modifications to the remote repository.
+Refactored the FAQ section content to remove the specific custodian names (Interactive Brokers and Charles Schwab) from the "Who keeps your capital safe?" question answer.
 
 ## What Was Built This Session
-- **Firestore Authors collection** — Created a collection `authors` to save custom authors dynamically.
-- **Seeding logic** — Integrated `seedAuthorsIfEmpty()` to populate initial authors (David Lee, Sarah Mitchell, Michael Chen, and the new team members Uyi Loveday E., Adaora Nkem Okafor, etc.).
-- **Dynamic Blog Editor dropdown** — Modified `BlogEditor.tsx` to pull authors dynamically from Firestore on mount.
-- **Inline Custom Author creator** — Implemented a clean, premium inline text input workflow within the blog details panel to add new authors instantly.
-- **SSR Page bypass** — Configured `export const dynamic = "force-dynamic";` in the public insights detail page `/insights/[slug]` to prevent SSG caching of dynamic data and serve instant updates.
-- **Git Push Verification** — Committed all changes, verified standard Next.js build compilation with TypeScript compiler checking, and pushed code to GitHub.
+- **FAQ copy refactoring** — Updated `src/lib/content/faqs.ts` to remove the references to Interactive Brokers and Charles Schwab under the capital custody question.
+- **Verification** — Initiated a project build to ensure compilation standards are preserved.
 
 ## Architecture Decisions Made
 - **Dual Content Division:** Separated direct operations ("Cooperations") from advisory areas ("Management Disciplines") to preserve institutional credibility while clearly representing the conglomerate's exact assets.

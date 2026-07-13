@@ -17,7 +17,7 @@ export const faqs: FAQ[] = [
     id: "faq-custody",
     question: "Who keeps your capital safe?",
     answer:
-      "Your family assets are held with leading independent, third-party custodians (such as Interactive Brokers and Charles Schwab) to guarantee the maximum security and clear reporting. LEE Investment Handlers never takes physical custody of client family wealth.",
+      "Your family assets are held with leading independent, third-party custodians to guarantee the maximum security and clear reporting. LEE Investment Handlers never takes physical custody of client family wealth.",
   },
   {
     id: "faq-review-frequency",
