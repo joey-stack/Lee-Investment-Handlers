@@ -29,6 +29,6 @@ export const faqs: FAQ[] = [
     id: "faq-risk-management",
     question: "How do we protect your family wealth?",
     answer:
-      "Risk management is the base of our pillars. We reduce risk through broad investment diversification, deep macroeconomic and security research, strict stress-testing under market cycles, and robust downside protection protocols.",
+      "Risk management is the base of our pillars. We reduce risk through broad investment diversification.",
   },
 ];
