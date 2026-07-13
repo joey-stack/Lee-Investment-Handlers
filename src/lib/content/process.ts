@@ -11,7 +11,7 @@ export const processSteps: ProcessStep[] = [
     step: "02",
     title: "Strategic Proposal",
     description:
-      "Our experts design a personalized asset allocation and portfolio plan matched to your specific growth goals and cash flow needs.",
+      "Our experts design a personalized investment allocation and portfolio plan matched to your specific growth goals and cash flow needs.",
   },
   {
     step: "03",

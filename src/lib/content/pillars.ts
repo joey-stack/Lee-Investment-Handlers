@@ -10,7 +10,7 @@ export const pillars: Pillar[] = [
   {
     id: "diversification",
     title: "Diversification",
-    body: "We distribute risk across asset classes, industries, and countries — so your portfolio does not depend on one single outcome. A well-diversified portfolio is not about owning many assets. It is about the right mix.",
+    body: "We distribute risk across investment classes, industries, and countries — so your portfolio does not depend on one single outcome. A well-diversified portfolio is not about owning many investments. It is about the right mix.",
     icon: "pie-chart",
   },
   {
@@ -22,7 +22,7 @@ export const pillars: Pillar[] = [
   {
     id: "performance",
     title: "Performance",
-    body: "We judge our success by your profits. We set performance goals, measure them daily, and report progress clearly. Our clients receive regular proof of how their assets grow — and why. We do not use averages. We own our results.",
+    body: "We judge our success by your profits. We set performance goals, measure them daily, and report progress clearly. Our clients receive regular proof of how their investments grow — and why. We do not use averages. We own our results.",
     icon: "bar-chart-2",
   },
 ];

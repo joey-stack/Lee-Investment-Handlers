@@ -14,7 +14,7 @@ export const investmentGoalOptions = [
   "Wealth Preservation",
   "Long-Term Growth",
   "Retirement Planning",
-  "Institutional Asset Management",
+  "Institutional Investment Management",
   "Alternative Investments",
   "Risk Management",
   "Not sure yet — I'd like guidance",

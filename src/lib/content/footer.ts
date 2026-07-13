@@ -64,6 +64,6 @@ export const footerContent: FooterContent = {
     buttonText: "Subscribe",
     successMessage: "Thank you for subscribing. We have added you to our strategic mailing list.",
   },
-  complianceDisclaimer: "LEE Investment Handlers operates as a professional asset management and advisory firm. All investments carry risks, including the potential loss of principal capital. Past results do not guarantee future growth. Structured investment products may not be suitable for all investors. Regulated under applicable investment authorities in respective jurisdictions.",
+  complianceDisclaimer: "LEE Investment Handlers operates as a professional investment management and advisory firm. All investments carry risks, including the potential loss of principal capital. Past results do not guarantee future growth. Structured investment products may not be suitable for all investors. Regulated under applicable investment authorities in respective jurisdictions.",
   copyrightTemplate: "© {year} LEE Investment Handlers. All rights reserved.",
 };

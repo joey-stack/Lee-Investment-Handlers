@@ -5,10 +5,12 @@
 Phase 11 — Handover / Final Polish
 
 ## Last Completed Task
-Refactored the FAQ section content to remove the specific custodian names (Interactive Brokers and Charles Schwab) from the "Who keeps your capital safe?" question answer.
+Refactored the FAQ section copy to align with operational reality (removing formal biannual review meetings and scheduled updates, replacing diaspora references), replaced "asset" copy with "investment" site-wide, and updated "partner with us" to "invest with us".
 
 ## What Was Built This Session
-- **FAQ copy refactoring** — Updated `src/lib/content/faqs.ts` to remove the references to Interactive Brokers and Charles Schwab under the capital custody question.
+- **FAQ copy refactoring** — Updated `src/lib/content/faqs.ts` to remove custodian references, and rewritten the reporting frequency answer to reflect flexible updates (no scheduled meetings, support for clients residing in different countries globally, automatic maturity payouts) with exact character count matching (238 characters).
+- **Site-wide Terminology Alignment** — Replaced user-facing occurrences of "asset" and "assets" with "investment" and "investments" in all content files, schemas, layouts, and components.
+- **Call to Action Optimization** — Updated `WhyChooseUs.tsx` and `FooterCTASection.tsx` to replace "partner with us" with "invest with us".
 - **Verification** — Initiated a project build to ensure compilation standards are preserved.
 
 ## Architecture Decisions Made

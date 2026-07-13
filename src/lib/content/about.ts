@@ -121,7 +121,7 @@ export const missionVisionContent: MissionVisionContent = {
   headline: "We Invest On Facts, Not Opinions",
   mission: {
     title: "Our Mission",
-    description: "To provide factual wealth management services that preserve assets and double capital, helping you build a lasting legacy for your children.",
+    description: "To provide factual wealth management services that preserve investments and double capital, helping you build a lasting legacy for your children.",
   },
   vision: {
     title: "Our Vision",
@@ -137,7 +137,7 @@ export const aboutWhyChooseUsContent: AboutWhyChooseUsContent = {
     {
       number: "01",
       title: "Strategic Portfolio Construction",
-      description: "We construct personalized investment portfolios across global asset classes to match your family objectives and grow your wealth safely.",
+      description: "We construct personalized investment portfolios across global investment classes to match your family objectives and grow your wealth safely.",
     },
     {
       number: "02",

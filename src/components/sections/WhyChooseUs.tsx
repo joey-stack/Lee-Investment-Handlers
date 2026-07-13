@@ -30,7 +30,7 @@ const items: WhyChooseItem[] = [
     icon: <Lock size={24} />,
     title: "Security & Compliance",
     description:
-      "Your assets are held with institutional-grade custodians. We operate under strict regulatory oversight and robust compliance frameworks.",
+      "Your investments are held with institutional-grade custodians. We operate under strict regulatory oversight and robust compliance frameworks.",
   },
 ];
 
@@ -56,7 +56,7 @@ export const WhyChooseUs: React.FC = () => {
 
           <div className="max-w-[450px] animate-fade-up-delay-2">
             <p className="text-sm md:text-base text-brand-secondary leading-relaxed">
-              What separates LEE Investment Handlers from the rest isn't just what we do — it's how we do it. Here is what you can expect when you partner with us.
+              What separates LEE Investment Handlers from the rest isn't just what we do — it's how we do it. Here is what you can expect when you invest with us.
             </p>
           </div>
         </div>

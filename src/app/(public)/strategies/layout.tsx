@@ -3,7 +3,7 @@ import React from "react";
 
 export const metadata: Metadata = {
   title: "Investment Strategies | LEE Investment Handlers",
-  description: "Explore our disciplined asset allocations, four core investment pillars, risk management frameworks, and historical performance tracking.",
+  description: "Explore our disciplined investment allocations, four core investment pillars, risk management frameworks, and historical performance tracking.",
 };
 
 export default function StrategiesLayout({

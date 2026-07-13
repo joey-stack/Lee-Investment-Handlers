@@ -9,7 +9,7 @@ export const cooperations: Service[] = [
     includes: [
       "Prime commercial office developments",
       "Residential joint-venture property projects",
-      "Asset valuation and portfolio optimization",
+      "Investment valuation and portfolio optimization",
       "High-yield leasehold structures",
       "Long-term capital appreciation strategies",
     ],
@@ -41,7 +41,7 @@ export const cooperations: Service[] = [
     id: "oil-gas-investments",
     title: "Oil & Gas Strategic Investments",
     description:
-      "Targeted investment strategies in upstream production assets, midstream distribution systems, and refinery logistics.",
+      "Targeted investment strategies in upstream production investments, midstream distribution systems, and refinery logistics.",
     includes: [
       "Upstream oil block development partnerships",
       "Midstream transport and storage logistics",

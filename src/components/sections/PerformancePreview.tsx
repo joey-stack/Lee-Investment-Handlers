@@ -8,7 +8,7 @@ export const PerformancePreview: React.FC = () => {
     {
       value: stats[0]?.value || "20+",
       label: stats[0]?.label || "Years of Experience",
-      desc: "Delivering disciplined asset management and capital growth.",
+      desc: "Delivering disciplined investment management and capital growth.",
     },
     {
       value: stats[1]?.value || "2",
@@ -23,7 +23,7 @@ export const PerformancePreview: React.FC = () => {
     {
       value: stats[2]?.value || "4",
       label: stats[2]?.label || "Structured Strategies",
-      desc: "Built across diversified, research-backed investment assets.",
+      desc: "Built across diversified, research-backed investments.",
     },
   ];
 

@@ -23,9 +23,9 @@ export const services: Service[] = [
     id: "portfolio-management",
     title: "Portfolio Management",
     description:
-      "Research-driven portfolios managed by experts to deliver consistent, long-term growth for assets.",
+      "Research-driven portfolios managed by experts to deliver consistent, long-term growth for investments.",
     includes: [
-      "Custom portfolio construction across asset classes",
+      "Custom portfolio construction across investment classes",
       "Active monitoring and rebalancing",
       "Risk-adjusted return optimization",
       "Regular performance reporting",
@@ -44,7 +44,7 @@ export const services: Service[] = [
       "Practical plans that give you the steady cash flow to retire on your terms forever.",
     includes: [
       "Retirement income modeling and projections",
-      "Asset allocation strategies for pre- and post-retirement",
+      "Investment allocation strategies for pre- and post-retirement",
       "Withdrawal planning and sequencing",
       "Social security and pension optimization guidance",
       "Estate and legacy planning considerations",
@@ -59,10 +59,10 @@ export const services: Service[] = [
     id: "institutional-investments",
     title: "Institutional Investments",
     description:
-      "Disciplined asset management built for foundations, trusts, and pension funds.",
+      "Disciplined investment management built for foundations, trusts, and pension funds.",
     includes: [
       "Investment policy statement development",
-      "Asset allocation and manager selection",
+      "Investment allocation and manager selection",
       "Liability-driven investing strategies",
       "Governance and compliance reporting",
       "Long-term performance benchmarking",
@@ -82,12 +82,12 @@ export const services: Service[] = [
       "Private equity and private credit opportunities",
       "Real estate investment strategies",
       "Hedge fund access and evaluation",
-      "Portfolio diversification through non-correlated assets",
+      "Portfolio diversification through non-correlated investments",
       "Risk assessment and due diligence on alternative holdings",
     ],
     icon: "layers",
     metrics: [
-      { value: "Private", label: "market asset access" },
+      { value: "Private", label: "market investment access" },
       { value: "Fully", label: "diversified portfolios" },
     ],
   },

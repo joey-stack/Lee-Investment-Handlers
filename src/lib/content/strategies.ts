@@ -39,19 +39,19 @@ export interface StrategiesCTA {
 
 export const strategiesPageHero: StrategiesPageHero = {
   headline: "How We Manage Your Capital",
-  subtext: "We build and run portfolios that achieve consistent, long-term growth. Our process combines deep research, asset diversification, and strict risk controls to protect your capital.",
+  subtext: "We build and run portfolios that achieve consistent, long-term growth. Our process combines deep research, investment diversification, and strict risk controls to protect your capital.",
 };
 
 export const strategiesIntro: StrategiesIntro = {
   eyebrow: "Philosophy",
   headline: "We Invest On Facts — Not Gossip",
-  body: "Global financial markets are full of rumors, panic, and daily ups and downs. At LEE Investment Handlers, we ignore all this gossip. We build portfolios based on sound economic facts, broad asset diversification, and strict stress-testing. We never chase past performance — we construct portfolios that protect client capital and double your wealth over generations.",
+  body: "Global financial markets are full of rumors, panic, and daily ups and downs. At LEE Investment Handlers, we ignore all this gossip. We build portfolios based on sound economic facts, broad investment diversification, and strict stress-testing. We never chase past performance — we construct portfolios that protect client capital and double your wealth over generations.",
 };
 
 export const strategyBreakdownContent: StrategyBreakdownContent = {
-  eyebrow: "Asset Allocations",
-  headline: "Factual Asset Classes For Steady Growth",
-  description: "We invest capital across five strategic areas. This balanced asset allocation protects your family money against market crashes and high inflation.",
+  eyebrow: "Investment Allocations",
+  headline: "Factual Investment Classes For Steady Growth",
+  description: "We invest capital across five strategic areas. This balanced investment allocation protects your family money against market crashes and high inflation.",
   items: [
     {
       id: "equity",
@@ -66,8 +66,8 @@ export const strategyBreakdownContent: StrategyBreakdownContent = {
       iconName: "percent",
     },
     {
-      id: "alternative-assets",
-      title: "Alternative Assets",
+      id: "alternative-investments",
+      title: "Alternative Investments",
       description: "Private credit, hedge fund strategies, and commodities that show low correlation with volatile stock and bond markets.",
       iconName: "layers",
     },
@@ -93,8 +93,8 @@ export const riskFramework: RiskFramework = {
   items: [
     "Macroeconomic Stress-Testing: We simulate recessions, currency crashes, and high inflation to ensure portfolios always remain within safe capital boundaries.",
     "Concentration Limits: No single stock, credit issue, or niche sector is allowed to dominate your portfolio risk parameters.",
-    "Liquidity Allocations: Portfolios are built with liquid cash buffers to ensure emergency withdrawals can be executed without selling depressed assets.",
-    "Asset-Liability Matching: We match asset durations with your exact lifestyle, business, or trust cash flow needs."
+    "Liquidity Allocations: Portfolios are built with liquid cash buffers to ensure emergency withdrawals can be executed without selling depressed investments.",
+    "Investment-Liability Matching: We match investment durations with your exact lifestyle, business, or trust cash flow needs."
   ],
 };
 

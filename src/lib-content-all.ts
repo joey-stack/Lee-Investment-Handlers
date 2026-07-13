@@ -25,7 +25,7 @@ export const services: Service[] = [
     description:
       "Actively managed, research-driven portfolios designed to deliver strong risk-adjusted returns over time.",
     includes: [
-      "Custom portfolio construction across asset classes",
+      "Custom portfolio construction across investment classes",
       "Active monitoring and rebalancing",
       "Risk-adjusted return optimization",
       "Regular performance reporting",
@@ -40,7 +40,7 @@ export const services: Service[] = [
       "Strategies that give you the confidence to retire on your terms — and stay there.",
     includes: [
       "Retirement income modeling and projections",
-      "Asset allocation strategies for pre- and post-retirement",
+      "Investment allocation strategies for pre- and post-retirement",
       "Withdrawal planning and sequencing",
       "Social security and pension optimization guidance",
       "Estate and legacy planning considerations",
@@ -51,10 +51,10 @@ export const services: Service[] = [
     id: "institutional-investments",
     title: "Institutional Investments",
     description:
-      "Institutional-grade asset management for organizations, foundations, trusts, and pension funds.",
+      "Institutional-grade investment management for organizations, foundations, trusts, and pension funds.",
     includes: [
       "Investment policy statement development",
-      "Asset allocation and manager selection",
+      "Investment allocation and manager selection",
       "Liability-driven investing strategies",
       "Governance and compliance reporting",
       "Long-term performance benchmarking",
@@ -70,7 +70,7 @@ export const services: Service[] = [
       "Private equity and private credit opportunities",
       "Real estate investment strategies",
       "Hedge fund access and evaluation",
-      "Portfolio diversification through non-correlated assets",
+      "Portfolio diversification through non-correlated investments",
       "Risk assessment and due diligence on alternative holdings",
     ],
     icon: "layers",
@@ -108,7 +108,7 @@ export const pillars: Pillar[] = [
   {
     id: "diversification",
     title: "Diversification",
-    body: "We spread risk intelligently across asset classes, sectors, and geographies — so your portfolio is never dependent on one outcome. A well-diversified portfolio isn't just about owning many things. It's about owning the right mix.",
+    body: "We spread risk intelligently across investment classes, sectors, and geographies — so your portfolio is never dependent on one outcome. A well-diversified portfolio isn't just about owning many things. It's about owning the right mix.",
     icon: "pie-chart",
   },
   {
@@ -237,7 +237,7 @@ export const insights: InsightArticle[] = [
     id: "future-of-alternative-investments",
     title: "The Future of Alternative Investments",
     excerpt:
-      "Private markets and real assets are opening up. What that means for your portfolio and how we're positioning client investments in response.",
+      "Private markets and real investments are opening up. What that means for your portfolio and how we're positioning client investments in response.",
     category: "Alternative Investments",
     date: "2025-12-20",
     slug: "future-of-alternative-investments",
@@ -350,7 +350,7 @@ export const investmentGoalOptions = [
   "Wealth Preservation",
   "Long-Term Growth",
   "Retirement Planning",
-  "Institutional Asset Management",
+  "Institutional Investment Management",
   "Alternative Investments",
   "Risk Management",
   "Not sure yet — I'd like guidance",

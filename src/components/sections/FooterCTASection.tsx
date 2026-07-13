@@ -29,7 +29,7 @@ export const FooterCTASection: React.FC<FooterCTASectionProps> = ({ onOpenConsul
 
           {/* Subtext Paragraph */}
           <p className="font-body text-sm md:text-base text-white/70 max-w-lg mb-10 leading-relaxed font-light text-balance animate-fade-up-delay-2">
-            Partner with us to protect and grow your wealth across generations. Request a private session with our investment committee.
+            Invest with us to protect and grow your wealth across generations. Request a private session with our investment committee.
           </p>
 
           {/* Primary CTA Button */}

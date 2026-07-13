@@ -7,7 +7,7 @@ export const team: TeamMember[] = [
     title: "Founder & Chief Executive Officer",
     bioShort:
       "Uyi Loveday E. leads Lee Investment Handlers with a vision for sustainable wealth creation, strategic investments, and international business growth.",
-    bio: "Uyi Loveday E. leads Lee Investment Handlers with a vision for sustainable wealth creation, strategic investments, and international business growth. With nearly two decades of leadership and corporate oversight, he directs the firm's global strategy, driving investment solutions that protect client assets and foster long-term growth across our Lagos and Venice hubs.",
+    bio: "Uyi Loveday E. leads Lee Investment Handlers with a vision for sustainable wealth creation, strategic investments, and international business growth. With nearly two decades of leadership and corporate oversight, he directs the firm's global strategy, driving investment solutions that protect client investments and foster long-term growth across our Lagos and Venice hubs.",
     image: "/team/uyi-loveday.jpg",
     linkedin: "",
     experienceHighlight: "Founder & CEO",
@@ -29,7 +29,7 @@ export const team: TeamMember[] = [
     title: "Senior Financial Advisor",
     bioShort:
       "Chinedu provides investment planning, wealth management strategies, financial advisory services, and market insights.",
-    bio: "Chinedu Alexander Eze is a Senior Financial Advisor at our firm. He specializes in designing custom investment plans, strategic asset allocations, and wealth management solutions. Chinedu partners closely with private clients and family offices to deliver factual guidance and actionable market insights.",
+    bio: "Chinedu Alexander Eze is a Senior Financial Advisor at our firm. He specializes in designing custom investment plans, strategic investment allocations, and wealth management solutions. Chinedu partners closely with private clients and family offices to deliver factual guidance and actionable market insights.",
     image: "/team/chinedu-eze.jpg",
     linkedin: "",
     experienceHighlight: "Client Wealth Advisor",
