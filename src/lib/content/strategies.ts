@@ -54,15 +54,9 @@ export const strategyBreakdownContent: StrategyBreakdownContent = {
   description: "We invest capital across five strategic areas. This balanced investment allocation protects your family money against market crashes and high inflation.",
   items: [
     {
-      id: "equity",
-      title: "Global Equities",
-      description: "Direct ownership in high-quality, cash-generating businesses across emerging and developed global stock markets.",
-      iconName: "trending-up",
-    },
-    {
       id: "fixed-income",
       title: "Fixed Income & Yield",
-      description: "Sovereign government bonds, high-grade corporate debt, and yield instruments built to preserve capital and provide reliable, steady cash flows.",
+      description: "Your returns on investment are guaranteed. Built for stability, not guesswork. Designed to grow your money without sleepless nights.",
       iconName: "percent",
     },
     {

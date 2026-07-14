@@ -5,13 +5,12 @@
 Phase 11 — Handover / Final Polish
 
 ## Last Completed Task
-Fixed the manual review creation connection hang and implemented the homepage featured reviews queue of exactly 2, with the oldest featured review automatically unfeatured when a third one is added, and renamed subtitle text to 'Client Review'.
+Fixed the manual review creation connection hang and implemented the homepage featured reviews queue of exactly 2, increased stats cards description font size to text-sm on mobile, removed the global equity card from the investment allocation section, and refactored the fixed income card copy.
 
 ## What Was Built This Session
-- **Firestore Database Writes Timeout Wrapper** — Added `runWithTimeout` to prevent Firestore write operations from hanging the browser indefinitely.
-- **Homepage Featured Reviews Queue** — Implemented queue logic to ensure that only the 2 most recently featured reviews are shown on the homepage, while all approved reviews continue to appear on the public Reviews page.
-- **Admin Dashboard Visual Toggle** — Added an interactive Star column to toggle featured status directly from the table, with auto-linking checkboxes to coordinate the "Approved" and "Featured" states.
-- **Aesthetics & Subtitle Tweak** — Updated the Testimonials section header to use the term "Client Review" instead of "Client Perspectives".
+- **Stats Card Mobile Font Size Increase** — Updated `PerformancePreview.tsx` to increase description font size on stats cards to `text-sm` for improved mobile readability.
+- **Global Equity Card Removal** — Removed the global equity card from `strategies.ts` investment allocation section and adjusted the bento grid columns in `StrategyBreakdownSection.tsx` to 2 columns for clean, balanced visual alignment of the remaining 4 cards.
+- **Fixed Income Card Copy Refactor** — Updated the fixed income card description in `strategies.ts` with the new copy ("Your returns on investment are guaranteed. Built for stability, not guesswork. Designed to grow your money without sleepless nights.") while preserving the exact 19-word count.
 - **Verification** — Initiated a project build to ensure compilation standards are preserved.
 
 ## Architecture Decisions Made

@@ -111,7 +111,7 @@ export const PerformancePreview: React.FC = () => {
                     {stat.label}
                   </h4>
                 </div>
-                <p className="font-body text-[11px] md:text-xs text-brand-secondary leading-relaxed mt-4">
+                <p className="font-body text-sm text-brand-secondary leading-relaxed mt-4">
                   {stat.desc}
                 </p>
               </div>
