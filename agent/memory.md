@@ -5,12 +5,13 @@
 Phase 11 — Handover / Final Polish
 
 ## Last Completed Task
-Refactored the FAQ section copy to align with operational reality (flexible reporting terms, globally-residing client support, simplified risk management answers), replaced "asset" copy with "investment" site-wide, and updated "partner with us" to "invest with us".
+Fixed the manual review creation connection hang and implemented the homepage featured reviews queue of exactly 2, with the oldest featured review automatically unfeatured when a third one is added, and renamed subtitle text to 'Client Review'.
 
 ## What Was Built This Session
-- **FAQ copy refactoring** — Updated `src/lib/content/faqs.ts` to remove custodian references, rephrase the reporting frequency answer (238 characters), and simplify the risk management/wealth protection answer to focus directly on investment diversification.
-- **Site-wide Terminology Alignment** — Replaced user-facing occurrences of "asset" and "assets" with "investment" and "investments" in all content files, schemas, layouts, and components.
-- **Call to Action Optimization** — Updated `WhyChooseUs.tsx` and `FooterCTASection.tsx` to replace "partner with us" with "invest with us".
+- **Firestore Database Writes Timeout Wrapper** — Added `runWithTimeout` to prevent Firestore write operations from hanging the browser indefinitely.
+- **Homepage Featured Reviews Queue** — Implemented queue logic to ensure that only the 2 most recently featured reviews are shown on the homepage, while all approved reviews continue to appear on the public Reviews page.
+- **Admin Dashboard Visual Toggle** — Added an interactive Star column to toggle featured status directly from the table, with auto-linking checkboxes to coordinate the "Approved" and "Featured" states.
+- **Aesthetics & Subtitle Tweak** — Updated the Testimonials section header to use the term "Client Review" instead of "Client Perspectives".
 - **Verification** — Initiated a project build to ensure compilation standards are preserved.
 
 ## Architecture Decisions Made

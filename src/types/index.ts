@@ -38,6 +38,8 @@ export interface Testimonial {
   rating: number;
   metric?: string;
   metricLabel?: string;
+  featured?: boolean;
+  featuredAt?: string;
 }
 
 export interface StatItem {

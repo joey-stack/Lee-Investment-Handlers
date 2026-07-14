@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Star, ArrowRight } from "lucide-react";
 import { Testimonial } from "@/types";
-import { getApprovedReviews } from "@/services/reviewService";
+import { getFeaturedReviews } from "@/services/reviewService";
 
 interface TestimonialsSectionProps {
   onOpenReviewModal: () => void;
@@ -14,11 +14,10 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
   useEffect(() => {
     async function loadReviews() {
       try {
-        const approved = await getApprovedReviews();
-        // Limit to 6 items to preserve visual balance
-        setList(approved.slice(0, 6));
+        const featured = await getFeaturedReviews();
+        setList(featured);
       } catch (err) {
-        console.error("Failed to load approved reviews:", err);
+        console.error("Failed to load featured reviews:", err);
       } finally {
         setLoading(false);
       }
@@ -33,7 +32,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-brand-alternate mb-4 animate-fade-up">
-            Client Perspectives
+            Client Review
           </p>
           <h2 className="font-heading text-3xl md:text-[40px] font-normal leading-[1.2] tracking-tight text-brand-primary max-w-xl mx-auto animate-fade-up-delay-1">
             Trusted by Families & Institutions

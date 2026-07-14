@@ -9,7 +9,8 @@ import {
   disapproveReview, 
   deleteReview, 
   createReview, 
-  updateReview 
+  updateReview,
+  toggleFeatured
 } from "@/services/reviewService";
 import { getConsultations, deleteConsultation } from "@/services/consultationService";
 import { InsightArticle } from "@/types";
@@ -72,6 +73,7 @@ export default function AdminDashboardPage() {
   const [reviewFormRating, setReviewFormRating] = useState(5);
   const [reviewFormComment, setReviewFormComment] = useState("");
   const [reviewFormApproved, setReviewFormApproved] = useState(true);
+  const [reviewFormFeatured, setReviewFormFeatured] = useState(false);
   const [reviewFormIsSubmitting, setReviewFormIsSubmitting] = useState(false);
   const [reviewFormError, setReviewFormError] = useState<string | null>(null);
 
@@ -181,10 +183,25 @@ export default function AdminDashboardPage() {
         await approveReview(id);
         showNotification("success", "Review status approved. Visible on site.");
       }
-      setReviews(reviews.map((r) => r.id === id ? { ...r, approved: !currentApproved } : r));
+      fetchReviews();
     } catch (error) {
       console.error("Approval toggle failure:", error);
       showNotification("error", "Failed to update review status.");
+    }
+  };
+
+  const handleToggleFeatured = async (id: string, currentFeatured: boolean, currentApproved: boolean) => {
+    try {
+      await toggleFeatured(id, !currentFeatured);
+      if (!currentFeatured) {
+        showNotification("success", "Review successfully featured on homepage.");
+      } else {
+        showNotification("success", "Review removed from homepage featured list.");
+      }
+      fetchReviews();
+    } catch (error: any) {
+      console.error("Featured toggle failure:", error);
+      showNotification("error", error.message || "Failed to update featured status.");
     }
   };
 
@@ -193,6 +210,7 @@ export default function AdminDashboardPage() {
     setReviewFormRating(5);
     setReviewFormComment("");
     setReviewFormApproved(true);
+    setReviewFormFeatured(false);
     setReviewFormError(null);
     setIsReviewCreateOpen(true);
   };
@@ -212,14 +230,15 @@ export default function AdminDashboardPage() {
         name: reviewFormName.trim(),
         rating: reviewFormRating,
         comment: reviewFormComment.trim(),
-        approved: reviewFormApproved
+        approved: reviewFormApproved,
+        featured: reviewFormFeatured
       });
       showNotification("success", "Review successfully created.");
       setIsReviewCreateOpen(false);
       fetchReviews();
-    } catch (error) {
+    } catch (error: any) {
       console.error("Create review failure:", error);
-      setReviewFormError("Failed to create review. Please try again.");
+      setReviewFormError(error.message || "Failed to create review. Please try again.");
     } finally {
       setReviewFormIsSubmitting(false);
     }
@@ -231,6 +250,7 @@ export default function AdminDashboardPage() {
     setReviewFormRating(review.rating);
     setReviewFormComment(review.comment);
     setReviewFormApproved(review.approved);
+    setReviewFormFeatured(!!review.featured);
     setReviewFormError(null);
     setIsReviewEditOpen(true);
   };
@@ -251,15 +271,16 @@ export default function AdminDashboardPage() {
         name: reviewFormName.trim(),
         rating: reviewFormRating,
         comment: reviewFormComment.trim(),
-        approved: reviewFormApproved
+        approved: reviewFormApproved,
+        featured: reviewFormFeatured
       });
       showNotification("success", "Review successfully updated.");
       setIsReviewEditOpen(false);
       setEditingReviewId(null);
       fetchReviews();
-    } catch (error) {
+    } catch (error: any) {
       console.error("Update review failure:", error);
-      setReviewFormError("Failed to update review.");
+      setReviewFormError(error.message || "Failed to update review.");
     } finally {
       setReviewFormIsSubmitting(false);
     }
@@ -691,6 +712,7 @@ export default function AdminDashboardPage() {
                         <th className="py-4 px-6 text-xs font-semibold text-brand-secondary uppercase tracking-wider">Client Details</th>
                         <th className="py-4 px-6 text-xs font-semibold text-brand-secondary uppercase tracking-wider text-center">Rating</th>
                         <th className="py-4 px-6 text-xs font-semibold text-brand-secondary uppercase tracking-wider">Review Text</th>
+                        <th className="py-4 px-6 text-xs font-semibold text-brand-secondary uppercase tracking-wider text-center">Featured</th>
                         <th className="py-4 px-6 text-xs font-semibold text-brand-secondary uppercase tracking-wider text-center">Approval</th>
                         <th className="py-4 px-6 text-xs font-semibold text-brand-secondary uppercase tracking-wider text-right">Actions</th>
                       </tr>
@@ -729,6 +751,23 @@ export default function AdminDashboardPage() {
                             <p className="font-body text-xs md:text-sm text-brand-secondary max-w-sm line-clamp-2 leading-relaxed">
                               {review.comment}
                             </p>
+                          </td>
+
+                          {/* Homepage Featured Star Toggle */}
+                          <td className="py-4 px-6 whitespace-nowrap text-center">
+                            <button
+                              onClick={() => handleToggleFeatured(review.id, !!review.featured, review.approved)}
+                              className="p-1 text-brand-alternate hover:scale-110 transition-transform cursor-pointer select-none"
+                              title={review.featured ? "Remove from homepage" : "Feature on homepage (Max 2)"}
+                            >
+                              <Star
+                                size={18}
+                                className={cn(
+                                  "transition-all duration-150 mx-auto",
+                                  review.featured ? "fill-brand-alternate text-brand-alternate" : "text-brand-border"
+                                )}
+                              />
+                            </button>
                           </td>
 
                           {/* Status / Toggle button */}
@@ -1068,16 +1107,36 @@ export default function AdminDashboardPage() {
               </div>
 
               {/* Toggle approved */}
-              <div className="flex items-center gap-2 pt-2 pb-1">
+              <div className="flex items-center gap-2 pt-2">
                 <input
                   id="create-approved"
                   type="checkbox"
                   checked={reviewFormApproved}
-                  onChange={(e) => setReviewFormApproved(e.target.checked)}
+                  onChange={(e) => {
+                    setReviewFormApproved(e.target.checked);
+                    if (!e.target.checked) setReviewFormFeatured(false);
+                  }}
                   className="h-4 w-4 border-brand-border rounded text-brand-alternate focus:ring-brand-primary"
                 />
                 <label htmlFor="create-approved" className="text-xs font-semibold text-brand-primary uppercase cursor-pointer">
                   Approve for public feed immediately
+                </label>
+              </div>
+
+              {/* Toggle featured */}
+              <div className="flex items-center gap-2 pb-1">
+                <input
+                  id="create-featured"
+                  type="checkbox"
+                  checked={reviewFormFeatured}
+                  onChange={(e) => {
+                    setReviewFormFeatured(e.target.checked);
+                    if (e.target.checked) setReviewFormApproved(true);
+                  }}
+                  className="h-4 w-4 border-brand-border rounded text-brand-alternate focus:ring-brand-primary"
+                />
+                <label htmlFor="create-featured" className="text-xs font-semibold text-brand-primary uppercase cursor-pointer">
+                  Feature on Homepage testimonial feed (Max 2)
                 </label>
               </div>
 
@@ -1168,16 +1227,36 @@ export default function AdminDashboardPage() {
               </div>
 
               {/* Toggle approved */}
-              <div className="flex items-center gap-2 pt-2 pb-1">
+              <div className="flex items-center gap-2 pt-2">
                 <input
                   id="edit-approved"
                   type="checkbox"
                   checked={reviewFormApproved}
-                  onChange={(e) => setReviewFormApproved(e.target.checked)}
+                  onChange={(e) => {
+                    setReviewFormApproved(e.target.checked);
+                    if (!e.target.checked) setReviewFormFeatured(false);
+                  }}
                   className="h-4 w-4 border-brand-border rounded text-brand-alternate focus:ring-brand-primary"
                 />
                 <label htmlFor="edit-approved" className="text-xs font-semibold text-brand-primary uppercase cursor-pointer">
                   Approve for public feed immediately
+                </label>
+              </div>
+
+              {/* Toggle featured */}
+              <div className="flex items-center gap-2 pb-1">
+                <input
+                  id="edit-featured"
+                  type="checkbox"
+                  checked={reviewFormFeatured}
+                  onChange={(e) => {
+                    setReviewFormFeatured(e.target.checked);
+                    if (e.target.checked) setReviewFormApproved(true);
+                  }}
+                  className="h-4 w-4 border-brand-border rounded text-brand-alternate focus:ring-brand-primary"
+                />
+                <label htmlFor="edit-featured" className="text-xs font-semibold text-brand-primary uppercase cursor-pointer">
+                  Feature on Homepage testimonial feed (Max 2)
                 </label>
               </div>
 
