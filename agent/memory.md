@@ -5,12 +5,14 @@
 Phase 11 — Handover / Final Polish
 
 ## Last Completed Task
-Fixed the manual review creation connection hang and implemented the homepage featured reviews queue of exactly 2, increased stats cards description font size to text-sm on mobile, removed the global equity card from the investment allocation section, and replaced the dollar sign ($) with the Naira sign (₦) on the entire site.
+Fixed the manual review creation connection hang and implemented the homepage featured reviews queue of exactly 2, increased stats cards description font size to text-sm on mobile, removed the global equity and alternative investments cards from the investment allocation section, set the remaining 3 cards in a balanced 3-column layout, updated the real estate copy, and replaced the dollar sign ($) with the Naira sign (₦) on the entire site.
 
 ## What Was Built This Session
+- **Alternative Investments Card Removal** — Removed the alternative investments card from `strategies.ts` investment allocation section and adjusted the bento grid columns in `StrategyBreakdownSection.tsx` to 3 columns for clean, balanced visual alignment of the remaining 3 cards in a single row on desktop.
+- **Real Estate Copy Refactor** — Updated the real estate card description in `strategies.ts` with the new copy ("Direct ownership in premium properties, providing income and strong inflation").
 - **Currency Symbol Swap** — Replaced all currency-related dollar signs ($) with the Nigerian Naira sign (₦) in the site content (e.g. minimum investment FAQ).
 - **Stats Card Mobile Font Size Increase** — Updated `PerformancePreview.tsx` to increase description font size on stats cards to `text-sm` for improved mobile readability.
-- **Global Equity Card Removal** — Removed the global equity card from `strategies.ts` investment allocation section and adjusted the bento grid columns in `StrategyBreakdownSection.tsx` to 2 columns for clean, balanced visual alignment of the remaining 4 cards.
+- **Global Equity Card Removal** — Removed the global equity card from `strategies.ts` investment allocation section.
 - **Fixed Income Card Copy Refactor** — Updated the fixed income card description in `strategies.ts` with the new copy ("Your returns on investment are guaranteed. Built for stability, not guesswork. Designed to grow your money without sleepless nights.") while preserving the exact 19-word count.
 - **Verification** — Initiated a project build to ensure compilation standards are preserved.
 

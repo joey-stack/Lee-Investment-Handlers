@@ -60,15 +60,9 @@ export const strategyBreakdownContent: StrategyBreakdownContent = {
       iconName: "percent",
     },
     {
-      id: "alternative-investments",
-      title: "Alternative Investments",
-      description: "Private credit, hedge fund strategies, and commodities that show low correlation with volatile stock and bond markets.",
-      iconName: "layers",
-    },
-    {
       id: "real-estate",
       title: "Real Estate & Infrastructure",
-      description: "Direct ownership in premium commercial and residential properties, providing rental income and strong inflation protection.",
+      description: "Direct ownership in premium properties, providing income and strong inflation",
       iconName: "building-2",
     },
     {
