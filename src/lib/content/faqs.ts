@@ -5,7 +5,7 @@ export const faqs: FAQ[] = [
     id: "faq-min-investment",
     question: "How much capital do you require?",
     answer:
-      "We examine every individual account. Typically we work with individuals, families, and institutions owning at least $500,000 in investable wealth. This allows us to construct our properly diversified, actively managed portfolios for you.",
+      "We examine every individual account. Typically we work with individuals, families, and institutions owning at least ₦500,000 in investable wealth. This allows us to construct our properly diversified, actively managed portfolios for you.",
   },
   {
     id: "faq-fee-structure",
