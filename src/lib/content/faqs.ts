@@ -8,12 +8,6 @@ export const faqs: FAQ[] = [
       "We examine every individual account. Typically we work with individuals, families, and institutions owning at least ₦500,000 in investable wealth. This allows us to construct our properly diversified, actively managed portfolios for you.",
   },
   {
-    id: "faq-fee-structure",
-    question: "How are our fees calculated?",
-    answer:
-      "We charge on a transparent, fee-only fiduciary basis. Our fee is a very small percentage of investments under management (IUM), starting at 1.0% annually and decreasing for larger accounts. We never accept commissions or hidden third-party broker incentives.",
-  },
-  {
     id: "faq-custody",
     question: "Who keeps your capital safe?",
     answer:

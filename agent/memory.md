@@ -5,9 +5,10 @@
 Phase 11 — Handover / Final Polish
 
 ## Last Completed Task
-Fixed the manual review creation connection hang and implemented the homepage featured reviews queue of exactly 2, increased stats cards description font size to text-sm on mobile, removed the global equity and alternative investments cards from the investment allocation section, set the remaining 3 cards in a balanced 3-column layout, updated the real estate copy, and replaced the dollar sign ($) with the Naira sign (₦) on the entire site.
+Fixed the manual review creation connection hang and implemented the homepage featured reviews queue of exactly 2, increased stats cards description font size to text-sm on mobile, removed the global equity and alternative investments cards from the investment allocation section, set the remaining 3 cards in a balanced 3-column layout, updated the real estate copy, replaced the dollar sign ($) with the Naira sign (₦), and removed the fee calculation FAQ card.
 
 ## What Was Built This Session
+- **Fee Calculation FAQ Card Removal** — Removed the fee calculation FAQ card from `faqs.ts` as requested.
 - **Alternative Investments Card Removal** — Removed the alternative investments card from `strategies.ts` investment allocation section and adjusted the bento grid columns in `StrategyBreakdownSection.tsx` to 3 columns for clean, balanced visual alignment of the remaining 3 cards in a single row on desktop.
 - **Real Estate Copy Refactor** — Updated the real estate card description in `strategies.ts` with the new copy ("Direct ownership in premium properties, providing income and strong inflation").
 - **Currency Symbol Swap** — Replaced all currency-related dollar signs ($) with the Nigerian Naira sign (₦) in the site content (e.g. minimum investment FAQ).
