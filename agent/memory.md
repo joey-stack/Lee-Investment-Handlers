@@ -5,9 +5,10 @@
 Phase 11 — Handover / Final Polish
 
 ## Last Completed Task
-Fixed the manual review creation connection hang and implemented the homepage featured reviews queue of exactly 2, increased stats cards description font size to text-sm on mobile, removed the global equity and alternative investments cards from the investment allocation section, set the remaining 3 cards in a balanced 3-column layout, updated the real estate copy, replaced the dollar sign ($) with the Naira sign (₦), removed the fee calculation FAQ card, and converted the Hero locations bar to an infinite marquee ticker.
+Fixed the manual review creation connection hang and implemented the homepage featured reviews queue of exactly 2, increased stats cards description font size to text-sm on mobile, removed the global equity and alternative investments cards from the investment allocation section, set the remaining 3 cards in a balanced 3-column layout, updated the real estate copy, replaced the dollar sign ($) with the Naira sign (₦), removed the fee calculation FAQ card, converted the Hero locations bar to an infinite marquee ticker, and replaced the navbar/footer logo with the new transparent version.
 
 ## What Was Built This Session
+- **Logo Background Removal & Update** — Processed the new square logo to remove its solid white background, auto-cropped the empty transparent borders, and replaced `lee-logo.png` to automatically update it in the Navbar, Mobile Menu, and Footer.
 - **Hero Section Infinite Marquee Ticker** — Replaced the static location bar in the home page Hero section with an infinite scrolling marquee ticker using `framer-motion`, added `"Invest wisely because penny wise"` copy, and enabled the marquee to remain visible and active across all screen sizes (mobile and desktop).
 - **Fee Calculation FAQ Card Removal** — Removed the fee calculation FAQ card from `faqs.ts` as requested.
 - **Alternative Investments Card Removal** — Removed the alternative investments card from `strategies.ts` investment allocation section and adjusted the bento grid columns in `StrategyBreakdownSection.tsx` to 3 columns for clean, balanced visual alignment of the remaining 3 cards in a single row on desktop.
