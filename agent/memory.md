@@ -5,9 +5,10 @@
 Phase 11 — Handover / Final Polish
 
 ## Last Completed Task
-Fixed the manual review creation connection hang and implemented the homepage featured reviews queue of exactly 2, increased stats cards description font size to text-sm on mobile, removed the global equity and alternative investments cards from the investment allocation section, set the remaining 3 cards in a balanced 3-column layout, updated the real estate copy, replaced the dollar sign ($) with the Naira sign (₦), and removed the fee calculation FAQ card.
+Fixed the manual review creation connection hang and implemented the homepage featured reviews queue of exactly 2, increased stats cards description font size to text-sm on mobile, removed the global equity and alternative investments cards from the investment allocation section, set the remaining 3 cards in a balanced 3-column layout, updated the real estate copy, replaced the dollar sign ($) with the Naira sign (₦), removed the fee calculation FAQ card, and converted the Hero locations bar to an infinite marquee ticker.
 
 ## What Was Built This Session
+- **Hero Section Infinite Marquee Ticker** — Replaced the static location bar in the home page Hero section with an infinite scrolling marquee ticker using `framer-motion`, added `"Invest wisely because penny wise"` copy, and enabled the marquee to remain visible and active across all screen sizes (mobile and desktop).
 - **Fee Calculation FAQ Card Removal** — Removed the fee calculation FAQ card from `faqs.ts` as requested.
 - **Alternative Investments Card Removal** — Removed the alternative investments card from `strategies.ts` investment allocation section and adjusted the bento grid columns in `StrategyBreakdownSection.tsx` to 3 columns for clean, balanced visual alignment of the remaining 3 cards in a single row on desktop.
 - **Real Estate Copy Refactor** — Updated the real estate card description in `strategies.ts` with the new copy ("Direct ownership in premium properties, providing income and strong inflation").

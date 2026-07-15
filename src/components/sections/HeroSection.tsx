@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { heroContent } from "@/lib/content/hero";
 
@@ -11,6 +12,20 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const tickerItems = [
+    "Lagos, Nigeria",
+    "Venice, Italy",
+    "Capital Preservation",
+    "Invest wisely because penny wise"
+  ];
+
+  const repeatedItems = [
+    ...tickerItems,
+    ...tickerItems,
+    ...tickerItems,
+    ...tickerItems,
+  ];
 
   // Auto-play workaround for browsers that block autoplay
   useEffect(() => {
@@ -98,13 +113,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
         </div>
       </div>
 
-      {/* Bottom Trust/Locations bar — hidden on mobile */}
-      <div className="absolute bottom-8 sm:bottom-12 left-6 right-6 z-20 hidden sm:flex flex-row items-center justify-center gap-4 sm:gap-8 md:gap-12 text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/60 font-body font-medium animate-fade-up-delay-4">
-        <span className="hover:text-white transition-colors duration-300">Lagos, Nigeria</span>
-        <span className="w-[1px] h-3.5 bg-white/20" />
-        <span className="hover:text-white transition-colors duration-300">Venice, Italy</span>
-        <span className="w-[1px] h-3.5 bg-white/20" />
-        <span className="hover:text-white transition-colors duration-300">Capital Preservation</span>
+      {/* Bottom Trust/Locations bar (Infinite Marquee Ticker) */}
+      <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 z-20 w-full overflow-hidden text-[9px] md:text-xs uppercase tracking-[0.2em] text-white/60 font-body font-medium select-none animate-fade-up-delay-4">
+        <div className="flex w-full overflow-hidden py-3 border-t border-b border-white/5 bg-black/20 backdrop-blur-xs">
+          <motion.div
+            animate={{ x: ["0%", "-25%"] }}
+            transition={{
+              ease: "linear",
+              duration: 25,
+              repeat: Infinity,
+            }}
+            className="flex items-center gap-8 md:gap-12 whitespace-nowrap shrink-0"
+          >
+            {repeatedItems.map((item, index) => (
+              <React.Fragment key={index}>
+                <span className="hover:text-white transition-colors duration-300">{item}</span>
+                <span className="w-[1px] h-3.5 bg-white/20 shrink-0" />
+              </React.Fragment>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );
