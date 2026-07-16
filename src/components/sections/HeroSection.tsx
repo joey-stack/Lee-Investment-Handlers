@@ -114,7 +114,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenConsultation }) 
       </div>
 
       {/* Bottom Trust/Locations bar (Infinite Marquee Ticker) */}
-      <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 z-20 w-full overflow-hidden text-[9px] md:text-xs uppercase tracking-[0.2em] text-white/60 font-body font-medium select-none animate-fade-up-delay-4">
+      <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 z-20 w-full overflow-hidden text-[11px] md:text-[13px] uppercase tracking-[0.2em] text-white/80 font-body font-semibold select-none animate-fade-up-delay-4">
         <div className="flex w-full overflow-hidden py-3 border-t border-b border-white/5 bg-black/20 backdrop-blur-xs">
           <motion.div
             animate={{ x: ["0%", "-25%"] }}

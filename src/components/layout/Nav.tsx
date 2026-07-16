@@ -28,7 +28,7 @@ export const Nav: React.FC = () => {
               alt="LEE Investment Handlers Logo"
               width={200}
               height={56}
-              className="h-[56px] w-auto object-contain"
+              className="h-[56px] w-auto object-contain brightness-150"
               priority
             />
           </Link>
