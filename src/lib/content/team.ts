@@ -25,11 +25,11 @@ export const team: TeamMember[] = [
   },
   {
     id: "chinedu-eze",
-    name: "Chinedu Alexander Eze",
+    name: "Olufemi Alexander Adebayo",
     title: "Senior Financial Advisor",
     bioShort:
-      "Chinedu provides investment planning, wealth management strategies, financial advisory services, and market insights.",
-    bio: "Chinedu Alexander Eze is a Senior Financial Advisor at our firm. He specializes in designing custom investment plans, strategic investment allocations, and wealth management solutions. Chinedu partners closely with private clients and family offices to deliver factual guidance and actionable market insights.",
+      "Olufemi provides investment planning, wealth management strategies, financial advisory services, and market insights.",
+    bio: "Olufemi Alexander Adebayo is a Senior Financial Advisor at our firm. He specializes in designing custom investment plans, strategic investment allocations, and wealth management solutions. Olufemi partners closely with private clients and family offices to deliver factual guidance and actionable market insights.",
     image: "/team/chinedu-eze.jpg",
     linkedin: "",
     experienceHighlight: "Client Wealth Advisor",
@@ -37,10 +37,10 @@ export const team: TeamMember[] = [
   {
     id: "alessandro-ricci",
     name: "Alessandro Ricci",
-    title: "Managing Director, Italy Operations",
+    title: "Forex Advisor, Italy Operations",
     bioShort:
       "Alessandro leads European operations, international partnerships, business development, and cross-border investment opportunities.",
-    bio: "Alessandro Ricci is the Managing Director of Italy Operations at our firm. Based in Venice, he leads our European business development, strategic international partnerships, and cross-border investment opportunities, facilitating seamless capital flow between our global hubs.",
+    bio: "Alessandro Ricci is the Forex Advisor of Italy Operations at our firm. Based in Venice, he leads our European business development, strategic international partnerships, and cross-border investment opportunities, facilitating seamless capital flow between our global hubs.",
     image: "/team/alessandro-ricci.jpg",
     linkedin: "",
     experienceHighlight: "European Operations MD",

@@ -184,7 +184,7 @@ const DEFAULT_AUTHORS = [
   "David Lee",
   "Uyi Loveday E.",
   "Barr. Adaora Nkem Okafor",
-  "Chinedu Alexander Eze",
+  "Olufemi Alexander Adebayo",
   "Alessandro Ricci"
 ];
 

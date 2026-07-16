@@ -5,13 +5,15 @@
 Phase 11 — Handover / Final Polish
 
 ## Last Completed Task
-Removed the Real Estate card, updated Oil & Gas copy, and removed Secure Bonds and World Stocks from the hero marquee.
+Updated team member name to a Yoruba name (Olufemi Alexander Adebayo), updated Alessandro Ricci's title to Forex Advisor, and updated corresponding references in blogService.
 
 ## What Was Built This Session
 - `src/lib/content/cooperations.ts` — Updated the description copy for the `oil-gas-investments` (Oil & Gas Strategic Investments) cooperation card to "Targeted investment strategy in the midstream distribution systems and logistic" per client request.
 - `src/lib/content/strategies.ts` — Removed the `real-estate` (Real Estate & Infrastructure) card item from the `strategyBreakdownContent` and updated the section description text from "five strategic areas" to "two strategic areas".
 - `src/components/sections/StrategyBreakdownSection.tsx` — Adjusted grid classes from `lg:grid-cols-3` to a centered 2-column card layout (`md:grid-cols-2 max-w-4xl mx-auto`) for clean visual balance of the remaining 2 cards.
 - `src/lib/content/marquee.ts` — Removed `global-equities` (World Stocks) and `fixed-income` (Secure Bonds) marquee items from the hero infinite marquee ticker as requested by the client.
+- `src/lib/content/team.ts` — Changed `Alessandro Ricci`'s title to "Forex Advisor, Italy Operations". Replaced `Chinedu Alexander Eze` with a Yoruba name `Olufemi Alexander Adebayo` and updated references across his bio and bioShort text.
+- `src/services/blogService.ts` — Updated the default authors list array to replace "Chinedu Alexander Eze" with "Olufemi Alexander Adebayo" to ensure data integrity across insights.
 
 ## Architecture Decisions Made
 - **Dual Content Division:** Separated direct operations ("Cooperations") from advisory areas ("Management Disciplines") to preserve institutional credibility while clearly representing the conglomerate's exact assets.
