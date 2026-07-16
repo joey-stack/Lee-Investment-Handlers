@@ -3,8 +3,13 @@ import { ContactFormData, ServiceResponse } from "@/types";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
-const resendApiKey = process.env.RESEND_API_KEY;
+const resendApiKey = process.env.RESEND_API_KEY && 
+                     process.env.RESEND_API_KEY !== "re_placeholder_key" && 
+                     !process.env.RESEND_API_KEY.includes("placeholder") 
+                     ? process.env.RESEND_API_KEY 
+                     : undefined;
 const contactEmailTo = process.env.CONTACT_EMAIL_TO;
+const contactEmailFrom = process.env.CONTACT_EMAIL_FROM || "LEE Investment Handlers <onboarding@resend.dev>";
 
 // Lazily initialize Resend to prevent crashes during build if API key is not yet set
 let resendInstance: Resend | null = null;
@@ -92,7 +97,7 @@ export async function sendConsultationEmail(
     `;
 
     const { error } = await resendInstance.emails.send({
-      from: "LEE Investment Handlers <onboarding@resend.dev>", // Fallback sandbox domain or custom verified domain
+      from: contactEmailFrom,
       to: contactEmailTo,
       subject: `New Consultation Request: ${fullName}`,
       html: emailHtml,

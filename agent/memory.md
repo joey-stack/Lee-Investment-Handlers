@@ -5,7 +5,7 @@
 Phase 11 — Handover / Final Polish
 
 ## Last Completed Task
-Removed max-width restriction on the Investment Allocations cards grid to allow the cards to span the full width of the container and align with the section header.
+Improved Resend email integration to fallback safely when placeholder keys are present and support configurable sender addresses (CONTACT_EMAIL_FROM).
 
 ## What Was Built This Session
 - `src/lib/content/cooperations.ts` — Updated the description copy for the `oil-gas-investments` (Oil & Gas Strategic Investments) cooperation card to "Targeted investment strategy in the midstream distribution systems and logistic" and the `real-estate-holdings` description to end with "across prime urban and developing growth hubs" per client request.
@@ -16,6 +16,7 @@ Removed max-width restriction on the Investment Allocations cards grid to allow 
 - `src/services/blogService.ts` — Updated the default authors list array to replace "Chinedu Alexander Eze" with "Olufemi Alexander Adebayo" to ensure data integrity across insights.
 - `src/components/layout/Nav.tsx`, `Footer.tsx`, `MobileMenu.tsx` — Brightened the transparent logo image by adding the `brightness-200` Tailwind filter to enhance contrast and legibility against dark backgrounds.
 - `src/components/sections/HeroSection.tsx` — Increased the size and weight of the infinite marquee ticker text (`text-[11px] md:text-[13px] font-semibold text-white/80`) and aligned it to the absolute bottom of the hero section (`bottom-0`) with no margins.
+- `src/services/contactService.ts` — Enhanced Resend integration by handling placeholder/development keys safely (treating them as unconfigured and logging requests locally to avoid API errors) and introducing support for a configurable `CONTACT_EMAIL_FROM` variable.
 
 ## Architecture Decisions Made
 - **Dual Content Division:** Separated direct operations ("Cooperations") from advisory areas ("Management Disciplines") to preserve institutional credibility while clearly representing the conglomerate's exact assets.
