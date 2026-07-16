@@ -5,10 +5,10 @@
 Phase 11 — Handover / Final Polish
 
 ## Last Completed Task
-Brightened navbar, mobile menu, and footer logos further (changed to brightness-200) and aligned the hero infinite marquee ticker to the absolute bottom of the hero section (bottom-0).
+Updated the Real Estate Holdings description in the cooperations content file to include "developing growth hubs".
 
 ## What Was Built This Session
-- `src/lib/content/cooperations.ts` — Updated the description copy for the `oil-gas-investments` (Oil & Gas Strategic Investments) cooperation card to "Targeted investment strategy in the midstream distribution systems and logistic" per client request.
+- `src/lib/content/cooperations.ts` — Updated the description copy for the `oil-gas-investments` (Oil & Gas Strategic Investments) cooperation card to "Targeted investment strategy in the midstream distribution systems and logistic" and the `real-estate-holdings` description to end with "across prime urban and developing growth hubs" per client request.
 - `src/lib/content/strategies.ts` — Removed the `real-estate` (Real Estate & Infrastructure) card item from the `strategyBreakdownContent` and updated the section description text from "five strategic areas" to "two strategic areas".
 - `src/components/sections/StrategyBreakdownSection.tsx` — Adjusted grid classes from `lg:grid-cols-3` to a centered 2-column card layout (`md:grid-cols-2 max-w-4xl mx-auto`) for clean visual balance of the remaining 2 cards.
 - `src/lib/content/marquee.ts` — Removed `global-equities` (World Stocks) and `fixed-income` (Secure Bonds) marquee items from the hero infinite marquee ticker as requested by the client.

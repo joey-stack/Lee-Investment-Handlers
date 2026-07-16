@@ -5,7 +5,7 @@ export const cooperations: Service[] = [
     id: "real-estate-holdings",
     title: "Real Estate Holdings",
     description:
-      "Strategic acquisition, management, and development of high-yield commercial and residential properties across prime urban growth hubs.",
+      "Strategic acquisition, management, and development of high-yield commercial and residential properties across prime urban and developing growth hubs.",
     includes: [
       "Prime commercial office developments",
       "Residential joint-venture property projects",
