@@ -5,7 +5,7 @@
 Phase 11 — Handover / Final Polish
 
 ## Last Completed Task
-Brightened navbar, mobile menu, and footer logos (added brightness-150 class) and increased the font size and weight of the hero infinite marquee ticker text.
+Brightened navbar, mobile menu, and footer logos further (changed to brightness-200) and aligned the hero infinite marquee ticker to the absolute bottom of the hero section (bottom-0).
 
 ## What Was Built This Session
 - `src/lib/content/cooperations.ts` — Updated the description copy for the `oil-gas-investments` (Oil & Gas Strategic Investments) cooperation card to "Targeted investment strategy in the midstream distribution systems and logistic" per client request.
@@ -14,8 +14,8 @@ Brightened navbar, mobile menu, and footer logos (added brightness-150 class) an
 - `src/lib/content/marquee.ts` — Removed `global-equities` (World Stocks) and `fixed-income` (Secure Bonds) marquee items from the hero infinite marquee ticker as requested by the client.
 - `src/lib/content/team.ts` — Changed `Alessandro Ricci`'s title to "Forex Advisor, Italy Operations". Replaced `Chinedu Alexander Eze` with a Yoruba name `Olufemi Alexander Adebayo` and updated references across his bio and bioShort text.
 - `src/services/blogService.ts` — Updated the default authors list array to replace "Chinedu Alexander Eze" with "Olufemi Alexander Adebayo" to ensure data integrity across insights.
-- `src/components/layout/Nav.tsx`, `Footer.tsx`, `MobileMenu.tsx` — Brightened the transparent logo image by adding the `brightness-150` Tailwind filter to enhance contrast against dark backgrounds.
-- `src/components/sections/HeroSection.tsx` — Increased the size and weight of the infinite marquee ticker text (`text-[11px] md:text-[13px] font-semibold text-white/80`) to improve visibility.
+- `src/components/layout/Nav.tsx`, `Footer.tsx`, `MobileMenu.tsx` — Brightened the transparent logo image by adding the `brightness-200` Tailwind filter to enhance contrast and legibility against dark backgrounds.
+- `src/components/sections/HeroSection.tsx` — Increased the size and weight of the infinite marquee ticker text (`text-[11px] md:text-[13px] font-semibold text-white/80`) and aligned it to the absolute bottom of the hero section (`bottom-0`) with no margins.
 
 ## Architecture Decisions Made
 - **Dual Content Division:** Separated direct operations ("Cooperations") from advisory areas ("Management Disciplines") to preserve institutional credibility while clearly representing the conglomerate's exact assets.
