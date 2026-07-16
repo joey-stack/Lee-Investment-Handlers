@@ -16,7 +16,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://leeinvestmenthandlers.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.leeinvestmenthandlers.com"),
   title: {
     default: "LEE Investment Handlers | Managing Wealth. Building Legacies.",
     template: "%s | LEE Investment Handlers",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "LEE Investment Handlers | Managing Wealth. Building Legacies.",
     description: "Disciplined wealth management and institutional-grade portfolio strategies for high-net-worth individuals, families, and organizations.",
-    url: "https://leeinvestmenthandlers.com",
+    url: "https://www.leeinvestmenthandlers.com",
     siteName: "LEE Investment Handlers",
     locale: "en_US",
     type: "website",
