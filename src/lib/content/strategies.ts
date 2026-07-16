@@ -51,19 +51,13 @@ export const strategiesIntro: StrategiesIntro = {
 export const strategyBreakdownContent: StrategyBreakdownContent = {
   eyebrow: "Investment Allocations",
   headline: "Factual Investment Classes For Steady Growth",
-  description: "We invest capital across five strategic areas. This balanced investment allocation protects your family money against market crashes and high inflation.",
+  description: "We invest capital across two strategic areas. This balanced investment allocation protects your family money against market crashes and high inflation.",
   items: [
     {
       id: "fixed-income",
       title: "Fixed Income & Yield",
       description: "Your returns on investment are guaranteed. Built for stability, not guesswork. Designed to grow your money without sleepless nights.",
       iconName: "percent",
-    },
-    {
-      id: "real-estate",
-      title: "Real Estate & Infrastructure",
-      description: "Direct ownership in premium properties, providing income and strong inflation",
-      iconName: "building-2",
     },
     {
       id: "global-diversification",

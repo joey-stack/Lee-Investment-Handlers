@@ -41,7 +41,7 @@ export const cooperations: Service[] = [
     id: "oil-gas-investments",
     title: "Oil & Gas Strategic Investments",
     description:
-      "Targeted investment strategies in upstream production investments, midstream distribution systems, and refinery logistics.",
+      "Targeted investment strategy in the midstream distribution systems and logistic",
     includes: [
       "Upstream oil block development partnerships",
       "Midstream transport and storage logistics",
