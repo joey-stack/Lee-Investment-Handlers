@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Didact_Gothic, Geist } from "next/font/google";
 import { ScrollTrigger } from "@/components/layout/ScrollTrigger";
 import { AuthProvider } from "@/context/AuthContext";
+import { StructuredData } from "@/components/seo/StructuredData";
 import "./globals.css";
 
 const didactGothic = Didact_Gothic({
@@ -21,10 +22,33 @@ export const metadata: Metadata = {
     default: "LEE Investment Handlers | Managing Wealth. Building Legacies.",
     template: "%s | LEE Investment Handlers",
   },
-  description: "Disciplined wealth management and institutional-grade portfolio strategies for high-net-worth individuals, families, and organizations.",
+  description: "Disciplined wealth management and institutional portfolio strategies operating across Lagos and Venice.",
+  keywords: [
+    "LEE Investment Handlers",
+    "Lee Wealth Management",
+    "Wealth Management Lagos",
+    "Wealth Management Venice",
+    "Portfolio Management",
+    "Investment Advisory",
+    "Capital Preservation"
+  ],
+  authors: [{ name: "LEE Investment Handlers" }],
+  creator: "LEE Investment Handlers",
+  publisher: "LEE Investment Handlers",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "LEE Investment Handlers | Managing Wealth. Building Legacies.",
-    description: "Disciplined wealth management and institutional-grade portfolio strategies for high-net-worth individuals, families, and organizations.",
+    description: "Disciplined wealth management and institutional portfolio strategies operating across Lagos and Venice.",
     url: "https://www.leeinvestmenthandlers.com",
     siteName: "LEE Investment Handlers",
     locale: "en_US",
@@ -41,7 +65,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "LEE Investment Handlers | Managing Wealth. Building Legacies.",
-    description: "Disciplined wealth management and institutional-grade portfolio strategies for high-net-worth individuals, families, and organizations.",
+    description: "Disciplined wealth management and institutional portfolio strategies operating across Lagos and Venice.",
     images: ["/og-image.png"],
   },
 };
@@ -57,6 +81,9 @@ export default function RootLayout({
       className={`${didactGothic.variable} ${geistSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <StructuredData />
+      </head>
       <body
         className="min-h-full flex flex-col bg-brand-bg-primary text-brand-primary"
         suppressHydrationWarning
