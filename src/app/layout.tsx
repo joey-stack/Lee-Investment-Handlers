@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     template: "%s | LEE Investment Handlers",
   },
   description: "Disciplined wealth management and institutional portfolio strategies operating across Lagos and Venice.",
+  verification: {
+    google: "rvpi5IJXSzHow2YlBMNLQwN2Hy6X7WNiEcvQxspB610",
+  },
   keywords: [
     "LEE Investment Handlers",
     "Lee Wealth Management",
