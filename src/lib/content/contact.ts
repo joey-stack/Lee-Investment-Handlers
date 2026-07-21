@@ -44,7 +44,7 @@ export const contactFormCopy: ContactFormCopy = {
   buttonSubmit: "Schedule a Consultation",
   buttonLoading: "Submitting Request...",
   successTitle: "Consultation Request Received",
-  successText: "Thank you for writing. A senior advisor from our firm will call you within one business day to analyze your strategic wealth goals.",
+  successText: "Thank you for reaching out. A senior advisor from our team will contact you within one business day to discuss your wealth goals.",
 };
 
 export const contactProcessCopy: ContactProcessCopy = {

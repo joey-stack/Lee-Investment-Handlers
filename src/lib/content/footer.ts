@@ -28,7 +28,7 @@ export interface FooterContent {
 
 export const footerContent: FooterContent = {
   tagline: "Secure Wealth. Outlive Inflation.",
-  description: "LEE Investment Handlers is a premier wealth management firm dedicated to preserving and compounding capital for wealthy individuals, families, and institutions across generations.",
+  description: "LEE Investment Handlers is a wealth management firm dedicated to protecting and growing capital for individuals, families, and institutions across generations.",
   offices: [
     {
       city: "Lagos Office",
@@ -59,11 +59,11 @@ export const footerContent: FooterContent = {
   ],
   newsletter: {
     title: "Get Factual Briefings",
-    description: "Get our monthly economic analysis and strategic investment updates directly in your inbox.",
+    description: "Receive our monthly economic analysis and investment updates directly in your inbox.",
     placeholder: "Enter your email address",
     buttonText: "Subscribe",
-    successMessage: "Thank you for subscribing. We have added you to our strategic mailing list.",
+    successMessage: "Thank you for subscribing. We have added you to our mailing list.",
   },
-  complianceDisclaimer: "LEE Investment Handlers operates as a professional investment management and advisory firm. All investments carry risks, including the potential loss of principal capital. Past results do not guarantee future growth. Structured investment products may not be suitable for all investors. Regulated under applicable investment authorities in respective jurisdictions.",
+  complianceDisclaimer: "LEE Investment Handlers operates as a professional investment management and advisory firm. All investments carry risks, including the potential loss of principal capital. Past results do not guarantee future growth. Investment products may not be suitable for all investors. Regulated under applicable investment authorities in respective jurisdictions.",
   copyrightTemplate: "© {year} LEE Investment Handlers. All rights reserved.",
 };

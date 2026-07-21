@@ -12,7 +12,7 @@ export interface HeroContent {
 export const heroContent: HeroContent = {
   eyebrow: "Keep Capital Growing Safely",
   headline: "Secure Wealth. Outlive Inflation.",
-  subtext: "Our fact-based investment strategy helps you preserve and compound wealth for generations.",
+  subtext: "Our fact based investment strategy helps you protect your capital and grow your wealth safely for generations.",
   trustLine: "Serious investors in Lagos and Venice trust us.",
   ctaPrimaryText: "Book A Consultation",
   ctaSecondaryText: "Read Our Methods",

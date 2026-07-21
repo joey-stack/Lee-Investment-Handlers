@@ -4,25 +4,25 @@ export const pillars: Pillar[] = [
   {
     id: "research",
     title: "Research",
-    body: "We ignore sensational newspaper headlines. Our team conducts deep market, economic, and sector research before making any single trade. We never invest on hunches — before deploying capital, we analyze the absolute facts and the real risk.",
+    body: "We ignore noise and market rumors. Our team studies market data, economic trends, and business performance before making any trade. We invest on hard facts to keep your capital safe.",
     icon: "search",
   },
   {
     id: "diversification",
     title: "Diversification",
-    body: "We distribute risk across investment classes, industries, and countries — so your portfolio does not depend on one single outcome. A well-diversified portfolio is not about owning many investments. It is about the right mix.",
+    body: "We spread investments across different assets, sectors, and countries so your money never depends on a single market. A well diversified portfolio keeps your capital safe in any environment.",
     icon: "pie-chart",
   },
   {
     id: "discipline",
     title: "Discipline",
-    body: "Markets change. Our process never does. Most investment mistakes happen in moments of panic or greed. We stick to our plan through market cycles with calm, principled decisions — never chasing quick gains at the expense of safety.",
+    body: "Markets move up and down, but our investment strategy stays firm. We avoid panic and emotional decisions, sticking strictly to your long term plan.",
     icon: "target",
   },
   {
     id: "performance",
     title: "Performance",
-    body: "We judge our success by your profits. We set performance goals, measure them daily, and report progress clearly. Our clients receive regular proof of how their investments grow — and why. We do not use averages. We own our results.",
+    body: "We measure success by your actual gains. We set clear goals, track progress daily, and share transparent updates so you always know how your money is growing.",
     icon: "bar-chart-2",
   },
 ];

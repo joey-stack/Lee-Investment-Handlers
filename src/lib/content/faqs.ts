@@ -5,24 +5,24 @@ export const faqs: FAQ[] = [
     id: "faq-min-investment",
     question: "How much capital do you require?",
     answer:
-      "We examine every individual account. Typically we work with individuals, families, and institutions owning at least ₦500,000 in investable wealth. This allows us to construct our properly diversified, actively managed portfolios for you.",
+      "We evaluate every account individually. We work with individuals, families, and institutions with at least ₦500,000 in investable wealth. This allows us to build properly diversified portfolios tailored for you.",
   },
   {
     id: "faq-custody",
     question: "Who keeps your capital safe?",
     answer:
-      "Your family investments are held with leading independent, third-party custodians to guarantee the maximum security and clear reporting. LEE Investment Handlers never takes physical custody of client family wealth.",
+      "Your investments are held safely with independent third party custodians to guarantee security and clear reporting. LEE Investment Handlers never takes physical custody of your funds.",
   },
   {
     id: "faq-review-frequency",
     question: "How often do we report your investment results?",
     answer:
-      "We provide regular updates in accordance with your agreed investment terms. Since our clients reside in different countries globally, we do not have formal, scheduled review meetings; our advisors are always available to help when needed.",
+      "We provide regular performance updates based on your agreed terms. Since our clients live in different global hubs, our team is always available whenever you have questions.",
   },
   {
     id: "faq-risk-management",
     question: "How do we protect your family wealth?",
     answer:
-      "Risk management is the base of our pillars. We reduce risk through broad investment diversification.",
+      "Capital preservation is at the core of our strategy. We manage risk through sound diversification across different assets, industries, and global markets.",
   },
 ];

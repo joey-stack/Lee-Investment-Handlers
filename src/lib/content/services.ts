@@ -5,13 +5,13 @@ export const services: Service[] = [
     id: "wealth-management",
     title: "Wealth Management",
     description:
-      "Bespoke financial strategies and active portfolio management built for your family — not templates.",
+      "Custom financial plans and active portfolio management built specifically for your family, never generic templates.",
     includes: [
       "Personalized financial planning",
       "Portfolio construction and ongoing management",
       "Regular performance reviews and strategy adjustments",
       "Coordination with your legal and tax advisors",
-      "Long-term wealth preservation planning",
+      "Long term wealth preservation planning",
     ],
     icon: "briefcase",
     metrics: [
@@ -23,11 +23,11 @@ export const services: Service[] = [
     id: "portfolio-management",
     title: "Portfolio Management",
     description:
-      "Research-driven portfolios managed by experts to deliver consistent, long-term growth for investments.",
+      "Portfolios guided by clear research and managed by experts to deliver steady, long term growth for your money.",
     includes: [
       "Custom portfolio construction across investment classes",
       "Active monitoring and rebalancing",
-      "Risk-adjusted return optimization",
+      "Risk adjusted return optimization",
       "Regular performance reporting",
       "Benchmark tracking and accountability",
     ],
@@ -41,12 +41,12 @@ export const services: Service[] = [
     id: "retirement-planning",
     title: "Retirement Planning",
     description:
-      "Practical plans that give you the steady cash flow to retire on your terms forever.",
+      "Practical plans that give you steady monthly cash flow so you can retire on your own terms with peace of mind.",
     includes: [
       "Retirement income modeling and projections",
-      "Investment allocation strategies for pre- and post-retirement",
+      "Investment allocation strategies before and after retirement",
       "Withdrawal planning and sequencing",
-      "Social security and pension optimization guidance",
+      "Social security and pension guidance",
       "Estate and legacy planning considerations",
     ],
     icon: "shield-check",
@@ -59,17 +59,17 @@ export const services: Service[] = [
     id: "institutional-investments",
     title: "Institutional Investments",
     description:
-      "Disciplined investment management built for foundations, trusts, and pension funds.",
+      "Disciplined investment management designed for foundations, family trusts, and pension funds.",
     includes: [
       "Investment policy statement development",
       "Investment allocation and manager selection",
-      "Liability-driven investing strategies",
+      "Liability driven investing strategies",
       "Governance and compliance reporting",
-      "Long-term performance benchmarking",
+      "Long term performance benchmarking",
     ],
     icon: "building-2",
     metrics: [
-      { value: "Dual-hub", label: "Lagos & Venice offices" },
+      { value: "Dual hub", label: "Lagos & Venice offices" },
       { value: "Custom", label: "investment policies" },
     ],
   },
@@ -77,12 +77,12 @@ export const services: Service[] = [
     id: "alternative-investments",
     title: "Alternative Investments",
     description:
-      "Access private equity, premium real estate, and high-yield vehicles beyond public stock markets.",
+      "Access private equity, prime real estate, and high yield opportunities outside standard stock markets.",
     includes: [
       "Private equity and private credit opportunities",
       "Real estate investment strategies",
       "Hedge fund access and evaluation",
-      "Portfolio diversification through non-correlated investments",
+      "Portfolio diversification through non correlated investments",
       "Risk assessment and due diligence on alternative holdings",
     ],
     icon: "layers",
@@ -95,7 +95,7 @@ export const services: Service[] = [
     id: "risk-management",
     title: "Risk Management",
     description:
-      "Continuous portfolio monitoring and capital preservation techniques that safeguard accumulated family wealth.",
+      "Continuous portfolio checking and capital safety controls that protect your family savings from market drops.",
     includes: [
       "Ongoing portfolio risk assessment",
       "Stress testing and scenario analysis",
@@ -126,7 +126,7 @@ export interface ServicesPageCTA {
 
 export const servicesPageHero: ServicesPageHero = {
   headline: "Wealth Plans Built On Facts",
-  subtext: "We turn complex global market insights into disciplined, wealth-building strategies. Whether preserving family capital for your heirs or managing institutional funds, we promise our complete alignment and factual execution.",
+  subtext: "We turn global market research into clear, disciplined wealth building strategies. Whether protecting family capital for your heirs or managing institutional funds, we promise complete transparency and factual execution.",
   bgImageUrl: "https://labs.google/fx/api/og-image/shared/dcfa42a0-4430-4555-a2d2-6b18617845e9",
 };
 
