@@ -44,7 +44,7 @@ export const strategiesPageHero: StrategiesPageHero = {
 
 export const strategiesIntro: StrategiesIntro = {
   eyebrow: "Philosophy",
-  headline: "We Invest On Facts — Not Gossip",
+  headline: "We Invest On Facts, Not Gossip",
   body: "Global financial markets are full of rumors, noise, and short term market swings. At LEE Investment Handlers, we ignore all market gossip. We build portfolios based on proven economic facts, broad asset diversification, and thorough stress testing. We construct portfolios that protect your savings and compound your wealth over generations.",
 };
 

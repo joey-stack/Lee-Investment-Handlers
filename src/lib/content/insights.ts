@@ -24,7 +24,7 @@ export const insights: InsightArticle[] = [
     id: "why-strategy-fails",
     title: "Why Strategy Fails Without Execution Support",
     excerpt:
-      "Even the best plans fall flat without clear ownership, tools, and follow through — here is how we solve for that.",
+      "Even the best plans fall flat without clear ownership, tools, and follow through. Here is how we solve for that.",
     category: "Insights",
     date: "February 26, 2026",
     slug: "why-strategy-fails",

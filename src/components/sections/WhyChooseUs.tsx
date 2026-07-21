@@ -12,25 +12,25 @@ const items: WhyChooseItem[] = [
     icon: <Target size={24} />,
     title: "Strategic Investment Approach",
     description:
-      "Every decision is grounded in thorough research, data-driven analysis, and a long-term perspective — never short-term speculation.",
+      "Every decision is grounded in thorough research, data driven analysis, and a long term perspective, never short term speculation.",
   },
   {
     icon: <Users size={24} />,
-    title: "Client-Centered Service",
+    title: "Client Centered Service",
     description:
-      "Your goals drive everything we do. We build strategies around your life, not a one-size-fits-all model.",
+      "Your goals drive everything we do. We build strategies around your life, not a one size fits all model.",
   },
   {
     icon: <MessageSquare size={24} />,
     title: "Transparent Communication",
     description:
-      "No surprises, no jargon. You'll always know how your investments are performing — and why we're making the decisions we make.",
+      "No surprises and no jargon. You will always know how your investments are performing and why we make the decisions we make.",
   },
   {
     icon: <Lock size={24} />,
     title: "Security & Compliance",
     description:
-      "Your investments are held with institutional-grade custodians. We operate under strict regulatory oversight and robust compliance frameworks.",
+      "Your investments are held with institutional grade custodians. We operate under strict regulatory oversight and robust compliance frameworks.",
   },
 ];
 
@@ -56,7 +56,7 @@ export const WhyChooseUs: React.FC = () => {
 
           <div className="max-w-[450px] animate-fade-up-delay-2">
             <p className="text-sm md:text-base text-brand-secondary leading-relaxed">
-              What separates LEE Investment Handlers from the rest isn't just what we do — it's how we do it. Here is what you can expect when you invest with us.
+              What separates LEE Investment Handlers from the rest is not just what we do, it is how we do it. Here is what you can expect when you invest with us.
             </p>
           </div>
         </div>

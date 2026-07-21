@@ -4,7 +4,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "testimonial-1",
     quote:
-      "This firm completely changed how we protect our capital. Their advice is excellent — factual, easy to understand, and always focused on making us money.",
+      "This firm completely changed how we protect our capital. Their advice is excellent, factual, easy to understand, and always focused on making us money.",
     attribution: "Private Investor",
     role: "Private Investor",
     rating: 5,

@@ -38,7 +38,7 @@ export const aboutSnippetContent: AboutSnippetContent = {
   ctaText: "Read Our Full Story",
   ctaHref: "/about",
   imageUrl: "/about-preview.png",
-  imageAlt: "LEE Investment Handlers — professional consultation meeting in a modern office",
+  imageAlt: "LEE Investment Handlers professional consultation meeting in a modern office",
   marqueeItems: [
     "Lagos, Nigeria",
     "Venice, Italy",
